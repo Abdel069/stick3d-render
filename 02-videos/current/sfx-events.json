@@ -1,0 +1,7 @@
+[{"t":3.62,"sfx":"whoosh","db":-6},{"t":6.3,"sfx":"impact","db":-10},{"t":6.65,"sfx":"click","db":-3},
+ {"t":9.0,"sfx":"whoosh","db":-8},{"t":13.95,"sfx":"ping","db":-4},
+ {"t":15.75,"sfx":"tick","db":-6},{"t":16.2,"sfx":"tick","db":-6},{"t":16.65,"sfx":"tick","db":-6},{"t":16.9,"sfx":"ding","db":-6},
+ {"t":21.5,"sfx":"pop","db":-3},{"t":22.05,"sfx":"whoosh","db":-8},{"t":23.05,"sfx":"pop","db":-6},
+ {"t":27.55,"sfx":"sparkle","db":-6},{"t":28.2,"sfx":"chime","db":-8},
+ {"t":33.6,"sfx":"stamp","db":-2},{"t":35.2,"sfx":"whoosh","db":-8},
+ {"t":39.0,"sfx":"impact","db":-6},{"t":47.7,"sfx":"chime","db":-6}]

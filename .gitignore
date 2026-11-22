@@ -1,0 +1,6 @@
+node_modules/
+99-exports/
+02-videos/*/stills*/
+02-videos/*/out/
+*.log
+.DS_Store

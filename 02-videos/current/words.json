@@ -2,636 +2,611 @@
  {
   "word": "Morgens",
   "start": 0.0,
-  "end": 0.56
+  "end": 0.68
  },
  {
   "word": "Berufsverkehr",
-  "start": 0.84,
-  "end": 1.66
+  "start": 1.04,
+  "end": 1.8
  },
  {
   "word": "ein",
-  "start": 2.06,
-  "end": 2.2
+  "start": 2.28,
+  "end": 2.44
  },
  {
   "word": "U-Bahnhof",
-  "start": 2.4,
-  "end": 2.88
+  "start": 2.64,
+  "end": 3.0
  },
  {
   "word": "in",
-  "start": 2.88,
-  "end": 3.06
+  "start": 3.0,
+  "end": 3.18
  },
  {
   "word": "Washington",
-  "start": 3.06,
-  "end": 3.52
+  "start": 3.18,
+  "end": 3.66
  },
  {
   "word": "Ein",
-  "start": 4.14,
-  "end": 4.26
- },
- {
-  "word": "Mann",
-  "start": 4.26,
+  "start": 4.34,
   "end": 4.46
  },
  {
-  "word": "in",
+  "word": "Mann",
   "start": 4.46,
-  "end": 4.68
+  "end": 4.6
+ },
+ {
+  "word": "in",
+  "start": 4.6,
+  "end": 4.8
  },
  {
   "word": "Jeans",
-  "start": 4.68,
-  "end": 5.02
+  "start": 4.8,
+  "end": 5.16
  },
  {
   "word": "und",
-  "start": 5.02,
-  "end": 5.22
+  "start": 5.16,
+  "end": 5.34
  },
  {
   "word": "Basecap",
-  "start": 5.22,
-  "end": 5.78
+  "start": 5.34,
+  "end": 5.86
  },
  {
   "word": "stellt",
-  "start": 5.78,
-  "end": 6.16
+  "start": 5.86,
+  "end": 6.2
  },
  {
   "word": "seinen",
-  "start": 6.16,
-  "end": 6.4
+  "start": 6.2,
+  "end": 6.46
  },
  {
   "word": "Geigenkasten",
-  "start": 6.4,
-  "end": 7.12
+  "start": 6.46,
+  "end": 7.24
  },
  {
   "word": "offen",
-  "start": 7.12,
-  "end": 7.5
- },
- {
-  "word": "auf",
-  "start": 7.5,
+  "start": 7.24,
   "end": 7.72
  },
  {
-  "word": "den",
+  "word": "auf",
   "start": 7.72,
-  "end": 7.86
+  "end": 7.92
+ },
+ {
+  "word": "den",
+  "start": 7.92,
+  "end": 8.06
  },
  {
   "word": "Boden",
-  "start": 7.86,
-  "end": 8.16
+  "start": 8.06,
+  "end": 8.32
  },
  {
   "word": "und",
-  "start": 8.16,
-  "end": 8.68
+  "start": 8.32,
+  "end": 8.98
  },
  {
   "word": "beginnt",
-  "start": 8.68,
-  "end": 9.02
+  "start": 8.98,
+  "end": 9.28
  },
  {
   "word": "zu",
-  "start": 9.02,
-  "end": 9.18
+  "start": 9.28,
+  "end": 9.42
  },
  {
   "word": "spielen",
-  "start": 9.18,
-  "end": 9.46
+  "start": 9.42,
+  "end": 9.72
  },
  {
   "word": "Bach",
-  "start": 10.04,
-  "end": 10.22
+  "start": 10.24,
+  "end": 10.44
  },
  {
   "word": "Fast",
-  "start": 10.9,
-  "end": 10.9
+  "start": 11.2,
+  "end": 11.2
  },
  {
   "word": "eine",
-  "start": 10.9,
-  "end": 11.16
+  "start": 11.2,
+  "end": 11.42
  },
  {
   "word": "Dreiviertelstunde",
-  "start": 11.16,
-  "end": 12.1
+  "start": 11.42,
+  "end": 12.4
  },
  {
   "word": "lang",
-  "start": 12.1,
-  "end": 12.36
+  "start": 12.4,
+  "end": 12.68
  },
  {
   "word": "Über",
-  "start": 12.82,
-  "end": 12.98
+  "start": 13.12,
+  "end": 13.28
  },
  {
   "word": "tausend",
-  "start": 12.98,
-  "end": 13.4
+  "start": 13.28,
+  "end": 13.72
  },
  {
   "word": "Menschen",
-  "start": 13.4,
-  "end": 13.82
+  "start": 13.72,
+  "end": 13.98
  },
  {
-  "word": "laufen",
-  "start": 13.82,
-  "end": 14.14
- },
- {
-  "word": "vorbei",
-  "start": 14.14,
+  "word": "rauschen",
+  "start": 13.98,
   "end": 14.56
  },
  {
-  "word": "Sieben",
+  "word": "vorbei",
   "start": 14.56,
-  "end": 15.3
- },
- {
-  "word": "bleiben",
-  "start": 15.3,
-  "end": 15.66
- },
- {
-  "word": "eine",
-  "start": 15.66,
-  "end": 16.12
- },
- {
-  "word": "Minute",
-  "start": 16.12,
-  "end": 16.5
- },
- {
-  "word": "stehen",
-  "start": 16.5,
-  "end": 16.86
- },
- {
-  "word": "Zusammen",
-  "start": 17.42,
-  "end": 17.8
- },
- {
-  "word": "kommen",
-  "start": 17.8,
-  "end": 18.26
- },
- {
-  "word": "32",
-  "start": 18.26,
-  "end": 18.96
- },
- {
-  "word": "Dollar",
-  "start": 18.96,
-  "end": 19.44
- },
- {
-  "word": "in",
-  "start": 19.44,
-  "end": 19.66
- },
- {
-  "word": "den",
-  "start": 19.66,
-  "end": 19.76
- },
- {
-  "word": "Kasten",
-  "start": 19.76,
-  "end": 20.18
- },
- {
-  "word": "dazu",
-  "start": 20.6,
-  "end": 20.88
- },
- {
-  "word": "ein",
-  "start": 20.88,
-  "end": 21.14
- },
- {
-  "word": "Zwanziger",
-  "start": 21.14,
-  "end": 21.78
- },
- {
-  "word": "von",
-  "start": 21.78,
-  "end": 21.96
- },
- {
-  "word": "einer",
-  "start": 21.96,
-  "end": 22.22
- },
- {
-  "word": "einzigen",
-  "start": 22.22,
-  "end": 22.7
- },
- {
-  "word": "Frau",
-  "start": 22.7,
-  "end": 23.02
- },
- {
-  "word": "die",
-  "start": 23.24,
-  "end": 23.44
- },
- {
-  "word": "ihn",
-  "start": 23.44,
-  "end": 23.58
- },
- {
-  "word": "erkennt",
-  "start": 23.58,
-  "end": 23.94
- },
- {
-  "word": "Die",
-  "start": 23.94,
-  "end": 24.66
- },
- {
-  "word": "Geige",
-  "start": 24.66,
-  "end": 24.96
- },
- {
-  "word": "ist",
-  "start": 24.96,
-  "end": 25.18
- },
- {
-  "word": "eine",
-  "start": 25.18,
-  "end": 25.42
- },
- {
-  "word": "Stradivari",
-  "start": 25.42,
-  "end": 26.2
- },
- {
-  "word": "von",
-  "start": 26.2,
-  "end": 26.6
- },
- {
-  "word": "1713",
-  "start": 26.6,
-  "end": 27.62
- },
- {
-  "word": "rund",
-  "start": 28.26,
-  "end": 28.56
- },
- {
-  "word": "3,5",
-  "start": 28.56,
-  "end": 29.52
- },
- {
-  "word": "Millionen",
-  "start": 29.52,
-  "end": 29.78
- },
- {
-  "word": "wert",
-  "start": 29.78,
-  "end": 30.28
- },
- {
-  "word": "Der",
-  "start": 30.72,
-  "end": 30.86
- },
- {
-  "word": "Mann",
-  "start": 30.86,
-  "end": 31.04
- },
- {
-  "word": "ist",
-  "start": 31.04,
-  "end": 31.34
- },
- {
-  "word": "Joshua",
-  "start": 31.34,
-  "end": 31.82
- },
- {
-  "word": "Bell",
-  "start": 31.82,
-  "end": 32.2
- },
- {
-  "word": "einer",
-  "start": 32.74,
-  "end": 32.74
- },
- {
-  "word": "der",
-  "start": 32.74,
-  "end": 32.9
- },
- {
-  "word": "besten",
-  "start": 32.9,
-  "end": 33.24
- },
- {
-  "word": "Geiger",
-  "start": 33.24,
-  "end": 33.64
- },
- {
-  "word": "der",
-  "start": 33.64,
-  "end": 33.84
- },
- {
-  "word": "Welt",
-  "start": 33.84,
-  "end": 34.12
- },
- {
-  "word": "der",
-  "start": 34.6,
-  "end": 34.7
- },
- {
-  "word": "zwei",
-  "start": 34.7,
-  "end": 34.92
- },
- {
-  "word": "Tage",
-  "start": 34.92,
-  "end": 35.2
- },
- {
-  "word": "vorher",
-  "start": 35.2,
-  "end": 35.64
- },
- {
-  "word": "einen",
-  "start": 35.64,
-  "end": 35.96
- },
- {
-  "word": "Saal",
-  "start": 35.96,
-  "end": 36.4
- },
- {
-  "word": "in",
-  "start": 36.4,
-  "end": 36.54
- },
- {
-  "word": "Boston",
-  "start": 36.54,
-  "end": 36.92
- },
- {
-  "word": "ausverkauft",
-  "start": 36.92,
-  "end": 37.62
- },
- {
-  "word": "hat",
-  "start": 37.62,
-  "end": 37.88
- },
- {
-  "word": "Tickets",
-  "start": 38.34,
-  "end": 38.64
- },
- {
-  "word": "um",
-  "start": 38.64,
-  "end": 39.02
- },
- {
-  "word": "100",
-  "start": 39.02,
-  "end": 39.68
- },
- {
-  "word": "Dollar",
-  "start": 39.68,
-  "end": 40.06
- },
- {
-  "word": "Gleiche",
-  "start": 40.52,
-  "end": 40.92
- },
- {
-  "word": "Musik",
-  "start": 40.92,
-  "end": 41.22
- },
- {
-  "word": "gleicher",
-  "start": 41.7,
-  "end": 42.06
- },
- {
-  "word": "Klang",
-  "start": 42.06,
-  "end": 42.38
+  "end": 14.92
  },
  {
   "word": "Nur",
-  "start": 42.84,
-  "end": 43.02
+  "start": 15.34,
+  "end": 15.46
  },
  {
-  "word": "der",
-  "start": 43.02,
-  "end": 43.2
- },
- {
-  "word": "Rahmen",
-  "start": 43.2,
-  "end": 43.52
- },
- {
-  "word": "war",
-  "start": 43.52,
-  "end": 43.82
- },
- {
-  "word": "ein",
-  "start": 43.82,
-  "end": 44.0
- },
- {
-  "word": "anderer",
-  "start": 44.0,
-  "end": 44.3
- },
- {
-  "word": "Jedes",
-  "start": 44.78,
-  "end": 44.94
- },
- {
-  "word": "Kind",
-  "start": 44.94,
-  "end": 45.36
- },
- {
-  "word": "wollte",
-  "start": 45.36,
-  "end": 45.72
- },
- {
-  "word": "stehen",
-  "start": 45.72,
-  "end": 46.08
+  "word": "sieben",
+  "start": 15.46,
+  "end": 15.9
  },
  {
   "word": "bleiben",
-  "start": 46.08,
-  "end": 46.44
+  "start": 15.9,
+  "end": 16.14
  },
  {
-  "word": "Jedes",
-  "start": 46.96,
-  "end": 47.32
+  "word": "stehen",
+  "start": 16.14,
+  "end": 16.56
  },
  {
-  "word": "wurde",
-  "start": 47.32,
-  "end": 47.68
+  "word": "für",
+  "start": 16.56,
+  "end": 17.04
+ },
+ {
+  "word": "eine",
+  "start": 17.04,
+  "end": 17.24
+ },
+ {
+  "word": "Minute",
+  "start": 17.24,
+  "end": 17.64
+ },
+ {
+  "word": "Am",
+  "start": 18.14,
+  "end": 18.28
+ },
+ {
+  "word": "Ende",
+  "start": 18.28,
+  "end": 18.58
+ },
+ {
+  "word": "liegen",
+  "start": 18.58,
+  "end": 18.84
+ },
+ {
+  "word": "32",
+  "start": 18.84,
+  "end": 19.5
+ },
+ {
+  "word": "Dollar",
+  "start": 19.5,
+  "end": 19.94
+ },
+ {
+  "word": "im",
+  "start": 19.94,
+  "end": 20.18
+ },
+ {
+  "word": "Kasten",
+  "start": 20.18,
+  "end": 20.56
+ },
+ {
+  "word": "dazu",
+  "start": 20.88,
+  "end": 21.18
+ },
+ {
+  "word": "ein",
+  "start": 21.18,
+  "end": 21.46
+ },
+ {
+  "word": "Zwanziger",
+  "start": 21.46,
+  "end": 22.16
  },
  {
   "word": "von",
-  "start": 47.68,
-  "end": 47.9
+  "start": 22.16,
+  "end": 22.62
  },
  {
-  "word": "seinen",
-  "start": 47.9,
-  "end": 48.16
+  "word": "einer",
+  "start": 22.62,
+  "end": 22.88
  },
  {
-  "word": "Eltern",
-  "start": 48.16,
-  "end": 48.52
+  "word": "einzigen",
+  "start": 22.88,
+  "end": 23.36
  },
  {
-  "word": "weitergezogen",
-  "start": 48.52,
-  "end": 49.38
+  "word": "Frau",
+  "start": 23.36,
+  "end": 23.7
  },
  {
-  "word": "Menschen",
-  "start": 49.38,
-  "end": 50.18
- },
- {
-  "word": "bewerten",
-  "start": 50.18,
-  "end": 50.68
- },
- {
-  "word": "nicht",
-  "start": 50.68,
-  "end": 50.9
- },
- {
-  "word": "den",
-  "start": 50.9,
-  "end": 51.1
- },
- {
-  "word": "Wert",
-  "start": 51.1,
-  "end": 51.44
- },
- {
-  "word": "sie",
-  "start": 51.9,
-  "end": 52.0
- },
- {
-  "word": "bewerten",
-  "start": 52.0,
-  "end": 52.44
- },
- {
-  "word": "den",
-  "start": 52.44,
-  "end": 52.6
- },
- {
-  "word": "Rahmen",
-  "start": 52.6,
-  "end": 53.06
- },
- {
-  "word": "in",
-  "start": 53.06,
-  "end": 53.3
- },
- {
-  "word": "dem",
-  "start": 53.3,
-  "end": 53.66
- },
- {
-  "word": "man",
-  "start": 53.66,
-  "end": 53.88
+  "word": "die",
+  "start": 23.98,
+  "end": 24.2
  },
  {
   "word": "ihn",
-  "start": 53.88,
-  "end": 54.1
+  "start": 24.2,
+  "end": 24.36
  },
  {
-  "word": "ihnen",
-  "start": 54.1,
-  "end": 54.3
+  "word": "erkennt",
+  "start": 24.36,
+  "end": 24.76
  },
  {
-  "word": "zeigt",
-  "start": 54.3,
-  "end": 54.7
+  "word": "Seine",
+  "start": 25.28,
+  "end": 25.6
+ },
+ {
+  "word": "Geige",
+  "start": 25.6,
+  "end": 25.92
+ },
+ {
+  "word": "ist",
+  "start": 25.92,
+  "end": 26.16
+ },
+ {
+  "word": "eine",
+  "start": 26.16,
+  "end": 26.4
+ },
+ {
+  "word": "Stradivari",
+  "start": 26.4,
+  "end": 27.14
+ },
+ {
+  "word": "von",
+  "start": 27.14,
+  "end": 27.58
+ },
+ {
+  "word": "1713",
+  "start": 27.58,
+  "end": 28.52
+ },
+ {
+  "word": "rund",
+  "start": 28.52,
+  "end": 29.26
+ },
+ {
+  "word": "3,5",
+  "start": 29.26,
+  "end": 30.36
+ },
+ {
+  "word": "Millionen",
+  "start": 30.36,
+  "end": 30.7
+ },
+ {
+  "word": "wert",
+  "start": 30.7,
+  "end": 31.3
+ },
+ {
+  "word": "Der",
+  "start": 31.8,
+  "end": 31.96
+ },
+ {
+  "word": "Mann",
+  "start": 31.96,
+  "end": 32.16
+ },
+ {
+  "word": "ist",
+  "start": 32.16,
+  "end": 32.48
+ },
+ {
+  "word": "Joshua",
+  "start": 32.48,
+  "end": 32.9
+ },
+ {
+  "word": "Bell",
+  "start": 32.9,
+  "end": 33.3
+ },
+ {
+  "word": "einer",
+  "start": 33.9,
+  "end": 34.1
+ },
+ {
+  "word": "der",
+  "start": 34.1,
+  "end": 34.267
+ },
+ {
+  "word": "besten",
+  "start": 34.267,
+  "end": 34.6
+ },
+ {
+  "word": "Geiger",
+  "start": 34.6,
+  "end": 35.08
+ },
+ {
+  "word": "der",
+  "start": 35.08,
+  "end": 35.28
+ },
+ {
+  "word": "Welt",
+  "start": 35.28,
+  "end": 35.56
+ },
+ {
+  "word": "Zwei",
+  "start": 36.0,
+  "end": 36.26
+ },
+ {
+  "word": "Tage",
+  "start": 36.26,
+  "end": 36.48
+ },
+ {
+  "word": "vorher",
+  "start": 36.48,
+  "end": 36.94
+ },
+ {
+  "word": "hat",
+  "start": 36.94,
+  "end": 37.2
+ },
+ {
+  "word": "er",
+  "start": 37.2,
+  "end": 37.32
+ },
+ {
+  "word": "in",
+  "start": 37.32,
+  "end": 37.46
+ },
+ {
+  "word": "Boston",
+  "start": 37.46,
+  "end": 37.82
+ },
+ {
+  "word": "einen",
+  "start": 37.82,
+  "end": 38.2
+ },
+ {
+  "word": "Saal",
+  "start": 38.2,
+  "end": 38.64
+ },
+ {
+  "word": "ausverkauft",
+  "start": 38.64,
+  "end": 39.32
+ },
+ {
+  "word": "Tickets",
+  "start": 39.94,
+  "end": 40.22
+ },
+ {
+  "word": "um",
+  "start": 40.22,
+  "end": 40.56
+ },
+ {
+  "word": "100",
+  "start": 40.56,
+  "end": 41.1
+ },
+ {
+  "word": "Dollar",
+  "start": 41.1,
+  "end": 41.46
+ },
+ {
+  "word": "Gleiche",
+  "start": 41.8,
+  "end": 42.2
+ },
+ {
+  "word": "Musik",
+  "start": 42.2,
+  "end": 42.5
+ },
+ {
+  "word": "gleicher",
+  "start": 42.92,
+  "end": 43.26
+ },
+ {
+  "word": "Klang",
+  "start": 43.26,
+  "end": 43.64
+ },
+ {
+  "word": "Nur",
+  "start": 44.14,
+  "end": 44.46
+ },
+ {
+  "word": "der",
+  "start": 44.46,
+  "end": 44.86
+ },
+ {
+  "word": "Rahmen",
+  "start": 44.86,
+  "end": 45.2
+ },
+ {
+  "word": "war",
+  "start": 45.2,
+  "end": 45.48
+ },
+ {
+  "word": "ein",
+  "start": 45.48,
+  "end": 45.64
+ },
+ {
+  "word": "anderer",
+  "start": 45.64,
+  "end": 46.0
+ },
+ {
+  "word": "Jedes",
+  "start": 46.64,
+  "end": 46.96
+ },
+ {
+  "word": "Kind",
+  "start": 46.96,
+  "end": 47.22
+ },
+ {
+  "word": "wollte",
+  "start": 47.22,
+  "end": 47.62
+ },
+ {
+  "word": "stehen",
+  "start": 47.62,
+  "end": 47.96
+ },
+ {
+  "word": "bleiben",
+  "start": 47.96,
+  "end": 48.28
+ },
+ {
+  "word": "Jedes",
+  "start": 48.72,
+  "end": 49.2
+ },
+ {
+  "word": "wurde",
+  "start": 49.2,
+  "end": 49.42
+ },
+ {
+  "word": "von",
+  "start": 49.42,
+  "end": 49.66
+ },
+ {
+  "word": "seinen",
+  "start": 49.66,
+  "end": 49.88
+ },
+ {
+  "word": "Eltern",
+  "start": 49.88,
+  "end": 50.28
+ },
+ {
+  "word": "weitergezogen",
+  "start": 50.28,
+  "end": 51.18
+ },
+ {
+  "word": "Der",
+  "start": 51.68,
+  "end": 51.86
+ },
+ {
+  "word": "Rahmen",
+  "start": 51.86,
+  "end": 52.2
+ },
+ {
+  "word": "entscheidet",
+  "start": 52.2,
+  "end": 52.88
+ },
+ {
+  "word": "was",
+  "start": 53.26,
+  "end": 53.38
+ },
+ {
+  "word": "uns",
+  "start": 53.38,
+  "end": 53.64
+ },
+ {
+  "word": "etwas",
+  "start": 53.64,
+  "end": 53.96
+ },
+ {
+  "word": "wert",
+  "start": 53.96,
+  "end": 54.34
+ },
+ {
+  "word": "ist",
+  "start": 54.34,
+  "end": 54.68
  }
 ]

@@ -14,17 +14,17 @@ export const JoshuaBell: React.FC = () => {
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       <Audio src={staticFile("mix.wav")} />
-      <Scene first start={CUTS[0]} end={CUTS[1]} bg="#1f6f7d">{(c) => <S1 {...c} />}</Scene>
-      <Scene start={CUTS[1]} end={CUTS[2]} bg="#c79a63" trans="whip">{(c) => <S2 {...c} />}</Scene>
-      <Scene start={CUTS[2]} end={CUTS[3]} bg="#27456a" trans="zoom">{(c) => <S3 {...c} />}</Scene>
-      <Scene start={CUTS[3]} end={CUTS[4]} bg="#7f46a4" trans="ghost">{(c) => <S4 {...c} />}</Scene>
-      <Scene start={CUTS[4]} end={CUTS[5]} bg="#b8744a" trans="whip">{(c) => <S5 {...c} />}</Scene>
-      <Scene start={CUTS[5]} end={CUTS[6]} bg="#241a48" trans="zoom">{(c) => <S6 {...c} />}</Scene>
-      <Scene start={CUTS[6]} end={CUTS[7]} bg="#4e1624" trans="flash">{(c) => <S7 {...c} />}</Scene>
-      <Scene start={CUTS[7]} end={CUTS[8]} bg="#500c1e" trans="ghost">{(c) => <S8 {...c} />}</Scene>
-      <Scene start={CUTS[8]} end={CUTS[9]} bg="#62758a" trans="whip">{(c) => <S9 {...c} />}</Scene>
-      <Scene start={CUTS[9]} end={CUTS[10]} bg="#d98a5a" trans="zoom">{(c) => <S10 {...c} />}</Scene>
-      <Scene start={CUTS[10]} end={CUTS[11]} bg="#3a2a66" trans="ghost">{(c) => <S11 {...c} />}</Scene>
+      <Scene first start={CUTS[0]} end={CUTS[1]} bg="#18857D">{(c) => <S1 {...c} />}</Scene>
+      <Scene start={CUTS[1]} end={CUTS[2]} bg="#C9B68E" trans="whip">{(c) => <S2 {...c} />}</Scene>
+      <Scene start={CUTS[2]} end={CUTS[3]} bg="#0B4A48" trans="zoom">{(c) => <S3 {...c} />}</Scene>
+      <Scene start={CUTS[3]} end={CUTS[4]} bg="#3D2A94" trans="ghost">{(c) => <S4 {...c} />}</Scene>
+      <Scene start={CUTS[4]} end={CUTS[5]} bg="#8A5A00" trans="whip">{(c) => <S5 {...c} />}</Scene>
+      <Scene start={CUTS[5]} end={CUTS[6]} bg="#221657" trans="zoom">{(c) => <S6 {...c} />}</Scene>
+      <Scene start={CUTS[6]} end={CUTS[7]} bg="#6E1630" trans="flash">{(c) => <S7 {...c} />}</Scene>
+      <Scene start={CUTS[7]} end={CUTS[8]} bg="#6E1630" trans="ghost">{(c) => <S8 {...c} />}</Scene>
+      <Scene start={CUTS[8]} end={CUTS[9]} bg="#0B4A48" trans="whip">{(c) => <S9 {...c} />}</Scene>
+      <Scene start={CUTS[9]} end={CUTS[10]} bg="#8A5A00" trans="zoom">{(c) => <S10 {...c} />}</Scene>
+      <Scene start={CUTS[10]} end={CUTS[11]} bg="#221657" trans="ghost">{(c) => <S11 {...c} />}</Scene>
       <Grade t={t} shaft={false} tint={TINT[idx]} />
       <Captions />
     </AbsoluteFill>

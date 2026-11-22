@@ -1,7 +1,7 @@
 // 2D stick-figure puppet v3: thick bean body, thin sticks, shading, physics-driven transforms, nervous acting.
 export type Look = {
   skin: string; body: string; outfit?: "suit" | "leather" | "blazer" | "hoodie" | "shirt"; tie?: string; shirt?: string;
-  hair?: "none" | "short" | "bob" | "swept" | "grey"; hairColor?: string; glasses?: boolean; badge?: string; hat?: string; shoe?: string;
+  hair?: "none" | "short" | "bob" | "swept" | "grey"; hairColor?: string; glasses?: boolean; badge?: string; hat?: string; shoe?: string; seed?: number /* unique head for main characters; undefined = shared NPC head */; tooth?: boolean;
 };
 export type Arms = "down" | "up" | "hold" | "point" | "head" | "chest" | "box" | "shrug";
 export type Pose = {
@@ -10,8 +10,18 @@ export type Pose = {
 };
 export const INK = "#0b0d1a";
 const sh = (c: CanvasRenderingContext2D, color: string, f: () => void) => { c.save(); f(); c.restore(); };
+// v5: deformed head (not a perfect circle). Main characters get a unique seed, NPCs share NPC_SEED so crowds look uniform.
+export const NPC_SEED = 7;
+const rr = (seed: number, k: number) => { const x = Math.sin(seed * 12.9898 + k * 78.233) * 43758.5453; return x - Math.floor(x); };
+const headShape = (seed: number) => {
+  const a2 = 0.05 + rr(seed, 1) * 0.07, a3 = 0.03 + rr(seed, 2) * 0.06, a5 = 0.015 + rr(seed, 3) * 0.03, p2 = rr(seed, 4) * 6.28, p3 = rr(seed, 5) * 6.28, p5 = rr(seed, 6) * 6.28;
+  const sx = 0.92 + rr(seed, 7) * 0.2, sy = 0.94 + rr(seed, 8) * 0.14, eyeL = 0.92 + rr(seed, 9) * 0.3, eyeR = 0.92 + rr(seed, 10) * 0.3, gap = 0.34 + rr(seed, 11) * 0.1, mx = (rr(seed, 12) - 0.5) * 16, nx = (rr(seed, 13) - 0.5) * 10;
+  const f = (t: number) => (1 + a2 * Math.cos(2 * t + p2) + a3 * Math.cos(3 * t + p3) + a5 * Math.cos(5 * t + p5));
+  return { f, sx, sy, eyeL, eyeR, gap, mx, nx, tooth: rr(seed, 14) > 0.5 };
+};
 export function drawPuppet(c: CanvasRenderingContext2D, W: number, H: number, look: Look, p: Pose) {
   c.clearRect(0, 0, W, H); c.save();
+  const hs = headShape(look.seed ?? NPC_SEED);
   const S = W / 400, cx = W / 2, feetY = H * 0.983, nerv = p.nerv ?? 0;
   const sq = p.squash ?? 0, tilt = p.tilt ?? 0;
   if (p.flip) { c.translate(W, 0); c.scale(-1, 1); }
@@ -21,17 +31,17 @@ export function drawPuppet(c: CanvasRenderingContext2D, W: number, H: number, lo
   c.lineCap = "round"; c.lineJoin = "round"; c.strokeStyle = INK;
   const w = p.walk, amp = p.speed ?? 0, moving = w !== undefined && amp > 0;
   const breath = Math.sin(p.t * 0.12) * 0.012, hunch = p.hunch ?? 0;
-  const bodyTopBase = H * 0.47, bodyH = H * 0.27 * (1 + breath), bodyW = W * 0.48;
+  const bodyTopBase = H * 0.43, bodyH = H * 0.245 * (1 + breath), bodyW = W * 0.34;
   const bob = moving ? Math.abs(Math.sin(w!)) * 9 * S * amp : 0;
   const bodyTop = bodyTopBase - bob + hunch * 8 * S;
   const shoe = look.shoe ?? INK;
   // legs
   for (const s of [-1, 1]) {
     const ph = moving ? Math.sin(w! + (s > 0 ? Math.PI : 0)) : 0, lift = moving ? Math.max(0, Math.cos(w! + (s > 0 ? Math.PI : 0))) : 0;
-    const sw = moving ? ph * 44 * S * amp : s * 12 * S + (p.air ? s * 14 * S : 0);
-    const x0 = cx + s * 24 * S, y0 = bodyTop + bodyH - 8 * S, fy = feetY - 12 * S - (moving ? lift * 14 * S * amp : 0) - (p.air ?? 0) * 18 * S;
-    c.lineWidth = 10 * S; c.beginPath(); c.moveTo(x0, y0); c.quadraticCurveTo(x0 + sw * 0.2, (y0 + fy) / 2, x0 + sw, fy); c.stroke();
-    c.fillStyle = shoe; c.lineWidth = 5 * S; c.beginPath(); c.ellipse(x0 + sw + 10 * S, fy + 6 * S, 21 * S, 10 * S, 0, 0, 7); c.fill(); c.stroke();
+    const sw = moving ? ph * 52 * S * amp : s * 12 * S + (p.air ? s * 14 * S : 0);
+    const x0 = cx + s * 19 * S, y0 = bodyTop + bodyH - 10 * S, fy = feetY - 12 * S - (moving ? lift * 14 * S * amp : 0) - (p.air ?? 0) * 18 * S;
+    c.lineWidth = 8 * S; c.beginPath(); c.moveTo(x0, y0); c.quadraticCurveTo(x0 + sw * 0.2, (y0 + fy) / 2, x0 + sw, fy); c.stroke();
+    c.fillStyle = shoe; c.lineWidth = 5 * S; c.beginPath(); c.ellipse(x0 + sw + 12 * S, fy + 6 * S, 25 * S, 11 * S, 0, 0, 7); c.fill(); c.stroke();
   }
   // arms
   const mode = p.arms ?? "down", ak = p.armK ?? 1;
@@ -40,24 +50,24 @@ export function drawPuppet(c: CanvasRenderingContext2D, W: number, H: number, lo
   for (const s of [-1, 1]) {
     const swing = moving ? Math.sin(w! + (s > 0 ? 0 : Math.PI)) * 30 * S * amp : 0;
     const sx = cx + s * bodyW * 0.46, sy = bodyTop + bodyH * 0.22;
-    let ex = sx + s * 38 * S, ey = bodyTop + bodyH * 0.85 + swing * 0.3, bend = 12 * S;
+    let ex = sx + s * 30 * S, ey = bodyTop + bodyH * 1.22 + swing * 0.3, bend = 12 * S;
     const tremble = nerv ? Math.sin(p.t * 3.1 + s) * 5 * S * nerv : 0;
     const target = (tx: number, ty: number) => { ex = ex + (tx - ex) * ak; ey = ey + (ty - ey) * ak; };
-    if (mode === "up") target(sx + s * 20 * S, sy - 118 * S);
+    if (mode === "up") target(sx + s * 20 * S, sy - 150 * S);
     if (mode === "head") { target(hxBase + s * hr * 0.98, hyBase + hr * 0.05); bend = 40 * S; }
     if (mode === "chest") target(cx + s * 14 * S, bodyTop + bodyH * 0.38);
     if (mode === "hold") target(cx + s * 30 * S, bodyTop + bodyH * 0.5);
     if (mode === "box") target(cx + s * 52 * S, bodyTop + bodyH * 0.6);
     if (mode === "shrug") target(sx + s * 52 * S, sy + 24 * S);
-    if (mode === "point" && s > 0) target(sx + 120 * S, sy - 14 * S);
+    if (mode === "point" && s > 0) target(sx + 150 * S, sy - 14 * S);
     const ik = s > 0 ? p.armR : p.armL, ikK = s > 0 ? (p.armRK ?? 1) : (p.armLK ?? 1);
     if (ik) { const tx = cx + ik[0] * H, ty = (0.983 - ik[1]) * H; ex = ex + (tx - ex) * ikK; ey = ey + (ty - ey) * ikK; bend = 14 * S; }
     ex += tremble; ey += tremble * 0.6;
-    c.lineWidth = 9 * S; c.beginPath(); c.moveTo(sx, sy); c.quadraticCurveTo((sx + ex) / 2 + s * bend, (sy + ey) / 2 + 12 * S, ex, ey); c.stroke();
-    c.fillStyle = INK; c.beginPath(); c.arc(ex, ey, 13 * S, 0, 7); c.fill();
+    c.lineWidth = 7.5 * S; c.beginPath(); c.moveTo(sx, sy); c.quadraticCurveTo((sx + ex) / 2 + s * bend, (sy + ey) / 2 + 12 * S, ex, ey); c.stroke();
+    c.fillStyle = INK; c.beginPath(); c.arc(ex, ey, 12 * S, 0, 7); c.fill();
   }
   // torso
-  const torso = () => { c.beginPath(); c.moveTo(cx - bodyW / 2, bodyTop + 26 * S); c.quadraticCurveTo(cx - bodyW / 2 - 10 * S, bodyTop + bodyH * 0.9, cx, bodyTop + bodyH); c.quadraticCurveTo(cx + bodyW / 2 + 10 * S, bodyTop + bodyH * 0.9, cx + bodyW / 2, bodyTop + 26 * S); c.quadraticCurveTo(cx, bodyTop - 16 * S, cx - bodyW / 2, bodyTop + 26 * S); };
+  const torso = () => { const bw = bodyW / 2, bt = bodyTop, bb = bodyTop + bodyH; c.beginPath(); c.moveTo(cx - bw, bt + 24 * S); c.quadraticCurveTo(cx - bw * 1.18, bt + bodyH * 0.55, cx - bw * 0.72, bb); c.quadraticCurveTo(cx, bb + 14 * S, cx + bw * 0.72, bb); c.quadraticCurveTo(cx + bw * 1.18, bt + bodyH * 0.55, cx + bw, bt + 24 * S); c.quadraticCurveTo(cx, bt - 14 * S, cx - bw, bt + 24 * S); };
   c.lineWidth = 10 * S; c.fillStyle = look.body; torso(); c.fill();
   c.save(); torso(); c.clip();
   const o = look.outfit ?? "shirt"; c.lineWidth = 6 * S;
@@ -85,15 +95,17 @@ export function drawPuppet(c: CanvasRenderingContext2D, W: number, H: number, lo
   // head
   const hy = hyBase + Math.sin(p.t * 0.12) * 1.5 * S + (moving ? Math.sin((w ?? 0) * 2) * 3 * S * amp : 0), hx = hxBase;
   const hc = look.hairColor ?? "#2a1a12", hair = look.hair ?? "none";
+  const headR = (a: number) => (hair === "bob" ? 0.88 : 1) * hr * hs.f(a);
+  const headPath = () => { c.beginPath(); for (let i = 0; i <= 56; i++) { const a = i / 56 * Math.PI * 2, r = headR(a); const x = hx + r * Math.cos(a) * hs.sx, y = hy + r * Math.sin(a) * hs.sy; i ? c.lineTo(x, y) : c.moveTo(x, y); } c.closePath(); };
   c.lineWidth = 11 * S;
   if (hair === "bob") { c.fillStyle = hc; c.beginPath(); c.ellipse(hx, hy + hr * 0.18, hr * 1.05, hr * 1.12, 0, 0, 7); c.fill(); c.stroke(); }
-  c.fillStyle = look.skin; c.beginPath(); c.arc(hx, hy, hair === "bob" ? hr * 0.88 : hr, 0, 7); c.fill();
-  c.save(); c.beginPath(); c.arc(hx, hy, hair === "bob" ? hr * 0.88 : hr, 0, 7); c.clip();
+  c.fillStyle = look.skin; headPath(); c.fill();
+  c.save(); headPath(); c.clip();
   const hg = c.createRadialGradient(hx - hr * 0.35, hy - hr * 0.35, hr * 0.1, hx, hy, hr * 1.1); hg.addColorStop(0, "rgba(255,255,255,.28)"); hg.addColorStop(0.6, "rgba(0,0,0,0)"); hg.addColorStop(1, "rgba(60,20,0,.25)"); c.fillStyle = hg; c.fillRect(hx - hr, hy - hr, hr * 2, hr * 2);
   if (nerv > 0.2 || p.mood === "shock" || p.mood === "worry") { c.fillStyle = `rgba(255,90,90,${0.18 + nerv * 0.2})`; for (const s of [-1, 1]) { c.beginPath(); c.ellipse(hx + s * hr * 0.55, hy + hr * 0.3, hr * 0.2, hr * 0.12, 0, 0, 7); c.fill(); } }
-  c.restore(); c.strokeStyle = INK; c.lineWidth = 11 * S; c.beginPath(); c.arc(hx, hy, hair === "bob" ? hr * 0.88 : hr, 0, 7); c.stroke();
+  c.restore(); c.strokeStyle = INK; c.lineWidth = 11 * S; headPath(); c.stroke();
   if (hair !== "none" && hair !== "bob") {
-    c.fillStyle = hair === "grey" ? "#a9aab4" : hc; c.lineWidth = 8 * S; c.beginPath(); c.arc(hx, hy, hr - 4 * S, Math.PI * 1.04, Math.PI * 1.96);
+    c.fillStyle = hair === "grey" ? "#a9aab4" : hc; c.lineWidth = 8 * S; c.beginPath(); for (let i = 0; i <= 24; i++) { const a = Math.PI * (1.04 + 0.92 * i / 24), r = headR(a) - 4 * S; const x = hx + r * Math.cos(a) * hs.sx, y = hy + r * Math.sin(a) * hs.sy; i ? c.lineTo(x, y) : c.moveTo(x, y); }
     if (hair === "swept") c.quadraticCurveTo(hx + hr * 0.35, hy - hr * 0.7, hx - hr * 0.95, hy - hr * 0.18); else c.quadraticCurveTo(hx, hy - hr * 0.3, hx - hr * 0.95, hy - hr * 0.3);
     c.fill(); c.stroke();
     c.strokeStyle = "rgba(255,255,255,.25)"; c.lineWidth = 4 * S; c.beginPath(); c.arc(hx, hy, hr * 0.78, Math.PI * 1.2, Math.PI * 1.45); c.stroke(); c.strokeStyle = INK;
@@ -101,29 +113,31 @@ export function drawPuppet(c: CanvasRenderingContext2D, W: number, H: number, lo
   if (hair === "bob") { c.fillStyle = hc; c.lineWidth = 7 * S; c.beginPath(); c.arc(hx, hy - hr * 0.1, hr * 0.85, Math.PI * 1.03, Math.PI * 1.97); c.quadraticCurveTo(hx, hy - hr * 0.4, hx - hr * 0.82, hy - hr * 0.1); c.fill(); }
   // face
   c.lineWidth = 6 * S; c.strokeStyle = INK; const m = p.mood ?? "smile";
-  const blink = (p.t % 100) > 96, eyeY = hy + hr * 0.03, ex0 = hx - hr * 0.38, ex1 = hx + hr * 0.38;
+  const blink = (p.t % 100) > 96, eyeY = hy + hr * 0.03, ex0 = hx - hr * hs.gap, ex1 = hx + hr * hs.gap;
   const dartX = (nerv ? Math.sin(p.t * 0.33) * 6 * S * nerv : 0) + (p.lookX ?? 0) * 7 * S;
-  const eye = (ex: number) => {
+  const eye = (ex: number, k = 1) => {
     if (m === "grin" || m === "laugh") { c.beginPath(); c.arc(ex, eyeY + 9 * S, 16 * S, Math.PI * 1.1, Math.PI * 1.9); c.stroke(); return; }
     if (blink) { c.beginPath(); c.moveTo(ex - 14 * S, eyeY); c.lineTo(ex + 14 * S, eyeY); c.stroke(); return; }
-    const r = m === "shock" ? 23 * S : 14.5 * S; c.fillStyle = "#fff"; c.beginPath(); c.arc(ex, eyeY, r, 0, 7); c.fill(); c.stroke();
+    const r = (m === "shock" ? 23 * S : 14.5 * S) * k; c.fillStyle = "#fff"; c.beginPath(); c.arc(ex, eyeY, r, 0, 7); c.fill(); c.stroke();
     c.fillStyle = INK; c.beginPath(); c.arc(ex + dartX, eyeY + 1, m === "shock" ? 4.5 * S : 5.8 * S, 0, 7); c.fill();
     c.fillStyle = "#fff"; c.beginPath(); c.arc(ex + dartX - 1.5 * S, eyeY - 1.5 * S, 1.6 * S, 0, 7); c.fill();
   };
-  eye(ex0); eye(ex1);
+  eye(ex0, hs.eyeL); eye(ex1, hs.eyeR);
+  c.fillStyle = "rgba(255,90,110,.28)"; for (const s2 of [-1, 1]) { c.beginPath(); c.ellipse(hx + s2 * hr * 0.62 * hs.sx, hy + hr * 0.42, hr * 0.16, hr * 0.1, 0, 0, 7); c.fill(); }
+  c.fillStyle = "rgba(160,70,40,.35)"; c.strokeStyle = "rgba(60,20,10,.55)"; c.lineWidth = 3.5 * S; c.beginPath(); c.ellipse(hx + hs.nx * S, hy + hr * 0.26, 9 * S, 7 * S, 0, 0, 7); c.fill(); c.stroke(); c.strokeStyle = INK;
   c.lineWidth = 6 * S; c.strokeStyle = INK; c.beginPath();
   if (m === "angry") { c.moveTo(ex0 - 20 * S, eyeY - 32 * S); c.lineTo(ex0 + 16 * S, eyeY - 17 * S); c.moveTo(ex1 + 20 * S, eyeY - 32 * S); c.lineTo(ex1 - 16 * S, eyeY - 17 * S); }
   else if (m === "worry" || m === "gulp") { const tw = nerv ? Math.sin(p.t * 0.7) * 3 * S : 0; c.moveTo(ex0 - 16 * S, eyeY - 16 * S + tw); c.lineTo(ex0 + 16 * S, eyeY - 32 * S); c.moveTo(ex1 + 16 * S, eyeY - 16 * S - tw); c.lineTo(ex1 - 16 * S, eyeY - 32 * S); }
   else if (m === "shock") { c.moveTo(ex0 - 16 * S, eyeY - 40 * S); c.lineTo(ex0 + 16 * S, eyeY - 40 * S); c.moveTo(ex1 - 16 * S, eyeY - 40 * S); c.lineTo(ex1 + 16 * S, eyeY - 40 * S); }
   else if (m === "deadpan") { c.moveTo(ex0 - 16 * S, eyeY - 26 * S); c.lineTo(ex0 + 16 * S, eyeY - 22 * S); c.moveTo(ex1 - 16 * S, eyeY - 22 * S); c.lineTo(ex1 + 16 * S, eyeY - 26 * S); }
   c.stroke();
-  const my = hy + hr * 0.46; c.beginPath();
+  const my = hy + hr * 0.5, mxo = hs.mx * S; c.beginPath();
   if (m === "grin" || m === "laugh") { c.fillStyle = "#fff"; c.roundRect(hx - 34 * S, my - 12 * S, 68 * S, m === "laugh" ? 46 * S : 30 * S, 9 * S); c.fill(); c.stroke(); c.lineWidth = 3 * S; for (let i = -2; i <= 2; i++) { c.beginPath(); c.moveTo(hx + i * 13 * S, my - 12 * S); c.lineTo(hx + i * 13 * S, my + 18 * S); c.stroke(); } }
   else if (m === "shock") { c.fillStyle = "#3a1020"; c.ellipse(hx, my + 8 * S, 13 * S, 21 * S, 0, 0, 7); c.fill(); c.stroke(); }
   else if (m === "worry" || m === "gulp") { const wob = nerv ? Math.sin(p.t * 1.9) * 3 * S : 0; c.moveTo(hx - 26 * S, my + 12 * S); c.quadraticCurveTo(hx, my - 6 * S + wob, hx + 26 * S, my + 12 * S); c.stroke(); }
   else if (m === "angry") { c.moveTo(hx - 26 * S, my + 14 * S); c.quadraticCurveTo(hx, my - 8 * S, hx + 26 * S, my + 14 * S); c.stroke(); }
   else if (m === "deadpan") { c.moveTo(hx - 20 * S, my + 4 * S); c.lineTo(hx + 20 * S, my + 4 * S); c.stroke(); }
-  else { c.arc(hx, my - 14 * S, 30 * S, 0.35, Math.PI - 0.35); c.stroke(); }
+  else { c.arc(hx + mxo, my - 14 * S, 30 * S, 0.35, Math.PI - 0.35); c.stroke(); if (hs.tooth || look.tooth) { c.fillStyle = "#fff"; c.lineWidth = 3.5 * S; c.beginPath(); c.roundRect(hx + mxo + 2 * S, my + 14 * S, 11 * S, 13 * S, 3 * S); c.fill(); c.stroke(); } }
   if (look.glasses) { c.lineWidth = 6 * S; c.fillStyle = "rgba(190,225,255,.28)"; for (const ex of [ex0, ex1]) { c.beginPath(); c.arc(ex, eyeY, 28 * S, 0, 7); c.fill(); c.stroke(); } c.beginPath(); c.moveTo(ex0 + 28 * S, eyeY); c.lineTo(ex1 - 28 * S, eyeY); c.stroke(); }
   // sweat: drops sliding down the face + flung drops
   const sw = p.sweat ?? 0;
@@ -135,6 +149,11 @@ export function drawPuppet(c: CanvasRenderingContext2D, W: number, H: number, lo
     }
     if (sw > 0.6) for (let k = 0; k < 2; k++) { const u = ((p.t * 0.06 + k * 0.5) % 1), dir = k ? -1 : 1, x = hx + dir * (hr + u * 70 * S), y = hy - hr * 0.5 - Math.sin(u * Math.PI) * 40 * S + u * u * 60 * S; c.globalAlpha = 1 - u; c.beginPath(); c.arc(x, y, 6 * S, 0, 7); c.fill(); c.globalAlpha = 1; }
   }
-  if (look.hat) { c.fillStyle = look.hat; c.lineWidth = 8 * S; c.beginPath(); c.ellipse(hx, hy - hr * 0.8, hr * 0.95, hr * 0.28, 0, Math.PI, 0); c.fill(); c.stroke(); }
+  if (look.hat) { // baseball cap: dome following the head blob + brim
+    c.fillStyle = look.hat; c.lineWidth = 8 * S; c.beginPath();
+    for (let i = 0; i <= 24; i++) { const a = Math.PI * (1.08 + 0.84 * i / 24), r = headR(a) + 5 * S; const x = hx + r * Math.cos(a) * hs.sx, y = hy + r * Math.sin(a) * hs.sy - 3 * S; i ? c.lineTo(x, y) : c.moveTo(x, y); }
+    c.lineTo(hx - hr * 0.78, hy - hr * 0.34); c.quadraticCurveTo(hx, hy - hr * 0.5, hx + hr * 0.78, hy - hr * 0.34); c.closePath(); c.fill(); c.stroke();
+    c.beginPath(); c.ellipse(hx + hr * 0.62, hy - hr * 0.36, hr * 0.62, hr * 0.13, 0.06, 0, 7); c.fill(); c.stroke();
+    c.fillStyle = "rgba(255,255,255,.35)"; c.beginPath(); c.ellipse(hx - hr * 0.25, hy - hr * 0.78, hr * 0.22, hr * 0.07, -0.4, 0, 7); c.fill(); }
   c.restore();
 }

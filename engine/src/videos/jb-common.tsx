@@ -12,14 +12,20 @@ export const FPS = 30, LEAD = 6, TAIL = 8, WALK = 3.4;
 export type Ctx = { t: number; f: number };
 export type Trans = "ghost" | "zoom" | "flash" | "whip";
 // scene cuts (seconds) taken from the word timings of words.json
-export const CUTS = [0, 3.65, 9.05, 13.6, 15.45, 22.1, 27.55, 32.3, 36.35, 40.55, 45.15, 49.9];
+// scenes are authored in "old" time (first voice); WARP maps new voice time <-> old time by word alignment
+import { WARP } from "./jb-warp";
+const lin = (x: number, a: number[], b: number[]) => { let i = 0; while (i < a.length - 2 && x > a[i + 1]) i++; return b[i] + (x - a[i]) / (a[i + 1] - a[i]) * (b[i + 1] - b[i]); };
+const WN = WARP.map((k) => k[0]), WO = WARP.map((k) => k[1]);
+export const oldOf = (tn: number) => lin(tn, WN, WO), newOf = (to: number) => lin(to, WO, WN);
+const CUTS_OLD = [0, 3.65, 9.05, 13.6, 15.45, 22.1, 27.55, 32.3, 36.35, 40.55, 45.15, 49.9];
+export const CUTS = CUTS_OLD.map(newOf);
 
 export const Scene: React.FC<{ start: number; end: number; first?: boolean; trans?: Trans; bg: string; children: (c: Ctx) => React.ReactNode }> = ({ start, end, first, trans = "ghost", bg, children }) => {
   const from = Math.round(start * FPS) - (first ? 0 : LEAD), dur = Math.round(end * FPS) - from + TAIL;
   return <Sequence from={from} durationInFrames={dur} layout="none"><Inner from={from} first={first} trans={trans} bg={bg} children={children} /></Sequence>;
 };
 const Inner: React.FC<{ from: number; first?: boolean; trans: Trans; bg: string; children: (c: Ctx) => React.ReactNode }> = ({ from, first, trans, bg, children }) => {
-  const f = useCurrentFrame(), t = (f + from) / FPS;
+  const f = useCurrentFrame(), t = oldOf((f + from) / FPS);
   const k = first ? 1 : clamp(f / (LEAD + 2)), ke = Easing.out(Easing.cubic)(k);
   const sc = !first && trans === "zoom" ? lerp(1.35, 1, ke) : 1;
   const tx = !first && trans === "whip" ? (1 - ke) * 720 : 0, blur = !first && trans === "whip" ? (1 - ke) * 14 : 0;

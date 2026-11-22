@@ -4,3 +4,4 @@ node_modules/
 02-videos/*/out/
 *.log
 .DS_Store
+*.mp4

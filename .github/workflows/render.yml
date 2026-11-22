@@ -55,8 +55,10 @@ jobs:
         with: { pattern: "part-*", path: parts, merge-multiple: true }
       - name: concat + mux
         run: |
+          sudo apt-get install -y ffmpeg >/dev/null
+          find parts -name '*.mp4' | sort > /dev/null
           ls parts/*.mp4 | sort | sed "s|^|file '$PWD/|;s|$|'|" > list.txt
-          ffmpeg -y -f concat -safe 0 -i list.txt -c copy video_only.mp4
+          ffmpeg -y -f concat -safe 0 -i list.txt -vf setpts=N/(30*TB) -fps_mode passthrough -c:v libx264 -crf 14 -preset medium -pix_fmt yuv420p video_only.mp4
           ffmpeg -y -i video_only.mp4 -i engine/public/mix.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest final.mp4
           ffprobe -v error -show_entries stream=codec_name,width,height,nb_frames,duration -of default=nw=1 final.mp4
       - uses: actions/upload-artifact@v4

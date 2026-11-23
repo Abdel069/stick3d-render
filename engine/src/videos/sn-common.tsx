@@ -15,12 +15,12 @@ export type Trans = "ghost" | "zoom" | "flash" | "whip";
 export { seg, lerp, clamp, rnd, crowd };
 export const P = { Y1: "#FFE6A8", Y2: "#F2B84B", Y3: "#C98A22", Y4: "#7A5214", C1: "#F5A5A0", C2: "#E4675F", C3: "#B04440", C4: "#6A2425", T1: "#9ADBD2", T2: "#3AA89E", T3: "#247A75", T4: "#124745", V1: "#A9A2E6", V2: "#6C5FC7", V3: "#41377F", V4: "#211B52", K1: "#FAF0DC", K2: "#EBDCBA", K3: "#C7B58F", K4: "#8A7B58" };
 
-export const Scene: React.FC<{ start: number; end: number; first?: boolean; trans?: Trans; bg: string; children: (c: Ctx) => React.ReactNode }> = ({ start, end, first, trans = "ghost", bg, children }) => {
+export const Scene: React.FC<{ start: number; end: number; first?: boolean; trans?: Trans; bg: string; warp?: (t: number) => number; children: (c: Ctx) => React.ReactNode }> = ({ start, end, first, trans = "ghost", bg, warp, children }) => {
   const from = Math.round(start * FPS) - (first ? 0 : LEAD), dur = Math.round(end * FPS) - from + TAIL;
-  return <Sequence from={from} durationInFrames={dur} layout="none"><Inner from={from} first={first} trans={trans} bg={bg} children={children} /></Sequence>;
+  return <Sequence from={from} durationInFrames={dur} layout="none"><Inner from={from} first={first} trans={trans} bg={bg} warp={warp} children={children} /></Sequence>;
 };
-const Inner: React.FC<{ from: number; first?: boolean; trans: Trans; bg: string; children: (c: Ctx) => React.ReactNode }> = ({ from, first, trans, bg, children }) => {
-  const f = useCurrentFrame(), t = (f + from) / FPS;
+const Inner: React.FC<{ from: number; first?: boolean; trans: Trans; bg: string; warp?: (t: number) => number; children: (c: Ctx) => React.ReactNode }> = ({ from, first, trans, bg, warp, children }) => {
+  const f = useCurrentFrame(), tn = (f + from) / FPS, t = warp ? warp(tn) : tn;
   const k = first ? 1 : clamp(f / (LEAD + 2)), ke = Easing.out(Easing.cubic)(k);
   const sc = !first && trans === "zoom" ? lerp(1.35, 1, ke) : 1;
   const tx = !first && trans === "whip" ? (1 - ke) * 720 : 0, blur = !first && trans === "whip" ? (1 - ke) * 14 : 0;
@@ -36,10 +36,29 @@ const Inner: React.FC<{ from: number; first?: boolean; trans: Trans; bg: string;
 
 /* ---------- word timing helper: first token containing `needle` at/after token index `from` ---------- */
 export type W = { word: string; start: number; end: number };
-export const wordAt = (words: W[], script: string[]) => (needle: string, from = 0) => {
+export const wordAt = (words: W[], script: string[], warp?: (t: number) => number) => (needle: string, from = 0) => {
   const n = needle.toLowerCase(); const i = script.findIndex((w, k) => k >= from && w.toLowerCase().includes(n));
-  return i < 0 ? words[Math.min(from, words.length - 1)].start : words[i].start;
+  const t = i < 0 ? words[Math.min(from, words.length - 1)].start : words[i].start;
+  return warp ? warp(t) : t;
 };
+
+/* ---------- time warp: scenes are authored in the first script's time; knots map new voice time <-> authoring time ---------- */
+export type Knots = [number, number][]; // [new, old]
+const lin = (x: number, a: number[], b: number[]) => { const n = a.length; if (x <= a[0]) return b[0] + (x - a[0]); if (x >= a[n - 1]) return b[n - 1] + (x - a[n - 1]); let i = 0; while (i < n - 2 && x > a[i + 1]) i++; return b[i] + (x - a[i]) / (a[i + 1] - a[i]) * (b[i + 1] - b[i]); };
+export const mkWarp = (k: Knots) => { const N = k.map((q) => q[0]), O = k.map((q) => q[1]); return { old: (tn: number) => lin(tn, N, O), neu: (to: number) => lin(to, O, N) }; };
+
+/* ---------- zoom in / zoom out choreography: slow breathing push per sentence + crash punch on hot words ---------- */
+export const buildZoom = (words: W[], script: string[], emph: string[] = [], amp = 0.085, punch = 0.075) => {
+  const kf: [number, number][] = [[0, 1]]; let a = words[0].start, si = 0;
+  words.forEach((w, i) => { if (/[.!?:]$/.test(script[i]) || i === words.length - 1) { const up = si % 2 === 0; kf.push([a, up ? 1 : 1 + amp], [w.end, up ? 1 + amp : 1]); a = words[i + 1]?.start ?? w.end; si++; } });
+  const hot = words.map((_, i) => i).filter((i) => /[!?]$/.test(script[i]) || /\d/.test(script[i]) || emph.some((e) => script[i].toLowerCase().includes(e.toLowerCase()))).map((i) => words[i].start);
+  return (t: number) => {
+    let base = 1; for (let i = 0; i < kf.length - 1; i++) { const [t0, s0] = kf[i], [t1, s1] = kf[i + 1]; if (t >= t0 && t <= t1) { const u = t1 > t0 ? (t - t0) / (t1 - t0) : 1; base = s0 + (s1 - s0) * (u * u * (3 - 2 * u)); break; } if (t > t1) base = s1; }
+    let p = 0; for (const h of hot) if (t >= h) p += punch * Math.exp(-(t - h) / 0.2) * Math.min(1, (t - h) / 0.05);
+    return base + Math.min(punch * 1.4, p);
+  };
+};
+export const ZoomWrap: React.FC<{ z: (t: number) => number; children: React.ReactNode }> = ({ z, children }) => { const f = useCurrentFrame(); return <AbsoluteFill style={{ transform: `scale(${z(f / FPS).toFixed(4)})`, transformOrigin: "50% 44%" }}>{children}</AbsoluteFill>; };
 
 /* ---------- looks (series cast; heads: unique seeds for the main cast, NPC_SEED crowd) ---------- */
 export const jonas: Look = { skin: "#f1d0b0", body: P.C2, outfit: "hoodie", hair: "short", hairColor: "#3a2616", shoe: P.V4, seed: 21, sleeve: P.C2, pants: P.V3, brows: 1.25, ears: true, stubble: true };

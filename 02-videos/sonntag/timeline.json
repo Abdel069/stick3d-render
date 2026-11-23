@@ -1,114 +1,122 @@
 [
  {
   "speaker": "Jonas",
-  "text": "Emre, ich schwöre, ich kann nicht mehr. Morgen wieder Stau, Montagsmeeting, dieselbe Folie wie letzte Woche.",
-  "start": 3.2,
-  "end": 10.355,
+  "text": "Alle reden über GTA 6. Ich rede mit meiner Zimmerpflanze, weil morgen Montag ist.",
+  "start": 0.357,
+  "end": 5.143,
   "tok0": 0,
-  "tok1": 16
- },
- {
-  "speaker": "Emre",
-  "text": "Du klingst wie ich vor einem Jahr.",
-  "start": 10.655,
-  "end": 12.921,
-  "tok0": 16,
-  "tok1": 23
+  "tok1": 14
  },
  {
   "speaker": "Jonas",
-  "text": "Dir geht's doch super im Vertrieb. Du verdienst richtig gut, oder?",
-  "start": 13.221,
-  "end": 16.25,
-  "tok0": 23,
-  "tok1": 34
+  "text": "Emre, ich schwör, ich kann nicht mehr. Morgen wieder Stau, dann Montagsmeeting, und Sabine zeigt dieselbe Folie wie letzte Woche. Mit dem gleichen Tippfehler!",
+  "start": 5.5,
+  "end": 14.331,
+  "tok0": 14,
+  "tok1": 38
  },
  {
   "speaker": "Emre",
-  "text": "Ich verdiene, was ich mir erarbeite. In den ersten drei Wochen fast nichts.",
-  "start": 16.55,
-  "end": 22.673,
-  "tok0": 34,
-  "tok1": 47
+  "text": "Bruder, du klingst genau wie ich vor einem Jahr. Ich hab damals meine Kaffeetasse umarmt.",
+  "start": 14.599,
+  "end": 19.186,
+  "tok0": 38,
+  "tok1": 53
  },
  {
   "speaker": "Jonas",
-  "text": "Was? Das hast du mir nie erzählt.",
-  "start": 22.973,
-  "end": 25.228,
-  "tok0": 47,
-  "tok1": 54
+  "text": "Dir geht's doch mega im Vertrieb. Du verdienst bestimmt richtig gut, oder? Fährst du schon so ein Auto mit Sitzheizung?",
+  "start": 19.454,
+  "end": 26.007,
+  "tok0": 53,
+  "tok1": 73
  },
  {
   "speaker": "Emre",
-  "text": "Weil ich an Tür zehn fast aufgegeben hätte. Eine Frau hat mir die Tür vor der Nase zugeknallt, mit Handtuch auf dem Kopf.",
-  "start": 25.528,
-  "end": 34.042,
-  "tok0": 54,
-  "tok1": 77
+  "text": "Ich verdiene, was ich mir erarbeite. In den ersten drei Wochen? Fast nichts. Ich hab von Toast mit Ketchup gelebt.",
+  "start": 26.275,
+  "end": 33.618,
+  "tok0": 73,
+  "tok1": 93
  },
  {
   "speaker": "Jonas",
-  "text": "Und trotzdem hast du weitergemacht?",
-  "start": 34.342,
-  "end": 36.176,
-  "tok0": 77,
-  "tok1": 82
+  "text": "Was?! Das hast du mir nie erzählt!",
+  "start": 33.886,
+  "end": 35.995,
+  "tok0": 93,
+  "tok1": 100
  },
  {
   "speaker": "Emre",
-  "text": "An Tür siebzehn sagt ein Rentner: „Komm rein, ich mach dir einen Tee.“ Zwei Stunden hat er geredet. Am Ende hat er unterschrieben.",
-  "start": 36.476,
-  "end": 45.356,
-  "tok0": 82,
-  "tok1": 105
- },
- {
-  "speaker": "Jonas",
-  "text": "Zwei Stunden für einen Vertrag?",
-  "start": 45.656,
-  "end": 47.736,
-  "tok0": 105,
-  "tok1": 110
- },
- {
-  "speaker": "Emre",
-  "text": "Das war der Tag, an dem ich kapiert habe: Mein Kontostand hängt von mir ab. Nicht von einer Beförderungsrunde im März.",
-  "start": 48.036,
-  "end": 56.667,
-  "tok0": 110,
-  "tok1": 131
- },
- {
-  "speaker": "Jonas",
-  "text": "Klingt nach Stress.",
-  "start": 56.967,
-  "end": 58.007,
-  "tok0": 131,
+  "text": "Weil ich an Tür zehn fast aufgegeben hätte. Eine Frau hat mir die Tür vor der Nase zugeknallt, mit Handtuch auf dem Kopf. Flamingo-Muster. Das seh ich heute noch, wenn ich die Augen zumache.",
+  "start": 36.262,
+  "end": 46.733,
+  "tok0": 100,
   "tok1": 134
  },
  {
-  "speaker": "Emre",
-  "text": "Ist es auch. Aber es ist mein Stress.",
-  "start": 58.307,
-  "end": 61.867,
+  "speaker": "Jonas",
+  "text": "Und trotzdem hast du weitergemacht? Bist du bescheuert?",
+  "start": 47.001,
+  "end": 49.524,
   "tok0": 134,
   "tok1": 142
  },
  {
-  "speaker": "Jonas",
-  "text": "Fängst du morgen wieder um sieben an?",
-  "start": 62.167,
-  "end": 64.248,
+  "speaker": "Emre",
+  "text": "An Tür siebzehn sagt ein Rentner: „Komm rein, ich mach dir einen Tee.“ Zwei Stunden hat er geredet, über seine Enten und seinen Krieg mit dem Nachbarn. Am Ende hat er unterschrieben.",
+  "start": 49.792,
+  "end": 60.946,
   "tok0": 142,
-  "tok1": 149
+  "tok1": 174
+ },
+ {
+  "speaker": "Jonas",
+  "text": "Zwei Stunden für einen Vertrag? Das ist ja länger als der Ladebildschirm von GTA!",
+  "start": 61.213,
+  "end": 65.646,
+  "tok0": 174,
+  "tok1": 188
  },
  {
   "speaker": "Emre",
-  "text": "Um zehn Planung, ab vier an den Türen. Da sind die Leute zu Hause. Willst du eine Tour mitlaufen?",
-  "start": 64.548,
-  "end": 71.074,
-  "tok0": 149,
-  "tok1": 168
+  "text": "Das war der Tag, an dem ich gecheckt hab: Mein Kontostand hängt von mir ab. Nicht von einer Beförderungsrunde im März, wo der Chef eh den nimmt, der am lautesten Kaffee schlürft.",
+  "start": 65.913,
+  "end": 74.968,
+  "tok0": 188,
+  "tok1": 220
+ },
+ {
+  "speaker": "Jonas",
+  "text": "Klingt nach brutal viel Stress.",
+  "start": 75.236,
+  "end": 77.048,
+  "tok0": 220,
+  "tok1": 225
+ },
+ {
+  "speaker": "Emre",
+  "text": "Ist es auch. Aber es ist mein Stress. Den such ich mir wenigstens selber aus.",
+  "start": 77.316,
+  "end": 80.982,
+  "tok0": 225,
+  "tok1": 240
+ },
+ {
+  "speaker": "Jonas",
+  "text": "Und morgen um sieben wieder los, du Verrückter?",
+  "start": 81.25,
+  "end": 83.637,
+  "tok0": 240,
+  "tok1": 248
+ },
+ {
+  "speaker": "Emre",
+  "text": "Um zehn Planung, ab vier an den Türen. Da sind die Leute zu Hause und hungrig auf Gespräche. Willst du eine Tour mitlaufen? Ich bring auch Energydrinks mit.",
+  "start": 83.904,
+  "end": 93.054,
+  "tok0": 248,
+  "tok1": 276
  }
 ]

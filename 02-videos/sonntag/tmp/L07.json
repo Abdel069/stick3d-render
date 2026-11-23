@@ -1,27 +1,172 @@
 [
  {
-  "word": "Und",
+  "word": "Weil",
   "start": 0.0,
-  "end": 0.12
+  "end": 0.18
  },
  {
-  "word": "trotzdem",
-  "start": 0.12,
-  "end": 0.58
+  "word": "ich",
+  "start": 0.18,
+  "end": 0.34
  },
  {
-  "word": "hast",
-  "start": 0.58,
-  "end": 0.8
+  "word": "an",
+  "start": 0.34,
+  "end": 0.48
  },
  {
-  "word": "du",
-  "start": 0.8,
-  "end": 0.98
+  "word": "Tür",
+  "start": 0.48,
+  "end": 0.66
  },
  {
-  "word": "weitergemacht",
-  "start": 0.98,
-  "end": 1.68
+  "word": "zehn",
+  "start": 0.66,
+  "end": 1.02
+ },
+ {
+  "word": "fast",
+  "start": 1.02,
+  "end": 1.28
+ },
+ {
+  "word": "aufgegeben",
+  "start": 1.28,
+  "end": 1.92
+ },
+ {
+  "word": "hätte",
+  "start": 1.92,
+  "end": 2.18
+ },
+ {
+  "word": "Eine",
+  "start": 2.92,
+  "end": 3.12
+ },
+ {
+  "word": "Frau",
+  "start": 3.12,
+  "end": 3.34
+ },
+ {
+  "word": "hat",
+  "start": 3.34,
+  "end": 3.54
+ },
+ {
+  "word": "mir",
+  "start": 3.54,
+  "end": 3.68
+ },
+ {
+  "word": "die",
+  "start": 3.68,
+  "end": 3.8
+ },
+ {
+  "word": "Tür",
+  "start": 3.8,
+  "end": 4.04
+ },
+ {
+  "word": "vor",
+  "start": 4.04,
+  "end": 4.2
+ },
+ {
+  "word": "der",
+  "start": 4.2,
+  "end": 4.32
+ },
+ {
+  "word": "Nase",
+  "start": 4.32,
+  "end": 4.64
+ },
+ {
+  "word": "zugeknallt",
+  "start": 4.64,
+  "end": 5.66
+ },
+ {
+  "word": "mit",
+  "start": 5.8,
+  "end": 5.92
+ },
+ {
+  "word": "Handtuch",
+  "start": 5.92,
+  "end": 6.32
+ },
+ {
+  "word": "auf",
+  "start": 6.32,
+  "end": 6.44
+ },
+ {
+  "word": "dem",
+  "start": 6.44,
+  "end": 6.58
+ },
+ {
+  "word": "Kopf",
+  "start": 6.58,
+  "end": 6.84
+ },
+ {
+  "word": "Flamingo-Muster",
+  "start": 6.84,
+  "end": 9.26
+ },
+ {
+  "word": "Das",
+  "start": 9.26,
+  "end": 9.66
+ },
+ {
+  "word": "seh",
+  "start": 9.66,
+  "end": 9.82
+ },
+ {
+  "word": "ich",
+  "start": 9.82,
+  "end": 9.92
+ },
+ {
+  "word": "heute",
+  "start": 9.92,
+  "end": 10.1
+ },
+ {
+  "word": "noch",
+  "start": 10.1,
+  "end": 10.42
+ },
+ {
+  "word": "wenn",
+  "start": 10.56,
+  "end": 10.64
+ },
+ {
+  "word": "ich",
+  "start": 10.64,
+  "end": 10.76
+ },
+ {
+  "word": "die",
+  "start": 10.76,
+  "end": 10.88
+ },
+ {
+  "word": "Augen",
+  "start": 10.88,
+  "end": 11.08
+ },
+ {
+  "word": "zumache",
+  "start": 11.08,
+  "end": 11.58
  }
 ]

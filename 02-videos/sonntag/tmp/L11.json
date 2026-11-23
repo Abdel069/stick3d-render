@@ -1,17 +1,162 @@
 [
  {
-  "word": "Klingt",
+  "word": "Das",
   "start": 0.0,
-  "end": 0.28
+  "end": 0.22
  },
  {
-  "word": "nach",
-  "start": 0.28,
-  "end": 0.46
+  "word": "war",
+  "start": 0.22,
+  "end": 0.4
  },
  {
-  "word": "Stress",
-  "start": 0.46,
-  "end": 0.72
+  "word": "der",
+  "start": 0.4,
+  "end": 0.5
+ },
+ {
+  "word": "Tag",
+  "start": 0.5,
+  "end": 0.78
+ },
+ {
+  "word": "an",
+  "start": 0.86,
+  "end": 0.98
+ },
+ {
+  "word": "dem",
+  "start": 0.98,
+  "end": 1.1
+ },
+ {
+  "word": "ich",
+  "start": 1.1,
+  "end": 1.22
+ },
+ {
+  "word": "gecheckt",
+  "start": 1.22,
+  "end": 1.66
+ },
+ {
+  "word": "hab",
+  "start": 1.66,
+  "end": 1.78
+ },
+ {
+  "word": "Mein",
+  "start": 2.14,
+  "end": 2.4
+ },
+ {
+  "word": "Kontostand",
+  "start": 2.4,
+  "end": 3.18
+ },
+ {
+  "word": "hängt",
+  "start": 3.18,
+  "end": 3.42
+ },
+ {
+  "word": "von",
+  "start": 3.42,
+  "end": 3.6
+ },
+ {
+  "word": "mir",
+  "start": 3.6,
+  "end": 3.88
+ },
+ {
+  "word": "ab",
+  "start": 3.88,
+  "end": 4.2
+ },
+ {
+  "word": "Nicht",
+  "start": 4.76,
+  "end": 4.96
+ },
+ {
+  "word": "von",
+  "start": 4.96,
+  "end": 5.12
+ },
+ {
+  "word": "einer",
+  "start": 5.12,
+  "end": 5.32
+ },
+ {
+  "word": "Beförderungsrunde",
+  "start": 5.32,
+  "end": 6.34
+ },
+ {
+  "word": "im",
+  "start": 6.34,
+  "end": 6.48
+ },
+ {
+  "word": "März",
+  "start": 6.48,
+  "end": 7.1
+ },
+ {
+  "word": "wo",
+  "start": 7.14,
+  "end": 7.28
+ },
+ {
+  "word": "der",
+  "start": 7.28,
+  "end": 7.4
+ },
+ {
+  "word": "Chef",
+  "start": 7.4,
+  "end": 7.6
+ },
+ {
+  "word": "eh",
+  "start": 7.6,
+  "end": 7.88
+ },
+ {
+  "word": "den",
+  "start": 7.88,
+  "end": 8.3
+ },
+ {
+  "word": "nimmt",
+  "start": 8.3,
+  "end": 8.5
+ },
+ {
+  "word": "der",
+  "start": 8.7,
+  "end": 8.76
+ },
+ {
+  "word": "am",
+  "start": 8.76,
+  "end": 8.9
+ },
+ {
+  "word": "lautesten",
+  "start": 8.9,
+  "end": 9.3
+ },
+ {
+  "word": "Kaffee",
+  "start": 9.3,
+  "end": 9.68
+ },
+ {
+  "word": "schlürft",
+  "start": 9.68,
+  "end": 10.06
  }
 ]

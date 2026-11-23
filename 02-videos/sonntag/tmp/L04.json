@@ -1,67 +1,102 @@
 [
  {
-  "word": "Ich",
+  "word": "Dir",
   "start": 0.0,
-  "end": 0.2
+  "end": 0.14
  },
  {
-  "word": "verdiene",
-  "start": 0.2,
-  "end": 0.82
+  "word": "geht's",
+  "start": 0.14,
+  "end": 0.5
  },
  {
-  "word": "was",
-  "start": 1.14,
-  "end": 1.24
+  "word": "doch",
+  "start": 0.5,
+  "end": 0.62
  },
  {
-  "word": "ich",
-  "start": 1.24,
-  "end": 1.46
+  "word": "mega",
+  "start": 0.62,
+  "end": 1.02
  },
  {
-  "word": "mir",
-  "start": 1.46,
-  "end": 1.64
+  "word": "im",
+  "start": 1.02,
+  "end": 1.28
  },
  {
-  "word": "erarbeite",
-  "start": 1.64,
-  "end": 2.6
+  "word": "Vertrieb",
+  "start": 1.28,
+  "end": 1.78
  },
  {
-  "word": "In",
-  "start": 3.18,
-  "end": 3.56
+  "word": "Du",
+  "start": 2.18,
+  "end": 2.34
  },
  {
-  "word": "den",
-  "start": 3.56,
-  "end": 3.68
+  "word": "verdienst",
+  "start": 2.34,
+  "end": 2.72
  },
  {
-  "word": "ersten",
-  "start": 3.68,
-  "end": 4.12
+  "word": "bestimmt",
+  "start": 2.72,
+  "end": 3.08
  },
  {
-  "word": "drei",
-  "start": 4.12,
-  "end": 4.48
+  "word": "richtig",
+  "start": 3.08,
+  "end": 3.4
  },
  {
-  "word": "Wochen",
-  "start": 4.48,
-  "end": 4.86
+  "word": "gut",
+  "start": 3.4,
+  "end": 3.76
  },
  {
-  "word": "fast",
-  "start": 4.86,
+  "word": "oder",
+  "start": 3.84,
+  "end": 4.06
+ },
+ {
+  "word": "Fährst",
+  "start": 4.76,
+  "end": 5.08
+ },
+ {
+  "word": "du",
+  "start": 5.08,
+  "end": 5.18
+ },
+ {
+  "word": "schon",
+  "start": 5.18,
   "end": 5.38
  },
  {
-  "word": "nichts",
+  "word": "so",
   "start": 5.38,
+  "end": 5.64
+ },
+ {
+  "word": "ein",
+  "start": 5.64,
   "end": 5.84
+ },
+ {
+  "word": "Auto",
+  "start": 5.84,
+  "end": 6.12
+ },
+ {
+  "word": "mit",
+  "start": 6.12,
+  "end": 6.52
+ },
+ {
+  "word": "Sitzheizung",
+  "start": 6.52,
+  "end": 7.28
  }
 ]

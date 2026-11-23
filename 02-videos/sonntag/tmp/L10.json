@@ -1,107 +1,72 @@
 [
  {
-  "word": "Das",
+  "word": "Zwei",
   "start": 0.0,
-  "end": 0.2
+  "end": 0.26
  },
  {
-  "word": "war",
-  "start": 0.2,
-  "end": 0.42
+  "word": "Stunden",
+  "start": 0.26,
+  "end": 0.74
+ },
+ {
+  "word": "für",
+  "start": 0.74,
+  "end": 1.04
+ },
+ {
+  "word": "einen",
+  "start": 1.04,
+  "end": 1.36
+ },
+ {
+  "word": "Vertrag",
+  "start": 1.36,
+  "end": 1.98
+ },
+ {
+  "word": "Das",
+  "start": 2.36,
+  "end": 2.54
+ },
+ {
+  "word": "ist",
+  "start": 2.54,
+  "end": 2.7
+ },
+ {
+  "word": "ja",
+  "start": 2.7,
+  "end": 2.84
+ },
+ {
+  "word": "länger",
+  "start": 2.84,
+  "end": 3.0
+ },
+ {
+  "word": "als",
+  "start": 3.0,
+  "end": 3.24
  },
  {
   "word": "der",
-  "start": 0.42,
-  "end": 0.58
+  "start": 3.24,
+  "end": 3.44
  },
  {
-  "word": "Tag",
-  "start": 0.58,
-  "end": 0.96
+  "word": "Ladebildschirm",
+  "start": 3.44,
+  "end": 4.12
  },
  {
-  "word": "an",
-  "start": 1.02,
-  "end": 1.18
+  "word": "von",
+  "start": 4.12,
+  "end": 4.28
  },
  {
-  "word": "dem",
-  "start": 1.18,
-  "end": 1.32
- },
- {
-  "word": "ich",
-  "start": 1.32,
-  "end": 1.48
- },
- {
-  "word": "kapiert",
-  "start": 1.48,
-  "end": 1.92
- },
- {
-  "word": "habe",
-  "start": 1.92,
-  "end": 2.26
- },
- {
-  "word": "Mein",
-  "start": 3.0,
-  "end": 3.18
- },
- {
-  "word": "Kontostand",
-  "start": 3.18,
-  "end": 4.1
- },
- {
-  "word": "hängt",
-  "start": 4.1,
+  "word": "GTA",
+  "start": 4.28,
   "end": 4.56
- },
- {
-  "word": "von",
-  "start": 4.56,
-  "end": 4.76
- },
- {
-  "word": "mir",
-  "start": 4.76,
-  "end": 4.98
- },
- {
-  "word": "ab",
-  "start": 4.98,
-  "end": 5.32
- },
- {
-  "word": "Nicht",
-  "start": 6.12,
-  "end": 6.36
- },
- {
-  "word": "von",
-  "start": 6.36,
-  "end": 6.6
- },
- {
-  "word": "einer",
-  "start": 6.6,
-  "end": 6.88
- },
- {
-  "word": "Beförderungsrunde",
-  "start": 6.88,
-  "end": 7.98
- },
- {
-  "word": "im",
-  "start": 7.98,
-  "end": 8.14
- },
- {
-  "word": "März",
-  "start": 8.14,
-  "end": 8.6
  }
 ]

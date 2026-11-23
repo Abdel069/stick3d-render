@@ -2,7 +2,7 @@
 """usage: build_dialog.py <workdir> [lead=3.2] [tail=7.5]
 workdir/lines.json = [{"speaker":"Jonas","text":"..."}...]; workdir/lines/L01.mp3.. (one recording per line, same order).
 Trims each line, joins with natural gaps, aligns words per line (Whisper, $WHISPER_PY), writes
-engine/public/{voice.wav,words.json,script.json} and workdir/timeline.json = [{speaker,text,start,end,tok0,tok1}] (seconds, token range in script.json)."""
+engine/public/<id>/{voice.wav,words.json,script.json} and workdir/timeline.json = [{speaker,text,start,end,tok0,tok1}] (seconds, token range in script.json)."""
 import sys, os, json, subprocess, shutil, wave
 import numpy as np
 work = os.path.abspath(sys.argv[1]); lead = float(sys.argv[2]) if len(sys.argv) > 2 else 3.2; tail = float(sys.argv[3]) if len(sys.argv) > 3 else 7.5
@@ -28,7 +28,7 @@ for i, ln in enumerate(lines, 1):
     toks += tk; chunks.append(a); t += d; prev = ln["speaker"]
 chunks.append(np.zeros(int(tail * SR), dtype=np.float32)); t += tail
 y = np.concatenate(chunks); y = y / max(1e-6, np.abs(y).max()) * 0.92
-pub = os.path.join(root, "engine", "public"); os.makedirs(pub, exist_ok=True); wf = os.path.join(pub, "voice.wav")
+pub = os.path.join(root, "engine", "public", os.path.basename(work)); os.makedirs(pub, exist_ok=True); wf = os.path.join(pub, "voice.wav")
 w = wave.open(wf, "wb"); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((y * 32767).astype(np.int16).tobytes()); w.close()
 json.dump(words, open(os.path.join(pub, "words.json"), "w")); json.dump(toks, open(os.path.join(pub, "script.json"), "w"))
 json.dump(tl, open(os.path.join(work, "timeline.json"), "w"), ensure_ascii=False, indent=1)

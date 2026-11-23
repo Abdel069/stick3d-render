@@ -1,0 +1,952 @@
+[
+ {
+  "word": "Emre",
+  "start": 0.0,
+  "end": 0.36
+ },
+ {
+  "word": "ist",
+  "start": 0.36,
+  "end": 0.58
+ },
+ {
+  "word": "27",
+  "start": 0.58,
+  "end": 1.24
+ },
+ {
+  "word": "als",
+  "start": 1.54,
+  "end": 1.7
+ },
+ {
+  "word": "er",
+  "start": 1.7,
+  "end": 1.76
+ },
+ {
+  "word": "seinen",
+  "start": 1.76,
+  "end": 1.98
+ },
+ {
+  "word": "Job",
+  "start": 1.98,
+  "end": 2.26
+ },
+ {
+  "word": "im",
+  "start": 2.26,
+  "end": 2.38
+ },
+ {
+  "word": "Lager",
+  "start": 2.38,
+  "end": 2.64
+ },
+ {
+  "word": "verliert",
+  "start": 2.64,
+  "end": 3.26
+ },
+ {
+  "word": "Eine",
+  "start": 3.68,
+  "end": 3.88
+ },
+ {
+  "word": "Mail",
+  "start": 3.88,
+  "end": 4.18
+ },
+ {
+  "word": "Dienstagmorgen",
+  "start": 4.58,
+  "end": 5.38
+ },
+ {
+  "word": "mehr",
+  "start": 5.62,
+  "end": 5.82
+ },
+ {
+  "word": "nicht",
+  "start": 5.82,
+  "end": 6.08
+ },
+ {
+  "word": "Drei",
+  "start": 6.66,
+  "end": 6.9
+ },
+ {
+  "word": "Wochen",
+  "start": 6.9,
+  "end": 7.1
+ },
+ {
+  "word": "später",
+  "start": 7.1,
+  "end": 7.5
+ },
+ {
+  "word": "steht",
+  "start": 7.5,
+  "end": 7.82
+ },
+ {
+  "word": "er",
+  "start": 7.82,
+  "end": 7.92
+ },
+ {
+  "word": "vor",
+  "start": 7.92,
+  "end": 8.06
+ },
+ {
+  "word": "der",
+  "start": 8.06,
+  "end": 8.18
+ },
+ {
+  "word": "ersten",
+  "start": 8.18,
+  "end": 8.46
+ },
+ {
+  "word": "Haustür",
+  "start": 8.46,
+  "end": 9.0
+ },
+ {
+  "word": "einen",
+  "start": 9.46,
+  "end": 9.64
+ },
+ {
+  "word": "Ordner",
+  "start": 9.64,
+  "end": 10.08
+ },
+ {
+  "word": "unterm",
+  "start": 10.08,
+  "end": 10.36
+ },
+ {
+  "word": "Arm",
+  "start": 10.36,
+  "end": 10.66
+ },
+ {
+  "word": "und",
+  "start": 10.66,
+  "end": 10.86
+ },
+ {
+  "word": "212",
+  "start": 10.86,
+  "end": 11.74
+ },
+ {
+  "word": "Euro",
+  "start": 11.74,
+  "end": 12.4
+ },
+ {
+  "word": "auf",
+  "start": 12.4,
+  "end": 12.68
+ },
+ {
+  "word": "dem",
+  "start": 12.68,
+  "end": 12.82
+ },
+ {
+  "word": "Konto",
+  "start": 12.82,
+  "end": 13.22
+ },
+ {
+  "word": "Tür",
+  "start": 13.98,
+  "end": 14.16
+ },
+ {
+  "word": "eins",
+  "start": 14.16,
+  "end": 14.48
+ },
+ {
+  "word": "niemand",
+  "start": 15.04,
+  "end": 15.22
+ },
+ {
+  "word": "da",
+  "start": 15.22,
+  "end": 15.54
+ },
+ {
+  "word": "Tür",
+  "start": 16.28,
+  "end": 16.38
+ },
+ {
+  "word": "zwei",
+  "start": 16.38,
+  "end": 16.78
+ },
+ {
+  "word": "ein",
+  "start": 17.24,
+  "end": 17.4
+ },
+ {
+  "word": "Hund",
+  "start": 17.4,
+  "end": 17.68
+ },
+ {
+  "word": "der",
+  "start": 17.9,
+  "end": 17.96
+ },
+ {
+  "word": "ihn",
+  "start": 17.96,
+  "end": 18.12
+ },
+ {
+  "word": "nicht",
+  "start": 18.12,
+  "end": 18.38
+ },
+ {
+  "word": "mag",
+  "start": 18.38,
+  "end": 18.66
+ },
+ {
+  "word": "Tür",
+  "start": 19.4,
+  "end": 19.54
+ },
+ {
+  "word": "drei",
+  "start": 19.54,
+  "end": 19.94
+ },
+ {
+  "word": "Wir",
+  "start": 20.54,
+  "end": 20.7
+ },
+ {
+  "word": "haben",
+  "start": 20.7,
+  "end": 21.0
+ },
+ {
+  "word": "schon",
+  "start": 21.0,
+  "end": 21.22
+ },
+ {
+  "word": "alles",
+  "start": 21.22,
+  "end": 21.64
+ },
+ {
+  "word": "An",
+  "start": 22.58,
+  "end": 22.74
+ },
+ {
+  "word": "Tür",
+  "start": 22.74,
+  "end": 22.94
+ },
+ {
+  "word": "zehn",
+  "start": 22.94,
+  "end": 23.34
+ },
+ {
+  "word": "knallt",
+  "start": 23.34,
+  "end": 23.8
+ },
+ {
+  "word": "ihm",
+  "start": 23.8,
+  "end": 23.86
+ },
+ {
+  "word": "eine",
+  "start": 23.86,
+  "end": 24.08
+ },
+ {
+  "word": "Frau",
+  "start": 24.08,
+  "end": 24.34
+ },
+ {
+  "word": "mit",
+  "start": 24.34,
+  "end": 24.58
+ },
+ {
+  "word": "Handtuch",
+  "start": 24.58,
+  "end": 24.96
+ },
+ {
+  "word": "auf",
+  "start": 24.96,
+  "end": 25.14
+ },
+ {
+  "word": "dem",
+  "start": 25.14,
+  "end": 25.3
+ },
+ {
+  "word": "Kopf",
+  "start": 25.3,
+  "end": 25.56
+ },
+ {
+  "word": "die",
+  "start": 25.56,
+  "end": 25.78
+ },
+ {
+  "word": "Tür",
+  "start": 25.78,
+  "end": 26.02
+ },
+ {
+  "word": "vor",
+  "start": 26.02,
+  "end": 26.22
+ },
+ {
+  "word": "der",
+  "start": 26.22,
+  "end": 26.36
+ },
+ {
+  "word": "Nase",
+  "start": 26.36,
+  "end": 26.68
+ },
+ {
+  "word": "zu",
+  "start": 26.68,
+  "end": 26.94
+ },
+ {
+  "word": "Emre",
+  "start": 26.94,
+  "end": 27.96
+ },
+ {
+  "word": "sitzt",
+  "start": 27.96,
+  "end": 28.18
+ },
+ {
+  "word": "zehn",
+  "start": 28.18,
+  "end": 28.52
+ },
+ {
+  "word": "Minuten",
+  "start": 28.52,
+  "end": 28.88
+ },
+ {
+  "word": "auf",
+  "start": 28.88,
+  "end": 29.14
+ },
+ {
+  "word": "einer",
+  "start": 29.14,
+  "end": 29.32
+ },
+ {
+  "word": "Treppe",
+  "start": 29.32,
+  "end": 29.76
+ },
+ {
+  "word": "und",
+  "start": 29.76,
+  "end": 30.38
+ },
+ {
+  "word": "sucht",
+  "start": 30.38,
+  "end": 30.7
+ },
+ {
+  "word": "schon",
+  "start": 30.7,
+  "end": 30.84
+ },
+ {
+  "word": "wieder",
+  "start": 30.84,
+  "end": 31.183
+ },
+ {
+  "word": "Stellenanzeigen",
+  "start": 31.183,
+  "end": 32.04
+ },
+ {
+  "word": "fürs",
+  "start": 32.04,
+  "end": 32.22
+ },
+ {
+  "word": "Lager",
+  "start": 32.22,
+  "end": 32.62
+ },
+ {
+  "word": "Woche",
+  "start": 33.6,
+  "end": 33.6
+ },
+ {
+  "word": "eins",
+  "start": 33.6,
+  "end": 33.88
+ },
+ {
+  "word": "kein",
+  "start": 33.88,
+  "end": 34.6
+ },
+ {
+  "word": "Vertrag",
+  "start": 34.6,
+  "end": 35.06
+ },
+ {
+  "word": "Woche",
+  "start": 35.06,
+  "end": 35.64
+ },
+ {
+  "word": "zwei",
+  "start": 35.64,
+  "end": 36.06
+ },
+ {
+  "word": "kein",
+  "start": 36.06,
+  "end": 36.86
+ },
+ {
+  "word": "Vertrag",
+  "start": 36.86,
+  "end": 37.34
+ },
+ {
+  "word": "Die",
+  "start": 37.34,
+  "end": 37.96
+ },
+ {
+  "word": "Miete",
+  "start": 37.96,
+  "end": 38.2
+ },
+ {
+  "word": "ist",
+  "start": 38.2,
+  "end": 38.44
+ },
+ {
+  "word": "fällig",
+  "start": 38.44,
+  "end": 38.82
+ },
+ {
+  "word": "der",
+  "start": 38.92,
+  "end": 39.0
+ },
+ {
+  "word": "Kühlschrank",
+  "start": 39.0,
+  "end": 39.46
+ },
+ {
+  "word": "leer",
+  "start": 39.46,
+  "end": 39.72
+ },
+ {
+  "word": "und",
+  "start": 39.72,
+  "end": 40.24
+ },
+ {
+  "word": "seine",
+  "start": 40.24,
+  "end": 40.4
+ },
+ {
+  "word": "Mutter",
+  "start": 40.4,
+  "end": 40.66
+ },
+ {
+  "word": "fragt",
+  "start": 40.66,
+  "end": 41.12
+ },
+ {
+  "word": "am",
+  "start": 41.12,
+  "end": 41.2
+ },
+ {
+  "word": "Telefon",
+  "start": 41.2,
+  "end": 41.72
+ },
+ {
+  "word": "ob",
+  "start": 42.02,
+  "end": 42.16
+ },
+ {
+  "word": "er",
+  "start": 42.16,
+  "end": 42.26
+ },
+ {
+  "word": "nicht",
+  "start": 42.26,
+  "end": 42.42
+ },
+ {
+  "word": "lieber",
+  "start": 42.42,
+  "end": 42.72
+ },
+ {
+  "word": "was",
+  "start": 42.72,
+  "end": 42.94
+ },
+ {
+  "word": "Festes",
+  "start": 42.94,
+  "end": 43.54
+ },
+ {
+  "word": "sucht",
+  "start": 43.54,
+  "end": 44.04
+ },
+ {
+  "word": "Am",
+  "start": 44.56,
+  "end": 44.72
+ },
+ {
+  "word": "Sonntag",
+  "start": 44.72,
+  "end": 45.16
+ },
+ {
+  "word": "schreibt",
+  "start": 45.16,
+  "end": 45.46
+ },
+ {
+  "word": "er",
+  "start": 45.46,
+  "end": 45.6
+ },
+ {
+  "word": "auf",
+  "start": 45.6,
+  "end": 45.88
+ },
+ {
+  "word": "was",
+  "start": 46.06,
+  "end": 46.18
+ },
+ {
+  "word": "schiefgelaufen",
+  "start": 46.18,
+  "end": 46.88
+ },
+ {
+  "word": "ist",
+  "start": 46.88,
+  "end": 47.2
+ },
+ {
+  "word": "Zwei",
+  "start": 47.66,
+  "end": 48.0
+ },
+ {
+  "word": "Seiten",
+  "start": 48.0,
+  "end": 48.42
+ },
+ {
+  "word": "Die",
+  "start": 48.93,
+  "end": 49.26
+ },
+ {
+  "word": "meisten",
+  "start": 49.26,
+  "end": 49.54
+ },
+ {
+  "word": "Absagen",
+  "start": 49.54,
+  "end": 50.16
+ },
+ {
+  "word": "kommen",
+  "start": 50.16,
+  "end": 50.4
+ },
+ {
+  "word": "in",
+  "start": 50.4,
+  "end": 50.6
+ },
+ {
+  "word": "den",
+  "start": 50.6,
+  "end": 50.68
+ },
+ {
+  "word": "ersten",
+  "start": 50.68,
+  "end": 51.02
+ },
+ {
+  "word": "zehn",
+  "start": 51.02,
+  "end": 51.32
+ },
+ {
+  "word": "Sekunden",
+  "start": 51.32,
+  "end": 51.94
+ },
+ {
+  "word": "Also",
+  "start": 52.34,
+  "end": 52.7
+ },
+ {
+  "word": "ändert",
+  "start": 52.7,
+  "end": 53.08
+ },
+ {
+  "word": "er",
+  "start": 53.08,
+  "end": 53.22
+ },
+ {
+  "word": "nur",
+  "start": 53.22,
+  "end": 53.44
+ },
+ {
+  "word": "seinen",
+  "start": 53.44,
+  "end": 53.74
+ },
+ {
+  "word": "ersten",
+  "start": 53.74,
+  "end": 54.16
+ },
+ {
+  "word": "Satz",
+  "start": 54.16,
+  "end": 54.74
+ },
+ {
+  "word": "Statt",
+  "start": 54.74,
+  "end": 55.38
+ },
+ {
+  "word": "Haben",
+  "start": 55.66,
+  "end": 55.96
+ },
+ {
+  "word": "Sie",
+  "start": 55.96,
+  "end": 56.1
+ },
+ {
+  "word": "kurz",
+  "start": 56.1,
+  "end": 56.3
+ },
+ {
+  "word": "Zeit",
+  "start": 56.3,
+  "end": 56.72
+ },
+ {
+  "word": "fragt",
+  "start": 57.1,
+  "end": 57.62
+ },
+ {
+  "word": "er",
+  "start": 57.62,
+  "end": 57.74
+ },
+ {
+  "word": "Was",
+  "start": 58.22,
+  "end": 58.42
+ },
+ {
+  "word": "nervt",
+  "start": 58.42,
+  "end": 58.9
+ },
+ {
+  "word": "Sie",
+  "start": 58.9,
+  "end": 58.98
+ },
+ {
+  "word": "gerade",
+  "start": 58.98,
+  "end": 59.22
+ },
+ {
+  "word": "am",
+  "start": 59.22,
+  "end": 59.52
+ },
+ {
+  "word": "meisten",
+  "start": 59.52,
+  "end": 59.92
+ },
+ {
+  "word": "an",
+  "start": 59.92,
+  "end": 60.12
+ },
+ {
+  "word": "Ihren",
+  "start": 60.12,
+  "end": 60.32
+ },
+ {
+  "word": "Fixkosten",
+  "start": 60.32,
+  "end": 61.06
+ },
+ {
+  "word": "Am",
+  "start": 61.8,
+  "end": 61.96
+ },
+ {
+  "word": "nächsten",
+  "start": 61.96,
+  "end": 62.2
+ },
+ {
+  "word": "Tag",
+  "start": 62.2,
+  "end": 62.64
+ },
+ {
+  "word": "an",
+  "start": 62.78,
+  "end": 62.82
+ },
+ {
+  "word": "Tür",
+  "start": 62.82,
+  "end": 62.98
+ },
+ {
+  "word": "siebzehn",
+  "start": 62.98,
+  "end": 64.0
+ },
+ {
+  "word": "lädt",
+  "start": 64.0,
+  "end": 64.22
+ },
+ {
+  "word": "ihn",
+  "start": 64.22,
+  "end": 64.36
+ },
+ {
+  "word": "ein",
+  "start": 64.36,
+  "end": 64.56
+ },
+ {
+  "word": "Rentner",
+  "start": 64.56,
+  "end": 65.0
+ },
+ {
+  "word": "auf",
+  "start": 65.0,
+  "end": 65.16
+ },
+ {
+  "word": "einen",
+  "start": 65.16,
+  "end": 65.36
+ },
+ {
+  "word": "Tee",
+  "start": 65.36,
+  "end": 65.82
+ },
+ {
+  "word": "ein",
+  "start": 65.82,
+  "end": 65.96
+ },
+ {
+  "word": "Zwei",
+  "start": 66.48,
+  "end": 66.76
+ },
+ {
+  "word": "Stunden",
+  "start": 66.76,
+  "end": 67.0
+ },
+ {
+  "word": "später",
+  "start": 67.0,
+  "end": 67.36
+ },
+ {
+  "word": "unterschreibt",
+  "start": 67.36,
+  "end": 68.2
+ },
+ {
+  "word": "er",
+  "start": 68.2,
+  "end": 68.4
+ },
+ {
+  "word": "Der",
+  "start": 68.9,
+  "end": 69.08
+ },
+ {
+  "word": "erste",
+  "start": 69.08,
+  "end": 69.44
+ },
+ {
+  "word": "Vertrag",
+  "start": 69.44,
+  "end": 70.0
+ },
+ {
+  "word": "Die",
+  "start": 70.64,
+  "end": 70.78
+ },
+ {
+  "word": "Miete",
+  "start": 70.78,
+  "end": 71.08
+ },
+ {
+  "word": "ist",
+  "start": 71.08,
+  "end": 71.28
+ },
+ {
+  "word": "noch",
+  "start": 71.28,
+  "end": 71.42
+ },
+ {
+  "word": "lange",
+  "start": 71.42,
+  "end": 71.68
+ },
+ {
+  "word": "nicht",
+  "start": 71.68,
+  "end": 71.86
+ },
+ {
+  "word": "bezahlt",
+  "start": 71.86,
+  "end": 72.38
+ },
+ {
+  "word": "Aber",
+  "start": 72.86,
+  "end": 73.0
+ },
+ {
+  "word": "Emre",
+  "start": 73.0,
+  "end": 73.38
+ },
+ {
+  "word": "weiß",
+  "start": 73.38,
+  "end": 73.62
+ },
+ {
+  "word": "jetzt",
+  "start": 73.62,
+  "end": 73.98
+ },
+ {
+  "word": "dass",
+  "start": 74.36,
+  "end": 74.48
+ },
+ {
+  "word": "es",
+  "start": 74.48,
+  "end": 74.66
+ },
+ {
+  "word": "geht",
+  "start": 74.66,
+  "end": 74.94
+ }
+]

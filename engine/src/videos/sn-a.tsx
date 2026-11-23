@@ -3,15 +3,20 @@ import React from "react";
 import { Easing } from "remotion";
 import { Calendar, ChartScreen, Clock, Lights } from "../style/kit";
 import { Cam, Key } from "../style/extra";
-import { Ctx, P, Person, Box, Cyl, Ball, CanvasPlane, INK, Sign, FaceGroup, hand, Floor, WallDoor, SideWall, Glow, Plant, Frame, WindowCity, Lamp, Rug, Dust, Living, Flat, Street, Phone, Poster, drawText, StaticClock, InfoCard, jonas, emre, opa, frau, chef, crowd, seg, lerp, clamp, wordAt, W, V3, talkTilt } from "./sn-common";
+import { mkWarp, Knots, Ctx, P, Person, Box, Cyl, Ball, CanvasPlane, INK, Sign, FaceGroup, hand, Floor, WallDoor, SideWall, Glow, Plant, Frame, WindowCity, Lamp, Rug, Dust, Living, Flat, Street, Phone, Poster, drawText, StaticClock, InfoCard, jonas, emre, opa, frau, chef, crowd, seg, lerp, clamp, wordAt, W, V3, talkTilt } from "./sn-common";
 import words from "../../public/sonntag/words.json";
 import script from "../../public/sonntag/script.json";
-import TL from "../../public/sonntag/timeline.json";
+import TLN from "../../public/sonntag/timeline.json";
+import TLO from "../../public/sonntag/old/timeline.json";
+import WARP from "../../public/sonntag/warp.json";
 
-const wt = wordAt(words as W[], script as string[]);
-export const L = TL as { speaker: string; start: number; end: number; tok0: number; tok1: number }[];
+export const warp = mkWarp(WARP as Knots);
+const wt = wordAt(words as W[], script as string[], warp.old); // returns authoring (old) time
+type TLI = { speaker: string; start: number; end: number; tok0: number; tok1: number }[];
+export const L = TLO as TLI; // old authoring timeline (scenes live in old time)
+export const LN = TLN as TLI; // current timeline (cuts, captions, overlay)
 const speaking = (t: number, i: number) => t >= L[i - 1].start && t <= L[i - 1].end;
-export const labelAt = (t: number) => { const l = L.find((x) => t >= x.start - 0.05 && t <= x.end + 0.1); return l ? l.speaker : undefined; };
+export const labelAt = (t: number) => { const l = LN.find((x) => t >= x.start - 0.05 && t <= x.end + 0.1); return l ? l.speaker : undefined; };
 const sit = (x: number): V3 => [x, -0.25, -4.15];
 
 /* ===== 1: title card + Jonas on the sofa staring at the ceiling ===== */
@@ -74,7 +79,7 @@ export const S4 = ({ t, f }: Ctx) => {
 /* ===== 5: L4 Emre: income chart, first three weeks nearly nothing ===== */
 const K5: Key[] = [{ t: 16.3, pos: [0.0, 3.2, 9.8], look: [0, 3.0, -4.4], fov: 56 }, { t: 20.0, pos: [0.4, 3.1, 8.2], look: [0.2, 3.1, -4.4], fov: 52 }, { t: 23.2, pos: [0.4, 3.0, 7.6], look: [0.0, 2.8, -4.4], fov: 50 }];
 export const S5 = ({ t, f }: Ctx) => {
-  const grow = seg(t, 16.9, 19.0, Easing.inOut(Easing.cubic)), mark = seg(t, wt("ersten", 34), wt("ersten", 34) + 0.4, Easing.out(Easing.back(2)));
+  const grow = seg(t, 16.9, 19.0, Easing.inOut(Easing.cubic)), mark = seg(t, wt("ersten", 73), wt("ersten", 73) + 0.4, Easing.out(Easing.back(2)));
   const hs = [0.06, 0.1, 0.14, 0.55, 0.85, 1.2, 1.55, 1.95, 2.35];
   return (<>
     <Cam t={t} keys={K5} /><Flat t={t} />
@@ -102,7 +107,7 @@ export const S6 = ({ t, f }: Ctx) => {
 /* ===== 7: L6 flashback door ten: slammed in his face by a woman with a towel on her head ===== */
 const K7: Key[] = [{ t: 25.4, pos: [-2.2, 2.8, 7.2], look: [-0.6, 2.2, -5.2], fov: 56 }, { t: 29.0, pos: [0.6, 2.8, 6.6], look: [0.1, 2.5, -5.4], fov: 52 }, { t: 33.2, pos: [0.9, 2.7, 5.6], look: [0.2, 2.4, -5.4], fov: 50 }, { t: 34.6, pos: [0.9, 2.7, 5.5], look: [0.2, 2.4, -5.4], fov: 50 }];
 export const S7 = ({ t, f }: Ctx) => {
-  const tFrau = wt("Frau", 54), tSlam = wt("zugeknallt", 54), tTow = wt("Handtuch", 54);
+  const tFrau = wt("Frau", 100), tSlam = wt("zugeknallt", 100), tTow = wt("Handtuch", 100);
   const openK = seg(t, tFrau - 0.1, tFrau + 0.5) * (1 - seg(t, tSlam - 0.12, tSlam + 0.04, Easing.in(Easing.quad)));
   const walk = seg(t, 25.5, 28.4, Easing.inOut(Easing.sin)), x = lerp(-5.2, -0.4, walk), jerk = t > tSlam ? Math.exp(-(t - tSlam) * 6) : 0;
   const frauIn = t > tFrau - 0.1 && t < tSlam + 0.1;
@@ -127,7 +132,7 @@ export const S8 = ({ t, f }: Ctx) => (<>
 /* ===== 9a: L8 door 17: the retiree invites him in ===== */
 const K9a: Key[] = [{ t: 36.3, pos: [-0.8, 2.8, 7.0], look: [-0.1, 2.5, -5.4], fov: 54 }, { t: 39.9, pos: [0.4, 2.8, 6.0], look: [0.2, 2.5, -5.4], fov: 50 }];
 export const S9a = ({ t, f }: Ctx) => {
-  const tRent = wt("Rentner", 82), tKomm = wt("Komm", 82), tZwei = wt("Zwei", 90);
+  const tRent = wt("Rentner", 142), tKomm = wt("Komm", 142), tZwei = wt("Zwei", 150);
   const openK = seg(t, tRent - 0.2, tRent + 0.4);
   const bub = seg(t, tKomm, tKomm + 0.3, Easing.out(Easing.back(2))) * (1 - seg(t, tZwei - 0.2, tZwei));
   return (<>
@@ -142,7 +147,7 @@ export const S9a = ({ t, f }: Ctx) => {
 /* ===== 9b: L8 kitchen: two hours of talking, then the signature ===== */
 const K9b: Key[] = [{ t: 39.7, pos: [0.0, 3.3, 8.6], look: [0, 2.4, -4.2], fov: 54 }, { t: 43.0, pos: [0.2, 3.2, 7.6], look: [0.1, 2.3, -4.2], fov: 50 }, { t: 45.9, pos: [0.0, 4.4, 6.4], look: [0.0, 1.6, -4.0], fov: 48 }];
 export const S9b = ({ t, f }: Ctx) => {
-  const tZwei = wt("Zwei", 90), tUnt = wt("unterschrieben", 90), sign = seg(t, tUnt - 0.2, tUnt + 0.5), tick = seg(t, tUnt + 0.3, tUnt + 0.55, Easing.out(Easing.back(3)));
+  const tZwei = wt("Zwei", 150), tUnt = wt("unterschrieben", 150), sign = seg(t, tUnt - 0.2, tUnt + 0.5), tick = seg(t, tUnt + 0.3, tUnt + 0.55, Easing.out(Easing.back(3)));
   return (<>
     <Cam t={t} keys={K9b} /><Flat t={t} />
     <Box p={[0, 1.0, -3.6]} s={[4.4, 0.16, 2.0]} color={P.Y3} /><Cyl p={[-1.8, 0.5, -3.1]} rt={0.12} h={1.0} color={P.Y4} /><Cyl p={[1.8, 0.5, -3.1]} rt={0.12} h={1.0} color={P.Y4} />
@@ -168,8 +173,8 @@ export const S10 = ({ t, f }: Ctx) => (<>
 /* ===== 11: L10 the account depends on me, not on a promotion round in March ===== */
 const K11: Key[] = [{ t: 47.8, pos: [0.0, 3.4, 10.0], look: [0, 3.2, -4.4], fov: 56 }, { t: 52.0, pos: [0.0, 3.4, 8.6], look: [0.0, 3.4, -4.4], fov: 52 }, { t: 57.1, pos: [0.2, 3.3, 7.8], look: [0.2, 3.3, -4.4], fov: 50 }];
 export const S11 = ({ t, f }: Ctx) => {
-  const tMir = wt("mir", 110), tNicht = wt("Nicht", 110), tMarz = wt("rz", 110);
-  const bal = seg(t, wt("Kontostand", 110), tMir + 0.6, Easing.inOut(Easing.cubic)), cal = seg(t, tNicht, tNicht + 0.4, Easing.out(Easing.back(2))), x = seg(t, tMarz - 0.3, tMarz + 0.2, Easing.out(Easing.back(3)));
+  const tMir = wt("mir", 188), tNicht = wt("Nicht", 188), tMarz = wt("rz", 188);
+  const bal = seg(t, wt("Kontostand", 188), tMir + 0.6, Easing.inOut(Easing.cubic)), cal = seg(t, tNicht, tNicht + 0.4, Easing.out(Easing.back(2))), x = seg(t, tMarz - 0.3, tMarz + 0.2, Easing.out(Easing.back(3)));
   return (<>
     <Cam t={t} keys={K11} /><Flat t={t} />
     <ChartScreen p={[-1.9, 4.2, -5.7]} s={[3.2, 2.2]} prog={bal} up label="KONTOSTAND" big={`${Math.round(120 + 3360 * bal)} €`} bigK={1} />
@@ -189,7 +194,7 @@ export const S12 = ({ t, f }: Ctx) => (<>
 /* ===== 13: L12 Emre: "mein Stress" ===== */
 const K13: Key[] = [{ t: 58.1, pos: [0.0, 3.0, 8.6], look: [0, 3.0, -4], fov: 54 }, { t: 62.0, pos: [0.0, 3.0, 7.0], look: [0, 3.2, -4], fov: 49 }];
 export const S13 = ({ t, f }: Ctx) => {
-  const tm = wt("mein", 134);
+  const tm = wt("mein", 225);
   return (<>
     <Cam t={t} keys={K13} /><Flat t={t} />
     <Person p={[0.2, 0, -3.8]} h={4.0} look={emre} f={f} pose={{ mood: t > tm ? "grin" : "smile", arms: t > tm - 0.1 ? "up" : "shrug", armK: seg(t, tm - 0.2, tm + 0.3, Easing.out(Easing.back(2))), tilt: talkTilt(t, speaking(t, 12), 0.03), squash: 0.015 * Math.sin(t * 2.4) }} />
@@ -212,7 +217,7 @@ export const S14 = ({ t, f }: Ctx) => {
 /* ===== 15: L14 plan at ten, doors from four, the invitation ===== */
 const K15: Key[] = [{ t: 64.4, pos: [0.0, 3.2, 9.0], look: [0, 3.2, -4.4], fov: 55 }, { t: 68.2, pos: [0.3, 3.2, 8.0], look: [0.2, 3.2, -4.4], fov: 51 }, { t: 71.5, pos: [0.0, 3.0, 6.4], look: [0.0, 3.0, -4.2], fov: 47 }];
 export const S15 = ({ t, f }: Ctx) => {
-  const t10 = wt("zehn", 149), t4 = wt("vier", 149), tZu = wt("Hause", 149), tTour = wt("Tour", 149);
+  const t10 = wt("zehn", 248), t4 = wt("vier", 248), tZu = wt("Hause", 248), tTour = wt("Tour", 248);
   const a = seg(t, t10, t10 + 0.3, Easing.out(Easing.back(2))), b = seg(t, t4, t4 + 0.3, Easing.out(Easing.back(2))), houses = seg(t, tZu - 0.4, tZu + 0.2);
   const hh = t < t4 ? 10 : 16;
   return (<>
@@ -240,9 +245,4 @@ export const S16 = ({ t, f }: Ctx) => {
     <Dust t={t} n={10} area={[6, 5, 4]} color="rgba(255,236,190,.7)" />
   </>);
 };
-export const OVERLAY = (t: number) => (<>
-  <InfoCard a={71.3} b={74.8} t={t} title="Laut Gallup-Engagement-Index" body="fühlt sich nur etwa jeder zehnte Beschäftigte in Deutschland emotional stark an seinen Arbeitgeber gebunden." />
-  <InfoCard a={74.9} b={78.9} t={t} title="Gallup-Engagement-Index" body="Der Rest macht oft nur Dienst nach Vorschrift." />
-  <InfoCard a={0.3} b={3.2} t={t} title="Sonntag, 21:40 Uhr" body="Jonas liegt auf dem Sofa und starrt an die Decke." />
-</>);
 void Frame; void Lamp; void Rug; void Plant; void WindowCity; void Sign; void CanvasPlane; void Phone; void Calendar; void clamp; void StaticClock;

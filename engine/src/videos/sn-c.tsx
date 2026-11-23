@@ -3,11 +3,13 @@ import React from "react";
 import { Easing } from "remotion";
 import { Calendar, Lights } from "../style/kit";
 import { Cam, Key } from "../style/extra";
-import { Ctx, P, Person, Box, Cyl, Ball, INK, FaceGroup, hand, Floor, WallDoor, SideWall, Glow, Dust, Flat, Street, Living, Lager, Cake, Pallets, CarBox, NightRoad, Poster, drawText, StaticClock, InfoCard, emre, opa, chef, lagerchefin, crowd, seg, lerp, wordAt, W, talkTilt, V3 } from "./sn-common";
+import { mkWarp, Knots, Ctx, P, Person, Box, Cyl, Ball, INK, FaceGroup, hand, Floor, WallDoor, SideWall, Glow, Dust, Flat, Street, Living, Lager, Cake, Pallets, CarBox, NightRoad, Poster, drawText, StaticClock, InfoCard, emre, opa, chef, lagerchefin, crowd, seg, lerp, wordAt, W, talkTilt, V3 } from "./sn-common";
 import words from "../../public/februar/words.json";
 import script from "../../public/februar/script.json";
 
-export const wt = wordAt(words as W[], script as string[]);
+import WARP from "../../public/februar/warp.json";
+export const warp = mkWarp(WARP as Knots);
+export const wt = wordAt(words as W[], script as string[], warp.old);
 const mv = (t: number, a: number, b: number, x0: number, x1: number) => { const k = seg(t, a, b, Easing.inOut(Easing.sin)); const x = lerp(x0, x1, k); return { x, walking: k > 0.01 && k < 0.99, phase: x * 3.4 }; };
 const suit = { ...emre, body: P.V4, sleeve: P.V4, outfit: "suit" as const, tie: P.Y2, shirt: "#ffffff", badge: undefined };
 
@@ -125,7 +127,7 @@ export const C9 = ({ t, f }: Ctx) => {
 /* 10 (36.6-44.2) he hangs up, recalculates, finds the mistake */
 const K10: Key[] = [{ t: 36.4, pos: [0.0, 4.4, 8.4], look: [0, 2.6, -3.8], fov: 54 }, { t: 44.4, pos: [0.0, 4.0, 6.8], look: [0, 2.8, -3.8], fov: 48 }];
 export const C10 = ({ t, f }: Ctx) => {
-  const err = seg(t, wt("Fehler"), wt("Fehler") + 0.4, Easing.out(Easing.back(2.5))), nul = seg(t, wt("Seit", 92), wt("Seit", 92) + 0.4, Easing.out(Easing.back(2)));
+  const err = seg(t, wt("Fehler"), wt("Fehler") + 0.4, Easing.out(Easing.back(2.5))), nul = seg(t, wt("Seit", 141), wt("Seit", 141) + 0.4, Easing.out(Easing.back(2)));
   return (<>
     <Cam t={t} keys={K10} /><Flat t={t} />
     <Box p={[0, 1.1, -3.6]} s={[4.0, 0.16, 2.0]} color={P.Y3} /><Cyl p={[-1.6, 0.55, -3.2]} rt={0.12} h={1.1} color={P.Y4} /><Cyl p={[1.6, 0.55, -3.2]} rt={0.12} h={1.1} color={P.Y4} />
@@ -169,7 +171,7 @@ export const C12 = ({ t, f }: Ctx) => {
 /* 13 (55.6-60.5) four contracts above quota */
 const K13: Key[] = [{ t: 55.4, pos: [0.0, 3.5, 9.6], look: [0, 3.4, -4.4], fov: 54 }, { t: 60.7, pos: [0.0, 3.4, 8.0], look: [0, 3.5, -4.4], fov: 50 }];
 export const C13 = ({ t, f }: Ctx) => {
-  const g = seg(t, 56.0, 58.4, Easing.inOut(Easing.cubic)), win = seg(t, wt("vier", 130), wt("vier", 130) + 0.5, Easing.out(Easing.back(2)));
+  const g = seg(t, 56.0, 58.4, Easing.inOut(Easing.cubic)), win = seg(t, wt("vier", 177), wt("vier", 177) + 0.5, Easing.out(Easing.back(2)));
   return (<>
     <Cam t={t} keys={K13} /><Flat t={t} />
     <Box p={[0, 3.8, -5.8]} s={[6.0, 4.2, 0.2]} color={P.K1} line={4} />

@@ -1,37 +1,77 @@
 [
  {
-  "word": "Fängst",
+  "word": "Ist",
   "start": 0.0,
-  "end": 0.36
+  "end": 0.16
  },
  {
-  "word": "du",
-  "start": 0.36,
-  "end": 0.44
+  "word": "es",
+  "start": 0.16,
+  "end": 0.3
  },
  {
-  "word": "morgen",
-  "start": 0.44,
-  "end": 0.74
+  "word": "auch",
+  "start": 0.3,
+  "end": 0.54
  },
  {
-  "word": "wieder",
-  "start": 0.74,
-  "end": 1.04
+  "word": "Aber",
+  "start": 0.86,
+  "end": 1.02
  },
  {
-  "word": "um",
-  "start": 1.04,
-  "end": 1.22
+  "word": "es",
+  "start": 1.02,
+  "end": 1.14
  },
  {
-  "word": "sieben",
-  "start": 1.22,
-  "end": 1.62
+  "word": "ist",
+  "start": 1.14,
+  "end": 1.32
  },
  {
-  "word": "an",
-  "start": 1.62,
-  "end": 1.7
+  "word": "mein",
+  "start": 1.32,
+  "end": 1.54
+ },
+ {
+  "word": "Stress",
+  "start": 1.54,
+  "end": 1.88
+ },
+ {
+  "word": "Den",
+  "start": 2.32,
+  "end": 2.44
+ },
+ {
+  "word": "such",
+  "start": 2.44,
+  "end": 2.74
+ },
+ {
+  "word": "ich",
+  "start": 2.74,
+  "end": 2.8
+ },
+ {
+  "word": "mir",
+  "start": 2.8,
+  "end": 2.92
+ },
+ {
+  "word": "wenigstens",
+  "start": 2.92,
+  "end": 3.36
+ },
+ {
+  "word": "selber",
+  "start": 3.36,
+  "end": 3.64
+ },
+ {
+  "word": "aus",
+  "start": 3.64,
+  "end": 3.92
  }
 ]

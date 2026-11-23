@@ -1,117 +1,42 @@
 [
  {
-  "word": "An",
+  "word": "Und",
   "start": 0.0,
-  "end": 0.22
+  "end": 0.14
  },
  {
-  "word": "Tür",
-  "start": 0.22,
-  "end": 0.48
+  "word": "trotzdem",
+  "start": 0.14,
+  "end": 0.56
  },
  {
-  "word": "siebzehn",
-  "start": 0.48,
-  "end": 1.52
+  "word": "hast",
+  "start": 0.56,
+  "end": 0.76
  },
  {
-  "word": "sagt",
-  "start": 1.52,
-  "end": 1.74
+  "word": "du",
+  "start": 0.76,
+  "end": 0.9
  },
  {
-  "word": "ein",
-  "start": 1.74,
-  "end": 1.98
+  "word": "weitergemacht",
+  "start": 0.9,
+  "end": 1.56
  },
  {
-  "word": "Rentner",
+  "word": "Bist",
   "start": 1.98,
-  "end": 2.46
+  "end": 2.1
  },
  {
-  "word": "„Komm",
-  "start": 2.8,
-  "end": 2.92
+  "word": "du",
+  "start": 2.1,
+  "end": 2.22
  },
  {
-  "word": "rein",
-  "start": 2.92,
-  "end": 3.3
- },
- {
-  "word": "ich",
-  "start": 3.66,
-  "end": 3.76
- },
- {
-  "word": "mach",
-  "start": 3.76,
-  "end": 3.92
- },
- {
-  "word": "dir",
-  "start": 3.92,
-  "end": 4.12
- },
- {
-  "word": "einen",
-  "start": 4.12,
-  "end": 4.38
- },
- {
-  "word": "Tee.“",
-  "start": 4.38,
-  "end": 4.98
- },
- {
-  "word": "Zwei",
-  "start": 5.06,
-  "end": 5.38
- },
- {
-  "word": "Stunden",
-  "start": 5.38,
-  "end": 5.76
- },
- {
-  "word": "hat",
-  "start": 5.76,
-  "end": 6.1
- },
- {
-  "word": "er",
-  "start": 6.1,
-  "end": 6.22
- },
- {
-  "word": "geredet",
-  "start": 6.22,
-  "end": 6.88
- },
- {
-  "word": "Am",
-  "start": 7.08,
-  "end": 7.22
- },
- {
-  "word": "Ende",
-  "start": 7.22,
-  "end": 7.6
- },
- {
-  "word": "hat",
-  "start": 7.6,
-  "end": 7.9
- },
- {
-  "word": "er",
-  "start": 7.9,
-  "end": 8.06
- },
- {
-  "word": "unterschrieben",
-  "start": 8.06,
-  "end": 8.72
+  "word": "bescheuert",
+  "start": 2.22,
+  "end": 2.7
  }
 ]

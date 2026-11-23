@@ -1,0 +1,114 @@
+[
+ {
+  "speaker": "Jonas",
+  "text": "Emre, ich schwöre, ich kann nicht mehr. Morgen wieder Stau, Montagsmeeting, dieselbe Folie wie letzte Woche.",
+  "start": 3.2,
+  "end": 10.355,
+  "tok0": 0,
+  "tok1": 16
+ },
+ {
+  "speaker": "Emre",
+  "text": "Du klingst wie ich vor einem Jahr.",
+  "start": 10.655,
+  "end": 12.921,
+  "tok0": 16,
+  "tok1": 23
+ },
+ {
+  "speaker": "Jonas",
+  "text": "Dir geht's doch super im Vertrieb. Du verdienst richtig gut, oder?",
+  "start": 13.221,
+  "end": 16.25,
+  "tok0": 23,
+  "tok1": 34
+ },
+ {
+  "speaker": "Emre",
+  "text": "Ich verdiene, was ich mir erarbeite. In den ersten drei Wochen fast nichts.",
+  "start": 16.55,
+  "end": 22.673,
+  "tok0": 34,
+  "tok1": 47
+ },
+ {
+  "speaker": "Jonas",
+  "text": "Was? Das hast du mir nie erzählt.",
+  "start": 22.973,
+  "end": 25.228,
+  "tok0": 47,
+  "tok1": 54
+ },
+ {
+  "speaker": "Emre",
+  "text": "Weil ich an Tür zehn fast aufgegeben hätte. Eine Frau hat mir die Tür vor der Nase zugeknallt, mit Handtuch auf dem Kopf.",
+  "start": 25.528,
+  "end": 34.042,
+  "tok0": 54,
+  "tok1": 77
+ },
+ {
+  "speaker": "Jonas",
+  "text": "Und trotzdem hast du weitergemacht?",
+  "start": 34.342,
+  "end": 36.176,
+  "tok0": 77,
+  "tok1": 82
+ },
+ {
+  "speaker": "Emre",
+  "text": "An Tür siebzehn sagt ein Rentner: „Komm rein, ich mach dir einen Tee.“ Zwei Stunden hat er geredet. Am Ende hat er unterschrieben.",
+  "start": 36.476,
+  "end": 45.356,
+  "tok0": 82,
+  "tok1": 105
+ },
+ {
+  "speaker": "Jonas",
+  "text": "Zwei Stunden für einen Vertrag?",
+  "start": 45.656,
+  "end": 47.736,
+  "tok0": 105,
+  "tok1": 110
+ },
+ {
+  "speaker": "Emre",
+  "text": "Das war der Tag, an dem ich kapiert habe: Mein Kontostand hängt von mir ab. Nicht von einer Beförderungsrunde im März.",
+  "start": 48.036,
+  "end": 56.667,
+  "tok0": 110,
+  "tok1": 131
+ },
+ {
+  "speaker": "Jonas",
+  "text": "Klingt nach Stress.",
+  "start": 56.967,
+  "end": 58.007,
+  "tok0": 131,
+  "tok1": 134
+ },
+ {
+  "speaker": "Emre",
+  "text": "Ist es auch. Aber es ist mein Stress.",
+  "start": 58.307,
+  "end": 61.867,
+  "tok0": 134,
+  "tok1": 142
+ },
+ {
+  "speaker": "Jonas",
+  "text": "Fängst du morgen wieder um sieben an?",
+  "start": 62.167,
+  "end": 64.248,
+  "tok0": 142,
+  "tok1": 149
+ },
+ {
+  "speaker": "Emre",
+  "text": "Um zehn Planung, ab vier an den Türen. Da sind die Leute zu Hause. Willst du eine Tour mitlaufen?",
+  "start": 64.548,
+  "end": 71.074,
+  "tok0": 149,
+  "tok1": 168
+ }
+]

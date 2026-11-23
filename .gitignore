@@ -5,3 +5,7 @@ node_modules/
 *.log
 .DS_Store
 *.mp4
+02-videos/st_*/
+02-videos/*/st[0-9]*/
+02-videos/*/tmp*/
+02-videos/*/lines_old_v1/

@@ -1,82 +1,72 @@
 [
  {
-  "word": "Emre",
+  "word": "Alle",
   "start": 0.0,
-  "end": 0.34
+  "end": 0.28
  },
  {
-  "word": "ich",
-  "start": 0.62,
-  "end": 0.7
+  "word": "reden",
+  "start": 0.28,
+  "end": 0.6
  },
  {
-  "word": "schwöre",
-  "start": 0.7,
-  "end": 1.22
+  "word": "über",
+  "start": 0.6,
+  "end": 0.94
  },
  {
-  "word": "ich",
-  "start": 1.46,
-  "end": 1.58
+  "word": "GTA",
+  "start": 0.94,
+  "end": 1.26
  },
  {
-  "word": "kann",
-  "start": 1.58,
-  "end": 1.8
+  "word": "6",
+  "start": 1.26,
+  "end": 2.42
  },
  {
-  "word": "nicht",
-  "start": 1.8,
-  "end": 1.98
+  "word": "Ich",
+  "start": 2.42,
+  "end": 2.62
  },
  {
-  "word": "mehr",
-  "start": 1.98,
-  "end": 2.26
+  "word": "rede",
+  "start": 2.62,
+  "end": 2.82
  },
  {
-  "word": "Morgen",
-  "start": 2.26,
-  "end": 2.972
+  "word": "mit",
+  "start": 2.82,
+  "end": 3.02
  },
  {
-  "word": "wieder",
-  "start": 2.972,
-  "end": 3.685
+  "word": "meiner",
+  "start": 3.02,
+  "end": 3.26
  },
  {
-  "word": "Stau",
-  "start": 3.685,
-  "end": 4.16
+  "word": "Zimmerpflanze",
+  "start": 3.26,
+  "end": 4.04
  },
  {
-  "word": "Montagsmeeting",
-  "start": 4.16,
-  "end": 5.02
+  "word": "weil",
+  "start": 4.2,
+  "end": 4.32
  },
  {
-  "word": "dieselbe",
-  "start": 5.36,
-  "end": 5.82
+  "word": "morgen",
+  "start": 4.32,
+  "end": 4.6
  },
  {
-  "word": "Folie",
-  "start": 5.82,
-  "end": 6.26
+  "word": "Montag",
+  "start": 4.6,
+  "end": 5.04
  },
  {
-  "word": "wie",
-  "start": 6.26,
-  "end": 6.42
- },
- {
-  "word": "letzte",
-  "start": 6.42,
-  "end": 6.68
- },
- {
-  "word": "Woche",
-  "start": 6.68,
-  "end": 6.98
+  "word": "ist",
+  "start": 5.04,
+  "end": 5.24
  }
 ]

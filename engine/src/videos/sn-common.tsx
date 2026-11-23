@@ -67,7 +67,7 @@ export const StaticClock: React.FC<{ p: V3; r?: number; hh: number; mm: number }
   }} />
 );
 // poster on a wall / floating card that pops in (k 0..1)
-export const Poster: React.FC<{ p: V3; s: [number, number]; k: number; draw: (c: CanvasRenderingContext2D, W: number, H: number) => void; rot?: V3 }> = ({ p, s, k, draw, rot }) => (
+export const Poster: React.FC<{ p: V3; s: [number, number]; k: number; draw: (c: CanvasRenderingContext2D, W: number, H: number) => void; rot?: V3 }> = ({ p, s, k, draw, rot }) => k < 0.03 ? null : (
   <CanvasPlane p={p} s={[s[0] * k + 0.001, s[1] * k + 0.001]} rot={rot} px={[Math.round(s[0] * 200), Math.round(s[1] * 200)]} frame={INK} draw={draw} />
 );
 export const drawText = (txt: string, bg: string, fg: string, size: number, sub?: string) => (c: CanvasRenderingContext2D, W: number, H: number) => {

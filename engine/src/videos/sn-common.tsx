@@ -134,8 +134,9 @@ export const Flat: React.FC<{ t: number; fridge?: number }> = ({ t, fridge = 0 }
 </>);
 
 // street with 3 rows of houses, numbered doors. doors: [{x, num, open, color}]
-export const Street: React.FC<{ t: number; night?: boolean; dusk?: boolean; focus?: number; open?: number; num?: string }> = ({ t, dusk, focus = 0, open = 0, num = "10" }) => {
+export const Street: React.FC<{ t: number; dusk?: boolean; open?: number; num?: string; opens?: [number, number, number]; nums?: [string, string, string]; day?: boolean }> = ({ t, dusk, open = 0, num = "10", opens, nums }) => {
   const wall = dusk ? P.V3 : P.K3, wall2 = dusk ? P.V4 : P.K2, roof = dusk ? P.C4 : P.C3;
+  const ops = opens ?? [0, open, 0], ns = nums ?? [String(Number(num) - 1), num, String(Number(num) + 1)];
   return (<>
     <Lights warm={dusk ? "#F5A5A0" : "#FFF6E3"} />
     <Floor kind="tile" a={dusk ? P.V4 : P.K3} b={dusk ? P.V3 : P.K2} w={40} d={40} unit={2.2} />
@@ -145,19 +146,59 @@ export const Street: React.FC<{ t: number; night?: boolean; dusk?: boolean; focu
         <Box p={[0, 6.4, 0]} s={[5.4, 1.1, 2.2]} color={roof} />
         {[-2.0, 2.0].map((wx) => <Box key={wx} p={[wx, 3.5, 1.22]} s={[1.1, 1.3, 0.1]} color={dusk ? P.Y1 : P.T1} line={2} />)}
         {dusk ? [-2.0, 2.0].map((wx) => <Glow key={"g" + wx} p={[wx, 3.5, 1.5]} r={1.2} color="rgba(255,214,140,1)" o={0.4} />) : null}
-        {/* door */}
-        <Box p={[-0.9, 1.5, 1.22]} s={[0.1, 3.1, 0.1]} color={wall2} />
-        <group position={[-0.9, 0, 1.25]} rotation={[0, -(i === 1 ? open : 0) * 1.5, 0]}><Box p={[0.9, 1.5, 0]} s={[1.8, 3.0, 0.14]} color={i === 1 ? P.Y3 : P.C3} line={3} /><Ball p={[1.5, 1.5, 0.12]} r={0.1} color={P.Y1} /></group>
-        {i === 1 ? <Box p={[0, 1.5, 1.0]} s={[1.9, 3.1, 0.1]} color={P.V4} line={2} /> : null}
-        <Sign p={[1.9, 2.6, 1.3]} s={[0.9, 0.7]} text={i === 1 ? num : String(i === 0 ? Number(num) - 1 : Number(num) + 1)} bg={P.K1} fg="#111" size={110} />
+        <Box p={[0, 1.5, 1.0]} s={[1.9, 3.1, 0.1]} color={P.V4} line={2} />
+        <group position={[-0.9, 0, 1.25]} rotation={[0, -ops[i] * 1.5, 0]}><Box p={[0.9, 1.5, 0]} s={[1.8, 3.0, 0.14]} color={i === 1 ? P.Y3 : P.C3} line={3} /><Ball p={[1.5, 1.5, 0.12]} r={0.1} color={P.Y1} /></group>
+        <Sign p={[1.9, 2.6, 1.3]} s={[0.9, 0.7]} text={ns[i]} bg={P.K1} fg="#111" size={110} />
       </group>
     ))}
     <Box p={[0, 0.05, -4.4]} s={[40, 0.06, 0.4]} color={P.K3} line={1} />
     {dusk ? null : <Glow p={[0, 8, -10]} r={9} color="rgba(255,226,170,1)" o={0.3} />}
     <Plant p={[-4.0, 0, -4.0]} s={1.0} pot={P.C3} /><Plant p={[3.6, 0, -4.0]} s={1.0} pot={P.Y3} />
     <Dust t={t} n={10} area={[8, 6, 6]} color="rgba(255,240,200,.8)" />
-    {void focus}
   </>);
 };
+
+/* ---- extra series props ---- */
+export const Dog: React.FC<{ p: V3; flip?: boolean; bark?: number; t: number }> = ({ p, flip, bark = 0, t }) => (
+  <group position={p} scale={[flip ? -1 : 1, 1, 1]}>
+    <Ball p={[0, 0.7, 0]} r={0.55} s={[1.5, 0.9, 0.9]} color={P.Y3} /><Ball p={[0.85, 1.05 + bark * 0.05, 0]} r={0.4} color={P.Y3} />
+    <Box p={[1.2, 0.95, 0]} s={[0.4, 0.25, 0.3]} color={P.Y4} /><Ball p={[1.45, 1.0, 0]} r={0.09} color={INK} />
+    <Box p={[0.8, 1.45, 0.2]} s={[0.15, 0.4, 0.12]} color={P.Y4} rot={[0, 0, 0.3]} /><Box p={[0.8, 1.45, -0.2]} s={[0.15, 0.4, 0.12]} color={P.Y4} rot={[0, 0, 0.3]} />
+    {[[-0.5, 0.2], [-0.5, -0.2], [0.5, 0.2], [0.5, -0.2]].map(([x, z], i) => <Cyl key={i} p={[x, 0.2, z]} rt={0.09} h={0.4} color={P.Y4} line={2} />)}
+    <Box p={[-0.95, 1.0 + Math.sin(t * 14) * 0.12, 0]} s={[0.5, 0.1, 0.1]} color={P.Y4} rot={[0, 0, 0.7]} />
+  </group>
+);
+export const Cake: React.FC<{ p: V3; s?: number }> = ({ p, s = 1 }) => (
+  <group position={p} scale={s}><Cyl p={[0, 0.15, 0]} rt={0.55} h={0.3} color={P.K2} /><Cyl p={[0, 0.42, 0]} rt={0.42} h={0.25} color={P.C1} /><Cyl p={[0, 0.7, 0]} rt={0.05} h={0.3} color={P.Y1} line={1} /><Glow p={[0, 0.95, 0]} r={0.25} color="rgba(255,200,90,1)" o={0.9} /></group>
+);
+export const Pallets: React.FC<{ p: V3; n?: number; color?: string }> = ({ p, n = 4, color = P.Y3 }) => (
+  <group position={p}>{Array.from({ length: n }, (_, i) => <React.Fragment key={i}><Box p={[0, 0.12 + i * 0.95, 0]} s={[1.8, 0.18, 1.3]} color={P.Y4} line={2} /><Box p={[0, 0.65 + i * 0.95, 0]} s={[1.6, 0.78, 1.1]} color={color} line={3} /></React.Fragment>)}</group>
+);
+export const CarBox: React.FC<{ p: V3; color?: string; rotY?: number }> = ({ p, color = P.C2, rotY = 0 }) => (
+  <group position={p} rotation={[0, rotY, 0]}><Box p={[0, 0.65, 0]} s={[3.6, 0.8, 1.5]} color={color} /><Box p={[-0.2, 1.3, 0]} s={[2.0, 0.65, 1.3]} color={P.T1} line={3} />
+    {[-1.1, 1.1].map((x) => [-0.78, 0.78].map((z) => <Cyl key={x + "" + z} p={[x, 0.32, z]} rt={0.36} h={0.2} color={INK} rot={[Math.PI / 2, 0, 0]} />))}
+    <Glow p={[1.9, 0.7, 0]} r={1.4} color="rgba(255,230,150,1)" o={0.5} /></group>
+);
+// warehouse / depot (Emre's old job)
+export const Lager: React.FC<{ t: number }> = ({ t }) => (<>
+  <Lights warm="#EBDCBA" />
+  <Floor kind="tile" a={P.K3} b={P.K4} w={30} d={24} unit={2.4} />
+  <WallDoor z={-7} W={30} kind="plain" a={P.K4} b={P.K4} base={P.V4} /><SideWall x={-7} kind="plain" a={P.K4} b={P.K4} /><SideWall x={7} kind="plain" a={P.K4} b={P.K4} />
+  <Shelf p={[-4.2, 0, -6.2]} w={3.4} rows={5} seed={5} wood={P.Y4} /><Shelf p={[4.2, 0, -6.2]} w={3.4} rows={5} seed={9} wood={P.Y4} />
+  <Pallets p={[-1.6, 0, -4.8]} n={3} /><Pallets p={[1.6, 0, -4.6]} n={2} color={P.T3} />
+  <Box p={[0, 0.03, -2.5]} s={[12, 0.04, 0.3]} color={P.Y2} line={1} />
+  <Sign p={[0, 6.0, -6.8]} s={[3.4, 0.9]} text="LAGER" bg={P.Y2} fg="#111" size={110} />
+  <Dust t={t} n={10} area={[6, 5, 5]} color="rgba(255,240,200,.7)" />
+</>);
+// night road with skyline (car scenes)
+export const NightRoad: React.FC<{ t: number }> = ({ t }) => (<>
+  <Lights warm="#A9A2E6" />
+  <Floor kind="tile" a={P.V4} b={"#1b1442"} w={60} d={40} unit={3} />
+  {Array.from({ length: 9 }, (_, i) => <Box key={i} p={[-14 + i * 3.8, 2 + (i % 3) * 1.6, -11 - (i % 2) * 2]} s={[3.2, 4 + (i % 3) * 3.2, 2.4]} color={[P.V3, P.V4, P.T4][i % 3]} />)}
+  {Array.from({ length: 9 }, (_, i) => Array.from({ length: 5 }, (_, k) => <Box key={i + "-" + k} p={[-14 + i * 3.8 + ((k % 2) - 0.5) * 1.2, 1.2 + k * 1.1, -9.7 - (i % 2) * 2]} s={[0.5, 0.5, 0.05]} color={(i * 5 + k) % 3 ? P.Y1 : P.V4} line={0} />))}
+  <Box p={[0, 0.02, -3.0]} s={[60, 0.04, 3.6]} color="#24205a" line={0} />
+  {Array.from({ length: 12 }, (_, i) => <Box key={i} p={[((i * 4 - t * 6) % 48) - 24, 0.05, -3.0]} s={[1.6, 0.05, 0.12]} color={P.Y2} line={0} />)}
+</>);
+
 export { Person, Box, Cyl, Ball, CanvasPlane, INK, Sign, FaceGroup, hand, Floor, WallDoor, SideWall, Glow, Plant, Frame, WindowCity, Lamp, Rug, Shelf, Dust };
 export type { V3 };

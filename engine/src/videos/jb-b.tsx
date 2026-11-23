@@ -16,7 +16,7 @@ const K6: Key[] = [
   { t: 27.8, pos: orbit(0.65, 8.0, 4.2, [0, 0, -1]), look: [0.1, 3.3, -1], fov: 44 },
 ];
 export const S6 = ({ t, f }: Ctx) => {
-  const spin = (t - 22.1) * 0.5, tag = seg(t, 23.0, 23.5, Easing.out(Easing.back(2.5))), yr = seg(t, 23.3, 24.2), mil = seg(t, 25.55, 26.6, Easing.inOut(Easing.cubic)), amazed = seg(t, 26.3, 26.55, Easing.out(Easing.back(2.5)));
+  const spin = -(t - 22.1) * 2.1, tag = seg(t, 23.0, 23.5, Easing.out(Easing.back(2.5))), yr = seg(t, 23.3, 24.2), mil = seg(t, 25.55, 26.6, Easing.inOut(Easing.cubic)), amazed = seg(t, 26.3, 26.55, Easing.out(Easing.back(2.5)));
   const price = (3.5 * mil).toFixed(1).replace(".", ",");
   return (<>
     <Cam t={t} keys={K6} />
@@ -33,7 +33,7 @@ export const S6 = ({ t, f }: Ctx) => {
     <SpotCone p={[0, 10, -1]} h={10} r={2.7} color="#EBDCBA" o={0.14} /><Glow p={[0, 1.4, -1]} r={2.6} color="rgba(255,225,160,1)" o={0.3} /><Dust t={t} n={18} area={[4, 8, 4]} color="rgba(255,236,190,.9)" />
     {/* pedestal + glass + the violin turning in the spotlight */}
     <Cyl p={[0, 0.9, -1]} rt={1.5} rb={1.7} h={1.8} color="#e8e0f5" /><Cyl p={[0, 1.85, -1]} rt={1.65} h={0.14} color="#F2B84B" />
-    <group position={[0, 3.3, -1]} rotation={[0, spin, 0.0]}><Violin p={[0, Math.sin(t * 1.6) * 0.06, 0]} s={1.5} rot={[0, 0, 0.35]} /><Bow p={[0.8, -0.2, 0.15]} s={1.1} rot={[0.3, 0.3, 0.9]} /></group>
+    <group position={[0, 2.95 + Math.sin(t * 1.6) * 0.06, -1]} rotation={[0.22, spin, 0.0]}><Violin p={[0, 0, 0]} s={1.3} rot={[0, 0, 0.35]} /><Bow p={[0.8, -0.2, 0.15]} s={1.1} rot={[0.3, 0.3, 0.9]} /></group>
     {/* year plate and price tag */}
     <CanvasPlane p={[0, 1.2, 0.2]} s={[2.2 * yr + 0.001, 0.8]} px={[440, 160]} frame="#0b0d1a" draw={(c, W, H) => { c.fillStyle = "#F2B84B"; c.fillRect(0, 0, W, H); c.fillStyle = INK; c.font = "900 92px Inter, Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("1713", W / 2, H / 2 + 4); }} />
     <FaceGroup p={[0.0, 5.3 + Math.sin(t * 2) * 0.05, -0.6]}>

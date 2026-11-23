@@ -1,7 +1,7 @@
 // 2D stick-figure puppet v3: thick bean body, thin sticks, shading, physics-driven transforms, nervous acting.
 export type Look = {
   skin: string; body: string; outfit?: "suit" | "leather" | "blazer" | "hoodie" | "shirt"; tie?: string; shirt?: string;
-  hair?: "none" | "short" | "bob" | "swept" | "grey"; hairColor?: string; glasses?: boolean; badge?: string; hat?: string; shoe?: string; seed?: number /* unique head for main characters; undefined = shared NPC head */; tooth?: boolean;
+  hair?: "none" | "short" | "bob" | "swept" | "grey"; hairColor?: string; glasses?: boolean; badge?: string; hat?: string; shoe?: string; seed?: number /* unique head for main characters; undefined = shared NPC head */; mustache?: string;
   /* v5.1 main-character details */ sleeve?: string; pants?: string; stubble?: boolean; freckles?: boolean; ears?: boolean; brows?: number; lashes?: boolean; lips?: string; earring?: string; bowtie?: string; scarf?: string; patch?: string; flower?: string; sneakers?: boolean;
 };
 export type Arms = "down" | "up" | "hold" | "point" | "head" | "chest" | "box" | "shrug";
@@ -16,7 +16,7 @@ export const NPC_SEED = 7;
 const rr = (seed: number, k: number) => { const x = Math.sin(seed * 12.9898 + k * 78.233) * 43758.5453; return x - Math.floor(x); };
 const headShape = (seed: number) => {
   const a2 = 0.05 + rr(seed, 1) * 0.07, a3 = 0.03 + rr(seed, 2) * 0.06, a5 = 0.015 + rr(seed, 3) * 0.03, p2 = rr(seed, 4) * 6.28, p3 = rr(seed, 5) * 6.28, p5 = rr(seed, 6) * 6.28;
-  const sx = 0.92 + rr(seed, 7) * 0.2, sy = 0.94 + rr(seed, 8) * 0.14, eyeL = 0.92 + rr(seed, 9) * 0.3, eyeR = 0.92 + rr(seed, 10) * 0.3, gap = 0.34 + rr(seed, 11) * 0.1, mx = (rr(seed, 12) - 0.5) * 16, nx = (rr(seed, 13) - 0.5) * 10;
+  const main = seed !== NPC_SEED, sx = main ? 0.84 + rr(seed, 7) * 0.1 : 0.92 + rr(seed, 7) * 0.2, sy = main ? 1.16 + rr(seed, 8) * 0.14 : 0.94 + rr(seed, 8) * 0.14, eyeL = 0.92 + rr(seed, 9) * 0.3, eyeR = 0.92 + rr(seed, 10) * 0.3, gap = 0.34 + rr(seed, 11) * 0.1, mx = (rr(seed, 12) - 0.5) * 16, nx = (rr(seed, 13) - 0.5) * 10;
   const f = (t: number) => (1 + a2 * Math.cos(2 * t + p2) + a3 * Math.cos(3 * t + p3) + a5 * Math.cos(5 * t + p5));
   return { f, sx, sy, eyeL, eyeR, gap, mx, nx, tooth: rr(seed, 14) > 0.5 };
 };
@@ -152,7 +152,8 @@ export function drawPuppet(c: CanvasRenderingContext2D, W: number, H: number, lo
   else if (m === "worry" || m === "gulp") { const wob = nerv ? Math.sin(p.t * 1.9) * 3 * S : 0; c.moveTo(hx - 26 * S, my + 12 * S); c.quadraticCurveTo(hx, my - 6 * S + wob, hx + 26 * S, my + 12 * S); c.stroke(); }
   else if (m === "angry") { c.moveTo(hx - 26 * S, my + 14 * S); c.quadraticCurveTo(hx, my - 8 * S, hx + 26 * S, my + 14 * S); c.stroke(); }
   else if (m === "deadpan") { c.moveTo(hx - 20 * S, my + 4 * S); c.lineTo(hx + 20 * S, my + 4 * S); c.stroke(); }
-  else { c.arc(hx + mxo, my - 14 * S, 30 * S, 0.35, Math.PI - 0.35); c.stroke(); if (look.lips) { c.strokeStyle = look.lips; c.lineWidth = 9 * S; c.beginPath(); c.arc(hx + mxo, my - 14 * S, 30 * S, 0.5, Math.PI - 0.5); c.stroke(); c.strokeStyle = INK; c.lineWidth = 6 * S; c.beginPath(); c.arc(hx + mxo, my - 14 * S, 30 * S, 0.35, Math.PI - 0.35); c.stroke(); } if (hs.tooth || look.tooth) { c.fillStyle = "#fff"; c.lineWidth = 3.5 * S; c.beginPath(); c.roundRect(hx + mxo + 2 * S, my + 14 * S, 11 * S, 13 * S, 3 * S); c.fill(); c.stroke(); } }
+  else { c.arc(hx + mxo, my - 14 * S, 30 * S, 0.35, Math.PI - 0.35); c.stroke(); if (look.lips) { c.strokeStyle = look.lips; c.lineWidth = 9 * S; c.beginPath(); c.arc(hx + mxo, my - 14 * S, 30 * S, 0.5, Math.PI - 0.5); c.stroke(); c.strokeStyle = INK; c.lineWidth = 6 * S; c.beginPath(); c.arc(hx + mxo, my - 14 * S, 30 * S, 0.35, Math.PI - 0.35); c.stroke(); }  }
+  if (look.mustache) { const my2 = hy + hr * 0.37, mc = hx + mxo * 0.4; c.fillStyle = look.mustache; c.strokeStyle = INK; c.lineWidth = 4 * S; c.beginPath(); c.moveTo(mc, my2 - 3 * S); c.quadraticCurveTo(mc - 20 * S, my2 - 16 * S, mc - 50 * S, my2 + 6 * S); c.quadraticCurveTo(mc - 52 * S, my2 + 16 * S, mc - 38 * S, my2 + 12 * S); c.quadraticCurveTo(mc - 20 * S, my2 + 4 * S, mc, my2 + 8 * S); c.quadraticCurveTo(mc + 20 * S, my2 + 4 * S, mc + 38 * S, my2 + 12 * S); c.quadraticCurveTo(mc + 52 * S, my2 + 16 * S, mc + 50 * S, my2 + 6 * S); c.quadraticCurveTo(mc + 20 * S, my2 - 16 * S, mc, my2 - 3 * S); c.closePath(); c.fill(); c.stroke(); }
   if (look.glasses) { c.lineWidth = 6 * S; c.fillStyle = "rgba(190,225,255,.28)"; for (const ex of [ex0, ex1]) { c.beginPath(); c.arc(ex, eyeY, 28 * S, 0, 7); c.fill(); c.stroke(); } c.beginPath(); c.moveTo(ex0 + 28 * S, eyeY); c.lineTo(ex1 - 28 * S, eyeY); c.stroke(); }
   // sweat: drops sliding down the face + flung drops
   const sw = p.sweat ?? 0;

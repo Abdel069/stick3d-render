@@ -1,6 +1,7 @@
 import React from "react";
 import { Composition } from "remotion";
 import "@fontsource/inter/900.css";
+import "@fontsource/inter/600.css";
 import { Main } from "./Main";
 import { NvidiaV4 } from "./videos/NvidiaV4";
 import { JoshuaBell } from "./videos/JoshuaBell";

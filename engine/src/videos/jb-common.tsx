@@ -42,8 +42,8 @@ export const yawTo = (cam: V3, p: V3) => Math.atan2(cam[0] - p[0], cam[2] - p[2]
 export const toWorld = (p: V3, loc: V3, cam: V3): V3 => { const y = yawTo(cam, p); return [p[0] + loc[0] * Math.cos(y) + loc[2] * Math.sin(y), p[1] + loc[1], p[2] - loc[0] * Math.sin(y) + loc[2] * Math.cos(y)]; };
 
 /* ---------- looks ---------- */
-export const busker: Look = { skin: "#f1d0b0", body: "#E4675F", outfit: "shirt", hair: "short", hairColor: "#2a1a12", hat: "#F2B84B", shoe: "#41377F", seed: 3, sleeve: "#E4675F", pants: "#41377F", stubble: true, freckles: true, ears: true, brows: 1.15, scarf: "#3AA89E", patch: "♪", sneakers: true };
-export const tux: Look = { skin: "#f1d0b0", body: "#211B52", outfit: "suit", shirt: "#ffffff", hair: "short", hairColor: "#2a1a12", shoe: "#0b0d1a", seed: 11, sleeve: "#211B52", pants: "#211B52", bowtie: "#E4675F", flower: "#F2B84B", ears: true, brows: 1.5 };
+export const busker: Look = { skin: "#f1d0b0", body: "#E4675F", outfit: "shirt", hair: "short", hairColor: "#2a1a12", hat: "#F2B84B", shoe: "#41377F", seed: 3, mustache: "#2a1a12", sleeve: "#E4675F", pants: "#41377F", stubble: true, freckles: true, ears: true, brows: 1.15, scarf: "#3AA89E", patch: "♪", sneakers: true };
+export const tux: Look = { skin: "#f1d0b0", body: "#211B52", outfit: "suit", shirt: "#ffffff", hair: "short", hairColor: "#2a1a12", shoe: "#0b0d1a", seed: 11, mustache: "#2a1a12", sleeve: "#211B52", pants: "#211B52", bowtie: "#E4675F", flower: "#F2B84B", ears: true, brows: 1.5 };
 export const woman: Look = { skin: "#e9bf9a", body: "#3AA89E", outfit: "blazer", shirt: "#ffffff", hair: "bob", hairColor: "#4a2a1a", glasses: true, shoe: "#211B52", seed: 5, sleeve: "#3AA89E", pants: "#211B52", lashes: true, lips: "#E4675F", earring: "#F2B84B", ears: true, flower: "#E4675F", brows: 0.9 };
 export const crowd: Look[] = [
   { skin: "#fbe3c8", body: "#E4675F", outfit: "hoodie", hair: "short", hairColor: "#222" }, { skin: "#c98e62", body: "#3AA89E", outfit: "shirt", hair: "bob", hairColor: "#1a1010" },
@@ -56,10 +56,15 @@ export const rnd = (i: number, k = 0) => { const x = Math.sin(i * 127.1 + k * 31
 /* ---------- violin, bow, case, notes ---------- */
 export const Violin: React.FC<{ p: V3; s?: number; rot?: V3 }> = ({ p, s = 1, rot }) => (
   <group position={p} rotation={rot} scale={s}>
-    <Ball p={[0, 0, 0]} r={0.3} s={[1, 1.35, 0.3]} color="#7A5214" ink={0.06} />
-    <Box p={[0, 0.66, 0]} s={[0.09, 0.62, 0.06]} color="#6A2425" line={2} />
-    <Ball p={[0, 1.0, 0]} r={0.07} color="#7A5214" ink={0.04} />
-    <Box p={[0, -0.12, 0.1]} s={[0.22, 0.03, 0.02]} color="#FFE6A8" line={1} />
+    {/* real volume: thick body, lighter top/back plates, ribs visible when seen from the side */}
+    <Ball p={[0, 0, 0]} r={0.3} s={[1, 1.35, 0.62]} color="#8E4A1E" ink={0.06} />
+    <Ball p={[0, 0, 0.11]} r={0.3} s={[0.93, 1.28, 0.34]} color="#C2662A" ink={0.03} />
+    <Ball p={[0, 0, -0.11]} r={0.3} s={[0.93, 1.28, 0.34]} color="#B05A24" ink={0.03} />
+    <Box p={[0, 0.66, 0]} s={[0.1, 0.62, 0.11]} color="#2a1608" line={2} />
+    <Box p={[0, 0.3, 0.16]} s={[0.26, 0.05, 0.04]} color="#2a1608" line={1} />
+    <Box p={[-0.1, 0.05, 0.19]} s={[0.025, 0.2, 0.02]} color="#2a1608" line={1} /><Box p={[0.1, 0.05, 0.19]} s={[0.025, 0.2, 0.02]} color="#2a1608" line={1} />
+    <Ball p={[0, 1.0, 0]} r={0.075} s={[1, 1, 0.9]} color="#B05A24" ink={0.04} />
+    <Box p={[0, -0.34, 0.13]} s={[0.2, 0.12, 0.03]} color="#2a1608" line={1} />
   </group>
 );
 export const Bow: React.FC<{ p: V3; s?: number; rot?: V3 }> = ({ p, s = 1, rot }) => (

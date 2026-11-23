@@ -40,10 +40,24 @@ const groups: G[] = (() => {
   flush(); return g;
 })();
 export const Captions: React.FC = () => {
+  // v6 captions: quiet, modern, editorial. Medium-weight cream sentence case, soft shadow, thin honey rule, numbers in honey. No stroke.
   const f = useCurrentFrame(), t = f / FPS;
   const idx = groups.findIndex((g, i) => t >= g.a - 0.02 && t < (groups[i + 1]?.a ?? 99) - 0.02); const g = groups[Math.max(0, idx)];
-  const sc = interpolate(t - g.a, [0, 0.12], [0.75, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.back(2.6)) });
-  return <div style={{ position: "absolute", left: 30, right: 30, top: 880, textAlign: "center", fontFamily: "Inter, Arial", fontWeight: 900, fontSize: Math.min(88, Math.floor(640 / (Math.max(...String(g.text).split(/\s+/).map((w: string) => w.length), 4) * 0.66))), lineHeight: 1.05, color: "#F2B84B", WebkitTextStroke: "12px #0b0d1a", paintOrder: "stroke fill", transform: `scale(${sc})`, textShadow: "0 9px 0 #E4675F" }}>{g.text}</div>;
+  const k = interpolate(t - g.a, [0, 0.16], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
+  const maxLen = Math.max(...String(g.text).split(/\s+/).map((w: string) => w.length), 4);
+  const fs = Math.min(54, Math.floor(600 / (maxLen * 0.6)));
+  const parts = String(g.text).split(" ");
+  return (
+    <>
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 420, background: "linear-gradient(to top, rgba(14,11,40,.5), rgba(14,11,40,0))" }} />
+      <div style={{ position: "absolute", left: 40, right: 40, bottom: 250, textAlign: "center", opacity: k, transform: `translateY(${(1 - k) * 12}px)` }}>
+        <div style={{ width: 34, height: 3, borderRadius: 2, background: "#F2B84B", margin: "0 auto 16px", opacity: 0.95 }} />
+        <div style={{ fontFamily: "Inter, Arial", fontWeight: 600, fontSize: fs, lineHeight: 1.15, letterSpacing: "0.015em", color: "#FAF0DC", textShadow: "0 2px 18px rgba(8,6,30,.7), 0 1px 3px rgba(8,6,30,.55)" }}>
+          {parts.map((w, i) => <span key={i} style={{ color: /[0-9$]/.test(w) ? "#F2B84B" : undefined }}>{w}{i < parts.length - 1 ? " " : ""}</span>)}
+        </div>
+      </div>
+    </>
+  );
 };
 
 const Demo = ({ t, f }: Ctx) => (<>

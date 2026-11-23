@@ -43,7 +43,7 @@ export const Captions: React.FC = () => {
   const f = useCurrentFrame(), t = f / FPS;
   const idx = groups.findIndex((g, i) => t >= g.a - 0.02 && t < (groups[i + 1]?.a ?? 99) - 0.02); const g = groups[Math.max(0, idx)];
   const sc = interpolate(t - g.a, [0, 0.12], [0.75, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.back(2.6)) });
-  return <div style={{ position: "absolute", left: 30, right: 30, top: 880, textAlign: "center", fontFamily: "Inter, Arial", fontWeight: 900, fontSize: 88, lineHeight: 1.05, color: "#FFC42E", WebkitTextStroke: "12px #0b0d1a", paintOrder: "stroke fill", transform: `scale(${sc})`, textShadow: "0 9px 0 #FF4F6D" }}>{g.text}</div>;
+  return <div style={{ position: "absolute", left: 30, right: 30, top: 880, textAlign: "center", fontFamily: "Inter, Arial", fontWeight: 900, fontSize: Math.min(88, Math.floor(640 / (Math.max(...String(g.text).split(/\s+/).map((w: string) => w.length), 4) * 0.66))), lineHeight: 1.05, color: "#F2B84B", WebkitTextStroke: "12px #0b0d1a", paintOrder: "stroke fill", transform: `scale(${sc})`, textShadow: "0 9px 0 #E4675F" }}>{g.text}</div>;
 };
 
 const Demo = ({ t, f }: Ctx) => (<>

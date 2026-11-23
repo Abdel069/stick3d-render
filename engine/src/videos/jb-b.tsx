@@ -16,32 +16,32 @@ const K6: Key[] = [
   { t: 27.8, pos: orbit(0.65, 8.0, 4.2, [0, 0, -1]), look: [0.1, 3.3, -1], fov: 44 },
 ];
 export const S6 = ({ t, f }: Ctx) => {
-  const spin = (t - 22.1) * 0.5, tag = seg(t, 23.0, 23.5, Easing.out(Easing.back(2.5))), yr = seg(t, 23.3, 24.2), mil = seg(t, 26.2, 27.2, Easing.inOut(Easing.cubic)), amazed = seg(t, 26.3, 26.55, Easing.out(Easing.back(2.5)));
+  const spin = (t - 22.1) * 0.5, tag = seg(t, 23.0, 23.5, Easing.out(Easing.back(2.5))), yr = seg(t, 23.3, 24.2), mil = seg(t, 25.55, 26.6, Easing.inOut(Easing.cubic)), amazed = seg(t, 26.3, 26.55, Easing.out(Easing.back(2.5)));
   const price = (3.5 * mil).toFixed(1).replace(".", ",");
   return (<>
     <Cam t={t} keys={K6} />
     <Lights warm="#e8d8ff" />
-    <Floor kind="marble" a="#221657" b="#221657" unit={2.4} w={34} d={30} />
-    <WallDoor z={-8} W={34} kind="plain" a="#221657" b="#221657" base="#221657" />
-    <SideWall x={-8} kind="plain" a="#221657" b="#221657" /><SideWall x={8} kind="plain" a="#221657" b="#221657" />
+    <Floor kind="marble" a="#211B52" b="#211B52" unit={2.4} w={34} d={30} />
+    <WallDoor z={-8} W={34} kind="plain" a="#211B52" b="#211B52" base="#211B52" />
+    <SideWall x={-8} kind="plain" a="#211B52" b="#211B52" /><SideWall x={8} kind="plain" a="#211B52" b="#211B52" />
     {/* gallery dressing */}
     <Frame p={[-4.6, 4.6, -7.9]} s={[2.6, 3.4]} art={1} /><Frame p={[0, 5.4, -7.9]} s={[3.2, 2.2]} art={0} /><Frame p={[4.8, 4.6, -7.9]} s={[2.6, 3.4]} art={2} />
-    {[-5.8, 5.8].map((x) => <React.Fragment key={x}><Cyl p={[x, 3.0, -3.4]} rt={0.4} h={6} color="#3D2A94" /><Cyl p={[x, 0.15, -3.4]} rt={0.55} h={0.3} color="#FFC42E" /></React.Fragment>)}
-    {[-3.4, 3.4].map((x) => <React.Fragment key={"r" + x}><Cyl p={[x, 0.6, 1.6]} rt={0.09} h={1.2} color="#FFC42E" /><Ball p={[x, 1.25, 1.6]} r={0.16} color="#FFC42E" /></React.Fragment>)}
-    <Box p={[0, 0.55, 1.6]} s={[6.4, 0.05, 0.05]} color="#C42E4C" line={2} />
-    <Plant p={[-6.4, 0, 0.5]} s={1.2} pot="#FFC42E" /><Plant p={[6.4, 0, 0.8]} s={1.2} pot="#FFC42E" /><Rug p={[0, 0.02, -1]} s={[8, 7]} a="#3D2A94" b="#C42E4C" />
-    <SpotCone p={[0, 10, -1]} h={10} r={2.7} color="#F0DDB8" o={0.14} /><Glow p={[0, 1.4, -1]} r={2.6} color="rgba(255,225,160,1)" o={0.3} /><Dust t={t} n={18} area={[4, 8, 4]} color="rgba(255,236,190,.9)" />
+    {[-5.8, 5.8].map((x) => <React.Fragment key={x}><Cyl p={[x, 3.0, -3.4]} rt={0.4} h={6} color="#41377F" /><Cyl p={[x, 0.15, -3.4]} rt={0.55} h={0.3} color="#F2B84B" /></React.Fragment>)}
+    {[-3.4, 3.4].map((x) => <React.Fragment key={"r" + x}><Cyl p={[x, 0.6, 1.6]} rt={0.09} h={1.2} color="#F2B84B" /><Ball p={[x, 1.25, 1.6]} r={0.16} color="#F2B84B" /></React.Fragment>)}
+    <Box p={[0, 0.55, 1.6]} s={[6.4, 0.05, 0.05]} color="#B04440" line={2} />
+    <Plant p={[-6.4, 0, 0.5]} s={1.2} pot="#F2B84B" /><Plant p={[6.4, 0, 0.8]} s={1.2} pot="#F2B84B" /><Rug p={[0, 0.02, -1]} s={[8, 7]} a="#41377F" b="#B04440" />
+    <SpotCone p={[0, 10, -1]} h={10} r={2.7} color="#EBDCBA" o={0.14} /><Glow p={[0, 1.4, -1]} r={2.6} color="rgba(255,225,160,1)" o={0.3} /><Dust t={t} n={18} area={[4, 8, 4]} color="rgba(255,236,190,.9)" />
     {/* pedestal + glass + the violin turning in the spotlight */}
-    <Cyl p={[0, 0.9, -1]} rt={1.5} rb={1.7} h={1.8} color="#e8e0f5" /><Cyl p={[0, 1.85, -1]} rt={1.65} h={0.14} color="#FFC42E" />
+    <Cyl p={[0, 0.9, -1]} rt={1.5} rb={1.7} h={1.8} color="#e8e0f5" /><Cyl p={[0, 1.85, -1]} rt={1.65} h={0.14} color="#F2B84B" />
     <group position={[0, 3.3, -1]} rotation={[0, spin, 0.0]}><Violin p={[0, Math.sin(t * 1.6) * 0.06, 0]} s={1.5} rot={[0, 0, 0.35]} /><Bow p={[0.8, -0.2, 0.15]} s={1.1} rot={[0.3, 0.3, 0.9]} /></group>
     {/* year plate and price tag */}
-    <CanvasPlane p={[0, 1.2, 0.2]} s={[2.2 * yr + 0.001, 0.8]} px={[440, 160]} frame="#0b0d1a" draw={(c, W, H) => { c.fillStyle = "#FFC42E"; c.fillRect(0, 0, W, H); c.fillStyle = INK; c.font = "900 92px Inter, Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("1713", W / 2, H / 2 + 4); }} />
+    <CanvasPlane p={[0, 1.2, 0.2]} s={[2.2 * yr + 0.001, 0.8]} px={[440, 160]} frame="#0b0d1a" draw={(c, W, H) => { c.fillStyle = "#F2B84B"; c.fillRect(0, 0, W, H); c.fillStyle = INK; c.font = "900 92px Inter, Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("1713", W / 2, H / 2 + 4); }} />
     <FaceGroup p={[0.0, 5.3 + Math.sin(t * 2) * 0.05, -0.6]}>
       <Cyl p={[0, 0.9, 0]} rt={0.02} h={1.8} color="#c9d3e0" line={1} />
-      <CanvasPlane p={[0, 0, 0.1]} s={[2.8 * tag + 0.001, 1.3 * tag + 0.001]} px={[480, 225]} frame="#0b0d1a" draw={(c, W, H) => { c.fillStyle = "#fffaf0"; c.fillRect(0, 0, W, H); c.fillStyle = "#FF4F6D"; c.fillRect(0, 0, W, 54); c.fillStyle = "#fff"; c.font = "900 36px Inter, Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("STRADIVARI", W / 2, 29); c.fillStyle = INK; c.font = "900 96px Inter, Arial"; c.fillText(mil > 0 ? "$" + price + " Mio" : "? Mio", W / 2, 140); }} />
+      <CanvasPlane p={[0, 0, 0.1]} s={[2.8 * tag + 0.001, 1.3 * tag + 0.001]} px={[480, 225]} frame="#0b0d1a" draw={(c, W, H) => { c.fillStyle = "#fffaf0"; c.fillRect(0, 0, W, H); c.fillStyle = "#E4675F"; c.fillRect(0, 0, W, 54); c.fillStyle = "#fff"; c.font = "900 36px Inter, Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("STRADIVARI", W / 2, 29); c.fillStyle = INK; c.font = "900 96px Inter, Arial"; c.fillText(mil > 0 ? "$" + price + " Mio" : "? Mio", W / 2, 140); }} />
     </FaceGroup>
     {/* gold piles rising with the number */}
-    {[-2.6, 2.6].map((x, i) => <ChipStack key={x} p={[x, 0, 0.4]} n={Math.max(1, Math.round(14 * mil))} color={i ? "#FFC42E" : "#2EC4B6"} r={0.7} />)}
+    {[-2.6, 2.6].map((x, i) => <ChipStack key={x} p={[x, 0, 0.4]} n={Math.max(1, Math.round(14 * mil))} color={i ? "#F2B84B" : "#3AA89E"} r={0.7} />)}
     {/* a visitor gapes at the price */}
     <Person p={[-3.8, 0, 0.6]} h={3.2} look={crowd[2]} f={f} pose={{ mood: amazed > 0.3 ? "shock" : "smile", lookX: 1, flip: false, arms: amazed > 0.3 ? "head" : "chest", armK: Math.max(0.6, amazed), squash: -0.12 * Math.exp(-Math.max(0, t - 26.4) * 6) * (t > 26.4 ? 1 : 0) }} />
   </>);
@@ -59,27 +59,27 @@ export const S7 = ({ t, f }: Ctx) => {
   const bow = seg(t, 27.9, 28.4, Easing.inOut(Easing.sin)) * (1 - seg(t, 30.9, 31.3));
   return (<>
     <Cam t={t} keys={K7} />
-    <Lights warm="#F0DDB8" />
-    <Floor kind="plank" a="#8A5A00" b="#8A5A00" unit={1.6} w={34} d={30} />
-    <WallDoor z={-6} W={34} kind="wood" a="#6E1630" b="#6E1630" base="#6E1630" unit={1.4} />
+    <Lights warm="#EBDCBA" />
+    <Floor kind="plank" a="#7A5214" b="#7A5214" unit={1.6} w={34} d={30} />
+    <WallDoor z={-6} W={34} kind="wood" a="#6A2425" b="#6A2425" base="#6A2425" unit={1.4} />
     <Curtain p={[-6.8, 4.6, -5.8]} s={[3.2, 9.2]} /><Curtain p={[6.8, 4.6, -5.8]} s={[3.2, 9.2]} /><Curtain p={[0, 8.7, -5.7]} s={[18, 1.8]} folds={16} />
-    <CanvasPlane p={[0, 6.0, -5.8]} s={[6.0 * name + 0.001, 1.3]} px={[740, 160]} frame="#FFC42E" draw={(c, W, H) => { c.fillStyle = "#12091f"; c.fillRect(0, 0, W, H); c.fillStyle = "#FFE08A"; c.font = "900 104px Inter, Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("JOSHUA BELL", W / 2, H / 2 + 4); }} />
-    {[-5, -2.5, 2.5, 5].map((x) => <React.Fragment key={x}><SpotCone p={[x, 9.4, -1]} h={9.4} r={1.4} color="#F0DDB8" o={0.07} /><Glow p={[x, 8.9, -0.8]} r={0.8} color="rgba(255,225,170,1)" o={0.6} /></React.Fragment>)}
-    <SpotCone p={[0, 9.4, -0.2]} h={9.4} r={2.6} color="#F0DDB8" o={0.16} /><Glow p={[0, 0.1, 0]} r={2.6} color="rgba(255,236,190,1)" o={0.35} />
+    <CanvasPlane p={[0, 6.0, -5.8]} s={[6.0 * name + 0.001, 1.3]} px={[740, 160]} frame="#F2B84B" draw={(c, W, H) => { c.fillStyle = "#12091f"; c.fillRect(0, 0, W, H); c.fillStyle = "#FFE6A8"; c.font = "900 104px Inter, Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("JOSHUA BELL", W / 2, H / 2 + 4); }} />
+    {[-5, -2.5, 2.5, 5].map((x) => <React.Fragment key={x}><SpotCone p={[x, 9.4, -1]} h={9.4} r={1.4} color="#EBDCBA" o={0.07} /><Glow p={[x, 8.9, -0.8]} r={0.8} color="rgba(255,225,170,1)" o={0.6} /></React.Fragment>)}
+    <SpotCone p={[0, 9.4, -0.2]} h={9.4} r={2.6} color="#EBDCBA" o={0.16} /><Glow p={[0, 0.1, 0]} r={2.6} color="rgba(255,236,190,1)" o={0.35} />
     {/* stage dressing: piano, music stand, chairs, flowers, speakers */}
-    <Box p={[-4.4, 1.0, -3.0]} s={[3.2, 0.3, 2.0]} color="#15151e" /><Box p={[-4.4, 0.55, -3.0]} s={[2.6, 0.9, 1.6]} color="#15151e" /><Box p={[-4.4, 1.55, -3.4]} s={[3.0, 0.1, 1.6]} color="#0B4A48" rot={[-0.5, 0, 0]} />
-    {[-5.8, -3.0].map((x) => <Cyl key={x} p={[x, 0.45, -1.2]} rt={0.4} h={0.9} color="#0B4A48" />)}
-    <Cyl p={[1.9, 1.0, -0.8]} rt={0.04} h={2.0} color="#221657" line={2} /><Box p={[1.9, 2.0, -0.8]} s={[0.9, 0.6, 0.05]} color="#fffaf0" rot={[-0.3, 0, 0]} line={2} />
-    <Plant p={[6.4, 0, -2.2]} s={1.5} pot="#FFC42E" /><Plant p={[-7.0, 0, -0.4]} s={1.5} pot="#FFC42E" /><Box p={[7.3, 1.4, 1.0]} s={[1.5, 2.8, 1.3]} color="#0B4A48" /><Ball p={[7.3, 1.9, 1.7]} r={0.42} color="#0B4A48" />
+    <Box p={[-4.4, 1.0, -3.0]} s={[3.2, 0.3, 2.0]} color="#15151e" /><Box p={[-4.4, 0.55, -3.0]} s={[2.6, 0.9, 1.6]} color="#15151e" /><Box p={[-4.4, 1.55, -3.4]} s={[3.0, 0.1, 1.6]} color="#124745" rot={[-0.5, 0, 0]} />
+    {[-5.8, -3.0].map((x) => <Cyl key={x} p={[x, 0.45, -1.2]} rt={0.4} h={0.9} color="#124745" />)}
+    <Cyl p={[1.9, 1.0, -0.8]} rt={0.04} h={2.0} color="#211B52" line={2} /><Box p={[1.9, 2.0, -0.8]} s={[0.9, 0.6, 0.05]} color="#fffaf0" rot={[-0.3, 0, 0]} line={2} />
+    <Plant p={[6.4, 0, -2.2]} s={1.5} pot="#F2B84B" /><Plant p={[-7.0, 0, -0.4]} s={1.5} pot="#F2B84B" /><Box p={[7.3, 1.4, 1.0]} s={[1.5, 2.8, 1.3]} color="#124745" /><Ball p={[7.3, 1.9, 1.7]} r={0.42} color="#124745" />
     <Globe p={[-3.6, 4.2 * globe + 0.001, -2.4]} r={1.3 * globe + 0.001} rotY={t * 0.8} />
-    {Array.from({ length: 5 }, (_, i) => <CanvasPlane key={i} p={[-3.6 + (i - 2) * 0.75, 6.3, -2.2]} s={[0.6 * globe + 0.001, 0.6 * globe + 0.001]} px={[96, 96]} draw={(c, W, H) => { c.clearRect(0, 0, W, H); c.fillStyle = "#FFC42E"; c.strokeStyle = INK; c.lineWidth = 6; c.beginPath(); for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + k * Math.PI / 5, r = k % 2 ? 18 : 42; c.lineTo(W / 2 + Math.cos(a) * r, H / 2 + Math.sin(a) * r); } c.closePath(); c.fill(); c.stroke(); }} />)}
+    {Array.from({ length: 5 }, (_, i) => <CanvasPlane key={i} p={[-3.6 + (i - 2) * 0.75, 6.3, -2.2]} s={[0.6 * globe + 0.001, 0.6 * globe + 0.001]} px={[96, 96]} draw={(c, W, H) => { c.clearRect(0, 0, W, H); c.fillStyle = "#F2B84B"; c.strokeStyle = INK; c.lineWidth = 6; c.beginPath(); for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + k * Math.PI / 5, r = k % 2 ? 18 : 42; c.lineTo(W / 2 + Math.cos(a) * r, H / 2 + Math.sin(a) * r); } c.closePath(); c.fill(); c.stroke(); }} />)}
     <Calendar p={[5.2, 4.8, -2.4]} month="VOR" day="2" s={1.9 * cal + 0.001} mark="TAGEN" markK={mk} />
     <Dust t={t} n={14} area={[6, 7, 3]} color="rgba(255,225,150,.9)" />
     {/* audience heads in the foreground */}
-    {[10.8, 12.4].map((z, r) => Array.from({ length: 8 }, (_, i) => { const xx = -7 + i * 2 + (r % 2) * 0.8; return <React.Fragment key={r + "-" + i}><Box p={[xx, 0.8, z]} s={[1.6, 1.6, 0.3]} color="#6E1630" line={3} /><Ball p={[xx, 1.95 + Math.sin(f * 0.07 + i + r) * 0.02, z - 0.3]} r={0.42} color={["#0B4A48", "#0B4A48", "#221657", "#221657"][(i + r) % 4]} /></React.Fragment>; }))}
+    {[10.8, 12.4].map((z, r) => Array.from({ length: 8 }, (_, i) => { const xx = -7 + i * 2 + (r % 2) * 0.8; return <React.Fragment key={r + "-" + i}><Box p={[xx, 0.8, z]} s={[1.6, 1.6, 0.3]} color="#6A2425" line={3} /><Ball p={[xx, 1.95 + Math.sin(f * 0.07 + i + r) * 0.02, z - 0.3]} r={0.42} color={["#124745", "#124745", "#211B52", "#211B52"][(i + r) % 4]} /></React.Fragment>; }))}
     {/* the soloist in a tuxedo: plays, then takes a bow */}
     {bow < 0.5 ? <Player P={[0, 0, 0]} h={3.6} look={tux} f={f} t={t} mood="smile" /> : <Person p={[0, 0, 0]} h={3.6} look={tux} f={f} pose={{ mood: "grin", arms: "down", hunch: 0.9, squash: -0.1, tilt: 0.25 }} />}
-    {bow < 0.5 ? <Notes p={[-0.4, 3.4, 0.4]} t={t} color="#FFE08A" /> : null}
+    {bow < 0.5 ? <Notes p={[-0.4, 3.4, 0.4]} t={t} color="#FFE6A8" /> : null}
   </>);
 };
 
@@ -94,22 +94,22 @@ export const S8 = ({ t, f }: Ctx) => {
   const cheer = t > 33.6 ? 1 : 0.3;
   return (<>
     <Cam t={t} keys={K8} impacts={[[33.6, 0.03]]} />
-    <Lights warm="#F0DDB8" />
-    <Floor kind="carpet" a="#6E1630" b="#6E1630" unit={1.6} w={34} d={40} />
-    <WallDoor z={-17} W={40} kind="wood" a="#6E1630" b="#6E1630" base="#6E1630" unit={1.4} />
+    <Lights warm="#EBDCBA" />
+    <Floor kind="carpet" a="#6A2425" b="#6A2425" unit={1.6} w={34} d={40} />
+    <WallDoor z={-17} W={40} kind="wood" a="#6A2425" b="#6A2425" base="#6A2425" unit={1.4} />
     <Curtain p={[-9, 5, -16.6]} s={[4, 10]} /><Curtain p={[9, 5, -16.6]} s={[4, 10]} />
     {/* balcony + risers */}
-    <Box p={[0, 4.6, -13]} s={[22, 0.5, 3]} color="#6E1630" /><Box p={[0, 5.2, -12.4]} s={[22, 0.9, 0.2]} color="#FFC42E" line={2} />
-    {[-8, -4, 0, 4, 8].map((x) => <React.Fragment key={x}><Cyl p={[x, 8.6, -6]} rt={0.35} rb={0.2} h={0.9} color="#FFE08A" /><Glow p={[x, 8.2, -6]} r={1.4} color="rgba(255,225,170,1)" o={0.5} /></React.Fragment>)}
+    <Box p={[0, 4.6, -13]} s={[22, 0.5, 3]} color="#6A2425" /><Box p={[0, 5.2, -12.4]} s={[22, 0.9, 0.2]} color="#F2B84B" line={2} />
+    {[-8, -4, 0, 4, 8].map((x) => <React.Fragment key={x}><Cyl p={[x, 8.6, -6]} rt={0.35} rb={0.2} h={0.9} color="#FFE6A8" /><Glow p={[x, 8.2, -6]} r={1.4} color="rgba(255,225,170,1)" o={0.5} /></React.Fragment>)}
     {[0, 1, 2].map((r) => Array.from({ length: 6 }, (_, i) => { const x = -6.2 + i * 2.5 + (r % 2) * 1.2, z = -2.2 - r * 2.8, y = r * 0.55, up = Math.abs(Math.sin(f * 0.35 + i * 1.3 + r)) * cheer;
-      return <React.Fragment key={r + "-" + i}><Box p={[x, y + 0.7, z - 0.5]} s={[1.8, 1.4, 0.3]} color="#C42E4C" line={3} /><Person p={[x, y, z]} h={3.0 - r * 0.1} look={crowd[(i + r * 3) % 8]} f={f + i * 5 + r} pose={{ mood: "grin", arms: "up", armK: 0.5 + 0.5 * up, squash: 0.03 * up }} /></React.Fragment>; }))}
+      return <React.Fragment key={r + "-" + i}><Box p={[x, y + 0.7, z - 0.5]} s={[1.8, 1.4, 0.3]} color="#B04440" line={3} /><Person p={[x, y, z]} h={3.0 - r * 0.1} look={crowd[(i + r * 3) % 8]} f={f + i * 5 + r} pose={{ mood: "grin", arms: "up", armK: 0.5 + 0.5 * up, squash: 0.03 * up }} /></React.Fragment>; }))}
     {/* SOLD OUT stamp slams on "ausverkauft" and a giant ticket arrives on "100 Dollar" */}
-    <CanvasPlane p={[0, 8.6, -12]} s={[7 * stamp + 0.001, 2.5 * stamp + 0.001]} rot={[0, 0, -0.08]} px={[720, 256]} frame="#0b0d1a" draw={(c, W, H) => { c.fillStyle = "#fffaf0"; c.fillRect(0, 0, W, H); c.strokeStyle = "#FF4F6D"; c.lineWidth = 18; c.strokeRect(20, 20, W - 40, H - 40); c.fillStyle = "#FF4F6D"; c.font = "900 118px Inter, Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("AUSVERKAUFT", W / 2, H / 2 + 6); }} />
-    <CanvasPlane p={[lerp(6, 0, tk), 5.6, -9]} s={[5.0 * (t > 35.1 ? 1 : 0.001), 2.2]} rot={[0, 0, lerp(0.5, -0.06, tk)]} px={[640, 280]} frame="#0b0d1a" draw={(c, W, H) => { c.fillStyle = "#FFC42E"; c.fillRect(0, 0, W, H); c.fillStyle = INK; c.font = "900 54px Inter, Arial"; c.textAlign = "center"; c.fillText("BOSTON  •  KONZERT", W / 2, 70); c.font = "900 150px Inter, Arial"; c.fillText("100 $", W / 2, 200); c.strokeStyle = INK; c.setLineDash([14, 12]); c.lineWidth = 6; c.beginPath(); c.moveTo(W * 0.86, 0); c.lineTo(W * 0.86, H); c.stroke(); }} />
+    <CanvasPlane p={[0, 8.6, -12]} s={[7 * stamp + 0.001, 2.5 * stamp + 0.001]} rot={[0, 0, -0.08]} px={[720, 256]} frame="#0b0d1a" draw={(c, W, H) => { c.fillStyle = "#fffaf0"; c.fillRect(0, 0, W, H); c.strokeStyle = "#E4675F"; c.lineWidth = 18; c.strokeRect(20, 20, W - 40, H - 40); c.fillStyle = "#E4675F"; c.font = "900 118px Inter, Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("AUSVERKAUFT", W / 2, H / 2 + 6); }} />
+    <CanvasPlane p={[lerp(6, 0, tk), 5.6, -9]} s={[5.0 * (t > 35.1 ? 1 : 0.001), 2.2]} rot={[0, 0, lerp(0.5, -0.06, tk)]} px={[640, 280]} frame="#0b0d1a" draw={(c, W, H) => { c.fillStyle = "#F2B84B"; c.fillRect(0, 0, W, H); c.fillStyle = INK; c.font = "900 54px Inter, Arial"; c.textAlign = "center"; c.fillText("BOSTON  •  KONZERT", W / 2, 70); c.font = "900 150px Inter, Arial"; c.fillText("100 $", W / 2, 200); c.strokeStyle = INK; c.setLineDash([14, 12]); c.lineWidth = 6; c.beginPath(); c.moveTo(W * 0.86, 0); c.lineTo(W * 0.86, H); c.stroke(); }} />
     <Dust t={t} n={16} area={[7, 7, 4]} color="rgba(255,225,150,.9)" />
     <Shaft p={[-3, 6, -5]} s={[2.6, 12]} rot={[0, 0, 0.3]} color="255,220,160" o={0.14} />
     {/* stage lip + conductor's rail in the foreground */}
-    <Box p={[0, 0.5, 6]} s={[20, 1.0, 0.5]} color="#6E1630" line={3} /><Plant p={[-5.5, 1.0, 5.4]} s={1.1} pot="#FFC42E" /><Plant p={[5.5, 1.0, 5.4]} s={1.1} pot="#FFC42E" />
+    <Box p={[0, 0.5, 6]} s={[20, 1.0, 0.5]} color="#6A2425" line={3} /><Plant p={[-5.5, 1.0, 5.4]} s={1.1} pot="#F2B84B" /><Plant p={[5.5, 1.0, 5.4]} s={1.1} pot="#F2B84B" />
   </>);
 };
 
@@ -126,22 +126,22 @@ export const S9 = ({ t, f }: Ctx) => {
     <Lights warm="#fff0d8" />
     {/* left: grey station, right: velvet hall, divided at x = 0 */}
     <Surface p={[-9, 0, 0]} s={[18, 30]} rot={[-Math.PI / 2, 0, 0]} kind="tile" a="#9aa6b2" b="#8f9ba8" unit={1.8} />
-    <Surface p={[9, 0, 0]} s={[18, 30]} rot={[-Math.PI / 2, 0, 0]} kind="plank" a="#8A5A00" b="#8A5A00" unit={1.6} />
-    <Surface p={[-9, 4.5, -4]} s={[18, 9]} kind="brick" a="#18857D" b="#0B4A48" unit={1.1} /><Surface p={[9, 4.5, -4]} s={[18, 9]} kind="wood" a="#6E1630" b="#6E1630" unit={1.4} />
-    <Box p={[0, 4.5, -3.9]} s={[0.14, 9, 0.3]} color="#FFC42E" line={2} />
+    <Surface p={[9, 0, 0]} s={[18, 30]} rot={[-Math.PI / 2, 0, 0]} kind="plank" a="#7A5214" b="#7A5214" unit={1.6} />
+    <Surface p={[-9, 4.5, -4]} s={[18, 9]} kind="brick" a="#247A75" b="#124745" unit={1.1} /><Surface p={[9, 4.5, -4]} s={[18, 9]} kind="wood" a="#6A2425" b="#6A2425" unit={1.4} />
+    <Box p={[0, 4.5, -3.9]} s={[0.14, 9, 0.3]} color="#F2B84B" line={2} />
     <Curtain p={[3.6, 4.6, -3.8]} s={[1.8, 9]} /><Curtain p={[5.6, 4.6, -3.8]} s={[1.8, 9]} />
-    <Cyl p={[-3.8, 4.5, -3.4]} rt={0.4} h={9} color="#0B4A48" /><Cyl p={[-5.8, 4.5, -3.5]} rt={0.4} h={9} color="#0B4A48" /><Frame p={[-2.0, 7.4, -3.7]} s={[1.4, 1.0]} art={0} />
-    <SpotCone p={[1.75, 10, 0]} h={10} r={1.9} color="#F0DDB8" o={0.12} /><Glow p={[1.75, 0.1, 0]} r={2.2} color="rgba(255,236,190,1)" o={0.3} />
+    <Cyl p={[-3.8, 4.5, -3.4]} rt={0.4} h={9} color="#124745" /><Cyl p={[-5.8, 4.5, -3.5]} rt={0.4} h={9} color="#124745" /><Frame p={[-2.0, 7.4, -3.7]} s={[1.4, 1.0]} art={0} />
+    <SpotCone p={[1.75, 10, 0]} h={10} r={1.9} color="#EBDCBA" o={0.12} /><Glow p={[1.75, 0.1, 0]} r={2.2} color="rgba(255,236,190,1)" o={0.3} />
     <Glow p={[-1.75, 0.1, 0]} r={2.0} color="rgba(210,230,255,1)" o={0.2} /><Shaft p={[-3.6, 5, -2]} s={[1.6, 9]} rot={[0, 0, 0.3]} color="200,225,255" o={0.1} />
-    <Plant p={[-3.6, 0, 0.8]} s={1.1} /><Plant p={[3.7, 0, 0.8]} s={1.1} pot="#FFC42E" /><Lamp p={[-0.9, 0, -2.2]} h={3.2} color="#cde8ff" /><Rug p={[1.75, 0.02, 0.6]} s={[3.6, 2.4]} a="#6E1630" b="#FFC42E" />
-    <Box p={[-1.75, 0.0, 1.0]} s={[1.8, 0.01, 0.8]} color="#0B4A48" /><Dust t={t} area={[6, 6, 4]} color="rgba(255,240,200,.9)" />
+    <Plant p={[-3.6, 0, 0.8]} s={1.1} /><Plant p={[3.7, 0, 0.8]} s={1.1} pot="#F2B84B" /><Lamp p={[-0.9, 0, -2.2]} h={3.2} color="#cde8ff" /><Rug p={[1.75, 0.02, 0.6]} s={[3.6, 2.4]} a="#6A2425" b="#F2B84B" />
+    <Box p={[-1.75, 0.0, 1.0]} s={[1.8, 0.01, 0.8]} color="#124745" /><Dust t={t} area={[6, 6, 4]} color="rgba(255,240,200,.9)" />
     <Player P={[-1.75, 0, 0]} h={HH} look={busker} f={f} t={t} mood="smile" /><Notes p={[-2.6, 3.0, 0.4]} t={t} amp={0.8} />
-    <Player P={[1.75, 0, 0]} h={HH} look={busker} f={f} t={t} mood="smile" /><Notes p={[1.7, 3.0, 0.4]} t={t} color="#FFE08A" amp={0.8} />
+    <Player P={[1.75, 0, 0]} h={HH} look={busker} f={f} t={t} mood="smile" /><Notes p={[1.7, 3.0, 0.4]} t={t} color="#FFE6A8" amp={0.8} />
     {/* price tags + frames drop in on "Rahmen" */}
-    <Sign p={[-1.75, 6.9, 0.4]} s={[1.8 * tg + 0.001, 0.8 * tg + 0.001]} text="32 $" bg="#fffaf0" fg="#111" size={90} /><Sign p={[1.75, 6.9, 0.4]} s={[1.9 * tg + 0.001, 0.8 * tg + 0.001]} text="100 $" bg="#FFC42E" fg="#111" size={90} />
-    {[[-1.75, "#0B4A48", 0.1], [1.75, "#FFC42E", 0.24]].map(([x, col, th], i) => { const y = lerp(9, 0, fr); const w = 2.3, hh = 5.0, c = col as string, T = th as number, X = x as number;
+    <Sign p={[-1.75, 6.9, 0.4]} s={[1.8 * tg + 0.001, 0.8 * tg + 0.001]} text="32 $" bg="#fffaf0" fg="#111" size={90} /><Sign p={[1.75, 6.9, 0.4]} s={[1.9 * tg + 0.001, 0.8 * tg + 0.001]} text="100 $" bg="#F2B84B" fg="#111" size={90} />
+    {[[-1.75, "#124745", 0.1], [1.75, "#F2B84B", 0.24]].map(([x, col, th], i) => { const y = lerp(9, 0, fr); const w = 2.3, hh = 5.0, c = col as string, T = th as number, X = x as number;
       return <group key={i} position={[X, y, 0.9]}><Box p={[0, hh + T / 2 - 0.05, 0]} s={[w + T * 2, T, 0.3]} color={c} /><Box p={[0, 0.05 - T / 2 + 0.02, 0]} s={[w + T * 2, T, 0.3]} color={c} />
-        <Box p={[-w / 2 - T / 2, hh / 2, 0]} s={[T, hh, 0.3]} color={c} /><Box p={[w / 2 + T / 2, hh / 2, 0]} s={[T, hh, 0.3]} color={c} />{i ? <><Ball p={[-w / 2 - T / 2, hh, 0.2]} r={0.26} color="#FFE08A" /><Ball p={[w / 2 + T / 2, hh, 0.2]} r={0.26} color="#FFE08A" /><Glow p={[0, hh / 2, 0.3]} r={3.2} color="rgba(255,215,110,1)" o={0.3 * glow} /></> : null}</group>; })}
+        <Box p={[-w / 2 - T / 2, hh / 2, 0]} s={[T, hh, 0.3]} color={c} /><Box p={[w / 2 + T / 2, hh / 2, 0]} s={[T, hh, 0.3]} color={c} />{i ? <><Ball p={[-w / 2 - T / 2, hh, 0.2]} r={0.26} color="#FFE6A8" /><Ball p={[w / 2 + T / 2, hh, 0.2]} r={0.26} color="#FFE6A8" /><Glow p={[0, hh / 2, 0.3]} r={3.2} color="rgba(255,215,110,1)" o={0.3 * glow} /></> : null}</group>; })}
   </>);
 };
 
@@ -153,18 +153,18 @@ const K10: Key[] = [
 ];
 const tether = 1.9;
 const pairs = [
-  { stop: 41.3, kx: -1.3, vp: 1.9, z: 0.5, kid: { skin: "#fbe3c8", body: "#D99A00", outfit: "hoodie" as const, hair: "short" as const, hairColor: "#3b2a1a" }, par: crowd[2] },
-  { stop: 42.5, kx: -0.3, vp: 2.1, z: 1.6, kid: { skin: "#c98e62", body: "#FF4F6D", outfit: "hoodie" as const, hair: "bob" as const, hairColor: "#1a1010" }, par: crowd[4] },
-  { stop: 43.4, kx: 0.6, vp: 2.3, z: -0.6, kid: { skin: "#fbe3c8", body: "#A99CFF", outfit: "shirt" as const, hair: "short" as const, hairColor: "#c47a2a" }, par: crowd[6] },
+  { stop: 41.3, kx: -1.3, vp: 1.9, z: 0.5, kid: { skin: "#fbe3c8", body: "#C98A22", outfit: "hoodie" as const, hair: "short" as const, hairColor: "#3b2a1a" }, par: crowd[2] },
+  { stop: 42.5, kx: -0.3, vp: 2.1, z: 1.6, kid: { skin: "#c98e62", body: "#E4675F", outfit: "hoodie" as const, hair: "bob" as const, hairColor: "#1a1010" }, par: crowd[4] },
+  { stop: 43.4, kx: 0.6, vp: 2.3, z: -0.6, kid: { skin: "#fbe3c8", body: "#A9A2E6", outfit: "shirt" as const, hair: "short" as const, hairColor: "#c47a2a" }, par: crowd[6] },
 ];
 export const S10 = ({ t, f }: Ctx) => {
   return (<>
     <Cam t={t} keys={K10} />
-    <Lights warm="#F0DDB8" />
-    <Floor kind="tile" a="#C9B68E" b="#C9B68E" unit={2.0} w={40} d={30} />
-    <WallDoor z={-6} W={40} kind="brick" a="#8A5A00" b="#8A5A00" base="#8A5A00" unit={1.2} />
-    <Cyl p={[-2.8, 4.5, -4.2]} rt={0.5} h={9} color="#18857D" /><Cyl p={[4.6, 4.5, -4.4]} rt={0.5} h={9} color="#18857D" /><Frame p={[0.8, 3.6, -5.9]} s={[1.8, 2.6]} art={2} /><Frame p={[-4.6, 3.4, -5.9]} s={[1.8, 2.4]} art={1} />
-    <Box p={[0, 0.03, 2.9]} s={[40, 0.05, 0.5]} color="#FFC42E" line={1} /><Rug p={[0.4, 0.02, -1.0]} s={[6, 3]} a="#18857D" b="#FFC42E" /><Plant p={[-4.2, 0, -3]} s={1.3} /><Plant p={[5.2, 0, -3.4]} s={1.3} /><Lamp p={[3.4, 0, -3.6]} h={3.2} color="#FFE08A" />
+    <Lights warm="#EBDCBA" />
+    <Floor kind="tile" a="#C7B58F" b="#C7B58F" unit={2.0} w={40} d={30} />
+    <WallDoor z={-6} W={40} kind="brick" a="#7A5214" b="#7A5214" base="#7A5214" unit={1.2} />
+    <Cyl p={[-2.8, 4.5, -4.2]} rt={0.5} h={9} color="#247A75" /><Cyl p={[4.6, 4.5, -4.4]} rt={0.5} h={9} color="#247A75" /><Frame p={[0.8, 3.6, -5.9]} s={[1.8, 2.6]} art={2} /><Frame p={[-4.6, 3.4, -5.9]} s={[1.8, 2.4]} art={1} />
+    <Box p={[0, 0.03, 2.9]} s={[40, 0.05, 0.5]} color="#F2B84B" line={1} /><Rug p={[0.4, 0.02, -1.0]} s={[6, 3]} a="#247A75" b="#F2B84B" /><Plant p={[-4.2, 0, -3]} s={1.3} /><Plant p={[5.2, 0, -3.4]} s={1.3} /><Lamp p={[3.4, 0, -3.6]} h={3.2} color="#FFE6A8" />
     <Shaft p={[1.0, 4.5, -2]} s={[2.4, 10]} rot={[0, 0, 0.35]} color="255,214,150" o={0.2} /><Dust t={t} area={[6, 6, 4]} color="rgba(255,236,190,.9)" />
     {/* the violinist keeps playing behind them */}
     <Player P={[1.7, 0, -2.6]} h={3.3} look={busker} f={f} t={t} mood="smile" /><Notes p={[1.3, 3.2, -2.2]} t={t} n={4} amp={0.8} />
@@ -192,20 +192,20 @@ export const S11 = ({ t, f }: Ctx) => {
   const rahmen = seg(t, 47.6, 48.3, Easing.out(Easing.back(2.5))), tag = seg(t, 48.6, 49.1, Easing.out(Easing.back(2.5))), wert = seg(t, 46.3, 46.8);
   return (<>
     <Cam t={t} keys={K11} />
-    <Lights warm="#F0DDB8" />
+    <Lights warm="#EBDCBA" />
     <Floor kind="marble" a="#e7dcc8" b="#ddd0b8" unit={2.4} w={40} d={30} />
-    <WallDoor z={-5} W={40} kind="plain" a="#221657" b="#221657" base="#221657" />
+    <WallDoor z={-5} W={40} kind="plain" a="#211B52" b="#211B52" base="#211B52" />
     {/* the painting: a framed little stage with the busker, gold frame on a museum wall */}
-    <Box p={[0, 4.2, -4.8]} s={[7.4, 8.4, 0.3]} color="#221657" />
-    <CanvasPlane p={[0, 4.2, -4.62]} s={[6.2, 7.4]} px={[310, 370]} draw={(c, W, H) => { const g = c.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#A99CFF"); g.addColorStop(1, "#FFE08A"); c.fillStyle = g; c.fillRect(0, 0, W, H); c.fillStyle = "#8FEDE2"; c.fillRect(0, H * 0.78, W, H * 0.22); c.fillStyle = "#18857D"; c.fillRect(W * 0.1, 0, 36, H * 0.78); c.fillRect(W * 0.84, 0, 36, H * 0.78); }} />
-    {(() => { const T = 0.5; const w = 6.6, hh = 7.8; return <group position={[0, 0.3, -4.5]}><Box p={[0, hh + T / 2, 0]} s={[w + T * 2, T, 0.4]} color="#FFC42E" /><Box p={[0, -T / 2 + 0.0, 0]} s={[w + T * 2, T, 0.4]} color="#FFC42E" /><Box p={[-w / 2 - T / 2, hh / 2, 0]} s={[T, hh + T, 0.4]} color="#FFC42E" /><Box p={[w / 2 + T / 2, hh / 2, 0]} s={[T, hh + T, 0.4]} color="#FFC42E" />
-      {[[-1, 1], [1, 1], [-1, 0], [1, 0]].map(([sx, sy], i) => <Ball key={i} p={[sx * (w / 2 + T / 2), sy ? hh : 0, 0.25]} r={0.42} color="#FFE08A" />)}<Glow p={[0, hh / 2, 0.4]} r={5.6} color="rgba(255,200,90,1)" o={0.18 * rahmen} /></group>; })()}
+    <Box p={[0, 4.2, -4.8]} s={[7.4, 8.4, 0.3]} color="#211B52" />
+    <CanvasPlane p={[0, 4.2, -4.62]} s={[6.2, 7.4]} px={[310, 370]} draw={(c, W, H) => { const g = c.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#A9A2E6"); g.addColorStop(1, "#FFE6A8"); c.fillStyle = g; c.fillRect(0, 0, W, H); c.fillStyle = "#9ADBD2"; c.fillRect(0, H * 0.78, W, H * 0.22); c.fillStyle = "#247A75"; c.fillRect(W * 0.1, 0, 36, H * 0.78); c.fillRect(W * 0.84, 0, 36, H * 0.78); }} />
+    {(() => { const T = 0.5; const w = 6.6, hh = 7.8; return <group position={[0, 0.3, -4.5]}><Box p={[0, hh + T / 2, 0]} s={[w + T * 2, T, 0.4]} color="#F2B84B" /><Box p={[0, -T / 2 + 0.0, 0]} s={[w + T * 2, T, 0.4]} color="#F2B84B" /><Box p={[-w / 2 - T / 2, hh / 2, 0]} s={[T, hh + T, 0.4]} color="#F2B84B" /><Box p={[w / 2 + T / 2, hh / 2, 0]} s={[T, hh + T, 0.4]} color="#F2B84B" />
+      {[[-1, 1], [1, 1], [-1, 0], [1, 0]].map(([sx, sy], i) => <Ball key={i} p={[sx * (w / 2 + T / 2), sy ? hh : 0, 0.25]} r={0.42} color="#FFE6A8" />)}<Glow p={[0, hh / 2, 0.4]} r={5.6} color="rgba(255,200,90,1)" o={0.18 * rahmen} /></group>; })()}
     <Player P={[0, 0.3, -4.0]} h={3.6} look={busker} f={f} t={t} mood="smile" /><Notes p={[-0.4, 3.7, -3.6]} t={t} />
     {/* neighbours: the cheap frame gets a glance, the gold one gets the crowd */}
     <Frame p={[-8.6, 4.4, -4.8]} s={[2.4, 3.2]} art={1} /><Frame p={[8.6, 4.4, -4.8]} s={[2.4, 3.2]} art={2} />
     <Sign p={[4.8, 1.8, -4.4]} s={[2.4 * tag + 0.001, 1.2 * tag + 0.001]} text={"WERT\n3,5 Mio $"} bg="#fffaf0" fg="#111" size={54} />
-    <Cyl p={[-3.8, 0.55, 0.4]} rt={0.09} h={1.1} color="#FFC42E" /><Cyl p={[3.8, 0.55, 0.4]} rt={0.09} h={1.1} color="#FFC42E" /><Box p={[0, 0.9, 0.4]} s={[7.6, 0.06, 0.06]} color="#C42E4C" line={2} />
-    <Plant p={[-6.2, 0, -2.4]} s={1.4} pot="#FFC42E" /><Plant p={[6.4, 0, -2.4]} s={1.4} pot="#FFC42E" /><Rug p={[0, 0.02, 1.6]} s={[9, 5]} a="#3D2A94" b="#C42E4C" />
+    <Cyl p={[-3.8, 0.55, 0.4]} rt={0.09} h={1.1} color="#F2B84B" /><Cyl p={[3.8, 0.55, 0.4]} rt={0.09} h={1.1} color="#F2B84B" /><Box p={[0, 0.9, 0.4]} s={[7.6, 0.06, 0.06]} color="#B04440" line={2} />
+    <Plant p={[-6.2, 0, -2.4]} s={1.4} pot="#F2B84B" /><Plant p={[6.4, 0, -2.4]} s={1.4} pot="#F2B84B" /><Rug p={[0, 0.02, 1.6]} s={[9, 5]} a="#41377F" b="#B04440" />
     {/* visitors admire the frame, not the man */}
     {[[-3.0, 2.2, 5], [-1.2, 3.4, 2], [1.6, 3.0, 4], [3.4, 2.0, 6]].map(([x, z, k], i) => <Person key={i} p={[x, 0, z]} h={3.2} look={crowd[k as number]} f={f + i * 9} pose={{ mood: rahmen > 0.5 ? "grin" : "smile", lookX: (x as number) < 0 ? 1 : -1, flip: (x as number) > 0, arms: rahmen > 0.5 ? "up" : "chest", armK: 0.35 + 0.65 * rahmen, squash: 0.02 * Math.sin(f * 0.3 + i) }} />)}
     <Dust t={t} area={[6, 7, 4]} color="rgba(255,236,190,.9)" />

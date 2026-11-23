@@ -30,7 +30,7 @@ const Inner: React.FC<{ from: number; first?: boolean; trans: Trans; bg: string;
   const sc = !first && trans === "zoom" ? lerp(1.35, 1, ke) : 1;
   const tx = !first && trans === "whip" ? (1 - ke) * 720 : 0, blur = !first && trans === "whip" ? (1 - ke) * 14 : 0;
   return (
-    <AbsoluteFill style={{ opacity: first || trans === "flash" || trans === "whip" ? 1 : k, transform: `translateX(${tx}px) scale(${sc})`, background: bg, filter: `saturate(1.32) contrast(1.07) brightness(1.02)${blur > 0.2 ? ` blur(${blur.toFixed(1)}px)` : ""}` }}>
+    <AbsoluteFill style={{ opacity: first || trans === "flash" || trans === "whip" ? 1 : k, transform: `translateX(${tx}px) scale(${sc})`, background: bg, filter: `saturate(1.1) contrast(1.05) brightness(1.0)${blur > 0.2 ? ` blur(${blur.toFixed(1)}px)` : ""}` }}>
       <ThreeCanvas width={720} height={1280} camera={{ fov: 60, position: [0, 2, 8], near: 0.1, far: 200 }} gl={{ antialias: true }}>
         <color attach="background" args={[bg]} />{children({ t, f })}
       </ThreeCanvas>
@@ -42,42 +42,42 @@ export const yawTo = (cam: V3, p: V3) => Math.atan2(cam[0] - p[0], cam[2] - p[2]
 export const toWorld = (p: V3, loc: V3, cam: V3): V3 => { const y = yawTo(cam, p); return [p[0] + loc[0] * Math.cos(y) + loc[2] * Math.sin(y), p[1] + loc[1], p[2] - loc[0] * Math.sin(y) + loc[2] * Math.cos(y)]; };
 
 /* ---------- looks ---------- */
-export const busker: Look = { skin: "#f1d0b0", body: "#FF4F6D", outfit: "shirt", hair: "short", hairColor: "#2a1a12", hat: "#FFC42E", shoe: "#221657", seed: 3 };
-export const tux: Look = { skin: "#f1d0b0", body: "#221657", outfit: "suit", tie: "#FFC42E", shirt: "#ffffff", hair: "short", hairColor: "#2a1a12", shoe: "#0b0d1a", seed: 11 };
-export const woman: Look = { skin: "#e9bf9a", body: "#2EC4B6", outfit: "blazer", shirt: "#ffffff", hair: "bob", hairColor: "#4a2a1a", glasses: true, shoe: "#221657", seed: 5 };
+export const busker: Look = { skin: "#f1d0b0", body: "#E4675F", outfit: "shirt", hair: "short", hairColor: "#2a1a12", hat: "#F2B84B", shoe: "#41377F", seed: 3, sleeve: "#E4675F", pants: "#41377F", stubble: true, freckles: true, ears: true, brows: 1.15, scarf: "#3AA89E", patch: "♪", sneakers: true };
+export const tux: Look = { skin: "#f1d0b0", body: "#211B52", outfit: "suit", shirt: "#ffffff", hair: "short", hairColor: "#2a1a12", shoe: "#0b0d1a", seed: 11, sleeve: "#211B52", pants: "#211B52", bowtie: "#E4675F", flower: "#F2B84B", ears: true, brows: 1.5 };
+export const woman: Look = { skin: "#e9bf9a", body: "#3AA89E", outfit: "blazer", shirt: "#ffffff", hair: "bob", hairColor: "#4a2a1a", glasses: true, shoe: "#211B52", seed: 5, sleeve: "#3AA89E", pants: "#211B52", lashes: true, lips: "#E4675F", earring: "#F2B84B", ears: true, flower: "#E4675F", brows: 0.9 };
 export const crowd: Look[] = [
-  { skin: "#fbe3c8", body: "#FF4F6D", outfit: "hoodie", hair: "short", hairColor: "#222" }, { skin: "#c98e62", body: "#2EC4B6", outfit: "shirt", hair: "bob", hairColor: "#1a1010" },
-  { skin: "#fbe3c8", body: "#FFC42E", outfit: "suit", tie: "#221657", hair: "grey" }, { skin: "#8d5a3a", body: "#6A4DE0", outfit: "hoodie", hair: "swept", hairColor: "#111", glasses: true },
-  { skin: "#f6d6bd", body: "#0B4A48", outfit: "suit", tie: "#FF4F6D", hair: "short", hairColor: "#3b2a1a" }, { skin: "#e0b48c", body: "#D99A00", outfit: "shirt", hair: "bob", hairColor: "#5a3420" },
-  { skin: "#fbe3c8", body: "#A99CFF", outfit: "blazer", shirt: "#fff", hair: "swept", hairColor: "#c47a2a" }, { skin: "#a86b45", body: "#FF4F6D", outfit: "hoodie", hair: "short", hairColor: "#111", glasses: true },
+  { skin: "#fbe3c8", body: "#E4675F", outfit: "hoodie", hair: "short", hairColor: "#222" }, { skin: "#c98e62", body: "#3AA89E", outfit: "shirt", hair: "bob", hairColor: "#1a1010" },
+  { skin: "#fbe3c8", body: "#F2B84B", outfit: "suit", tie: "#211B52", hair: "grey" }, { skin: "#8d5a3a", body: "#6C5FC7", outfit: "hoodie", hair: "swept", hairColor: "#111", glasses: true },
+  { skin: "#f6d6bd", body: "#124745", outfit: "suit", tie: "#E4675F", hair: "short", hairColor: "#3b2a1a" }, { skin: "#e0b48c", body: "#C98A22", outfit: "shirt", hair: "bob", hairColor: "#5a3420" },
+  { skin: "#fbe3c8", body: "#A9A2E6", outfit: "blazer", shirt: "#fff", hair: "swept", hairColor: "#c47a2a" }, { skin: "#a86b45", body: "#E4675F", outfit: "hoodie", hair: "short", hairColor: "#111", glasses: true },
 ];
 export const rnd = (i: number, k = 0) => { const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
 
 /* ---------- violin, bow, case, notes ---------- */
 export const Violin: React.FC<{ p: V3; s?: number; rot?: V3 }> = ({ p, s = 1, rot }) => (
   <group position={p} rotation={rot} scale={s}>
-    <Ball p={[0, 0, 0]} r={0.3} s={[1, 1.35, 0.3]} color="#8A5A00" ink={0.06} />
-    <Box p={[0, 0.66, 0]} s={[0.09, 0.62, 0.06]} color="#6E1630" line={2} />
-    <Ball p={[0, 1.0, 0]} r={0.07} color="#8A5A00" ink={0.04} />
-    <Box p={[0, -0.12, 0.1]} s={[0.22, 0.03, 0.02]} color="#FFE08A" line={1} />
+    <Ball p={[0, 0, 0]} r={0.3} s={[1, 1.35, 0.3]} color="#7A5214" ink={0.06} />
+    <Box p={[0, 0.66, 0]} s={[0.09, 0.62, 0.06]} color="#6A2425" line={2} />
+    <Ball p={[0, 1.0, 0]} r={0.07} color="#7A5214" ink={0.04} />
+    <Box p={[0, -0.12, 0.1]} s={[0.22, 0.03, 0.02]} color="#FFE6A8" line={1} />
   </group>
 );
 export const Bow: React.FC<{ p: V3; s?: number; rot?: V3 }> = ({ p, s = 1, rot }) => (
   <group position={p} rotation={rot} scale={s}>
-    <Box p={[0, 0, 0]} s={[1.5, 0.035, 0.035]} color="#8A5A00" line={2} /><Box p={[0.05, -0.05, 0]} s={[1.4, 0.012, 0.02]} color="#fff6e0" line={1} />
+    <Box p={[0, 0, 0]} s={[1.5, 0.035, 0.035]} color="#7A5214" line={2} /><Box p={[0.05, -0.05, 0]} s={[1.4, 0.012, 0.02]} color="#fff6e0" line={1} />
   </group>
 );
 // open violin case on the floor; open: 0..1, coins: number of coins lying inside
 export const Case: React.FC<{ p: V3; open: number; rotY?: number; coins?: [number, number][]; empty?: boolean }> = ({ p, open, rotY = 0, coins = [], empty }) => (
   <group position={p} rotation={[0, rotY, 0]}>
-    <Box p={[0, 0.18, 0]} s={[2.3, 0.36, 0.95]} color="#0B4A48" />
-    <Box p={[0, 0.365, 0]} s={[2.1, 0.02, 0.75]} color="#C42E4C" line={1} />
+    <Box p={[0, 0.18, 0]} s={[2.3, 0.36, 0.95]} color="#124745" />
+    <Box p={[0, 0.365, 0]} s={[2.1, 0.02, 0.75]} color="#B04440" line={1} />
     {empty ? null : <Violin p={[0, 0.5, 0]} s={0.0001} />}
     <group position={[0, 0.36, -0.475]} rotation={[-open * 1.95, 0, 0]}>
-      <Box p={[0, 0.09, 0.475]} s={[2.3, 0.18, 0.95]} color="#0B4A48" />
-      <Box p={[0, -0.005, 0.475]} s={[2.1, 0.02, 0.75]} color="#C42E4C" line={1} />
+      <Box p={[0, 0.09, 0.475]} s={[2.3, 0.18, 0.95]} color="#124745" />
+      <Box p={[0, -0.005, 0.475]} s={[2.1, 0.02, 0.75]} color="#B04440" line={1} />
     </group>
-    {coins.map(([x, z], i) => <Cyl key={i} p={[x, 0.4, z]} rt={0.12} h={0.03} color="#FFC42E" line={1} />)}
+    {coins.map(([x, z], i) => <Cyl key={i} p={[x, 0.4, z]} rt={0.12} h={0.03} color="#F2B84B" line={1} />)}
   </group>
 );
 // rising music notes (sprites facing the camera)
@@ -111,7 +111,7 @@ export const Walker: React.FC<{ p0: V3; v: V3; ts: number; t: number; f: number;
   const u = Math.max(0, t - ts), P: V3 = [p0[0] + v[0] * u, 0, p0[2] + v[2] * u], dist = Math.hypot(v[0], v[2]) * u, flip = v[0] < -0.05;
   return (<>
     <Person p={P} h={h} look={look} f={f + i * 7} pose={{ walk: dist * WALK, speed: 1, flip, mood: "deadpan", armR: hold ? [0.24, 0.44] : undefined, armRK: hold ? 1 : 0, nerv: 0 }} />
-    {hold ? <FaceGroup p={P}><Box p={hand(h, [0.24, 0.4], 0, flip, 0.12)} s={[0.34, 0.5, 0.12]} color={["#0B4A48", "#0B4A48", "#8E7C5A"][i % 3]} line={2} /></FaceGroup> : null}
+    {hold ? <FaceGroup p={P}><Box p={hand(h, [0.24, 0.4], 0, flip, 0.12)} s={[0.34, 0.5, 0.12]} color={["#124745", "#124745", "#8A7B58"][i % 3]} line={2} /></FaceGroup> : null}
   </>);
 };
 export const glowFloor = (p: V3, r: number, color: string, o = 0.4) => <Glow p={p} r={r} color={color} o={o} />;

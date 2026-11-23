@@ -1,0 +1,57 @@
+[
+ {
+  "word": "Dir",
+  "start": 0.0,
+  "end": 0.18
+ },
+ {
+  "word": "geht's",
+  "start": 0.18,
+  "end": 0.44
+ },
+ {
+  "word": "doch",
+  "start": 0.44,
+  "end": 0.52
+ },
+ {
+  "word": "super",
+  "start": 0.52,
+  "end": 0.76
+ },
+ {
+  "word": "im",
+  "start": 0.76,
+  "end": 0.94
+ },
+ {
+  "word": "Vertrieb",
+  "start": 0.94,
+  "end": 1.34
+ },
+ {
+  "word": "Du",
+  "start": 1.64,
+  "end": 1.78
+ },
+ {
+  "word": "verdienst",
+  "start": 1.78,
+  "end": 2.14
+ },
+ {
+  "word": "richtig",
+  "start": 2.14,
+  "end": 2.44
+ },
+ {
+  "word": "gut",
+  "start": 2.44,
+  "end": 2.7
+ },
+ {
+  "word": "oder",
+  "start": 2.7,
+  "end": 2.9
+ }
+]

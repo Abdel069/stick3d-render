@@ -1,0 +1,67 @@
+[
+ {
+  "word": "Ich",
+  "start": 0.0,
+  "end": 0.2
+ },
+ {
+  "word": "verdiene",
+  "start": 0.2,
+  "end": 0.82
+ },
+ {
+  "word": "was",
+  "start": 1.14,
+  "end": 1.24
+ },
+ {
+  "word": "ich",
+  "start": 1.24,
+  "end": 1.46
+ },
+ {
+  "word": "mir",
+  "start": 1.46,
+  "end": 1.64
+ },
+ {
+  "word": "erarbeite",
+  "start": 1.64,
+  "end": 2.6
+ },
+ {
+  "word": "In",
+  "start": 3.18,
+  "end": 3.56
+ },
+ {
+  "word": "den",
+  "start": 3.56,
+  "end": 3.68
+ },
+ {
+  "word": "ersten",
+  "start": 3.68,
+  "end": 4.12
+ },
+ {
+  "word": "drei",
+  "start": 4.12,
+  "end": 4.48
+ },
+ {
+  "word": "Wochen",
+  "start": 4.48,
+  "end": 4.86
+ },
+ {
+  "word": "fast",
+  "start": 4.86,
+  "end": 5.38
+ },
+ {
+  "word": "nichts",
+  "start": 5.38,
+  "end": 5.84
+ }
+]

@@ -1,0 +1,932 @@
+[
+ {
+  "word": "Nach",
+  "start": 0.0,
+  "end": 0.24
+ },
+ {
+  "word": "drei",
+  "start": 0.24,
+  "end": 0.58
+ },
+ {
+  "word": "Monaten",
+  "start": 0.58,
+  "end": 0.88
+ },
+ {
+  "word": "läuft",
+  "start": 0.88,
+  "end": 1.26
+ },
+ {
+  "word": "es",
+  "start": 1.26,
+  "end": 1.6
+ },
+ {
+  "word": "Emre",
+  "start": 2.28,
+  "end": 2.6
+ },
+ {
+  "word": "verdient",
+  "start": 2.6,
+  "end": 3.0
+ },
+ {
+  "word": "mehr",
+  "start": 3.0,
+  "end": 3.28
+ },
+ {
+  "word": "als",
+  "start": 3.28,
+  "end": 3.48
+ },
+ {
+  "word": "im",
+  "start": 3.48,
+  "end": 3.66
+ },
+ {
+  "word": "Lager",
+  "start": 3.66,
+  "end": 4.0
+ },
+ {
+  "word": "kauft",
+  "start": 4.58,
+  "end": 4.76
+ },
+ {
+  "word": "sich",
+  "start": 4.76,
+  "end": 4.94
+ },
+ {
+  "word": "einen",
+  "start": 4.94,
+  "end": 5.18
+ },
+ {
+  "word": "Anzug",
+  "start": 5.18,
+  "end": 5.64
+ },
+ {
+  "word": "und",
+  "start": 5.64,
+  "end": 5.92
+ },
+ {
+  "word": "stellt",
+  "start": 5.92,
+  "end": 6.14
+ },
+ {
+  "word": "den",
+  "start": 6.14,
+  "end": 6.32
+ },
+ {
+  "word": "Wecker",
+  "start": 6.32,
+  "end": 6.56
+ },
+ {
+  "word": "auf",
+  "start": 6.56,
+  "end": 6.78
+ },
+ {
+  "word": "sechs",
+  "start": 6.78,
+  "end": 7.04
+ },
+ {
+  "word": "Dann",
+  "start": 8.06,
+  "end": 8.3
+ },
+ {
+  "word": "kommt",
+  "start": 8.3,
+  "end": 8.58
+ },
+ {
+  "word": "der",
+  "start": 8.58,
+  "end": 8.72
+ },
+ {
+  "word": "Februar",
+  "start": 8.72,
+  "end": 9.08
+ },
+ {
+  "word": "Zwei",
+  "start": 9.96,
+  "end": 10.38
+ },
+ {
+  "word": "Verträge",
+  "start": 10.38,
+  "end": 10.9
+ },
+ {
+  "word": "in",
+  "start": 10.9,
+  "end": 11.12
+ },
+ {
+  "word": "vier",
+  "start": 11.12,
+  "end": 11.38
+ },
+ {
+  "word": "Wochen",
+  "start": 11.38,
+  "end": 11.64
+ },
+ {
+  "word": "Ein",
+  "start": 12.42,
+  "end": 12.58
+ },
+ {
+  "word": "Kunde",
+  "start": 12.58,
+  "end": 12.88
+ },
+ {
+  "word": "der",
+  "start": 13.06,
+  "end": 13.06
+ },
+ {
+  "word": "alles",
+  "start": 13.06,
+  "end": 13.38
+ },
+ {
+  "word": "storniert",
+  "start": 13.38,
+  "end": 13.94
+ },
+ {
+  "word": "Ein",
+  "start": 14.66,
+  "end": 14.86
+ },
+ {
+  "word": "Chef",
+  "start": 14.86,
+  "end": 15.1
+ },
+ {
+  "word": "der",
+  "start": 15.24,
+  "end": 15.32
+ },
+ {
+  "word": "sagt",
+  "start": 15.32,
+  "end": 15.66
+ },
+ {
+  "word": "Wer",
+  "start": 16.34,
+  "end": 16.48
+ },
+ {
+  "word": "die",
+  "start": 16.48,
+  "end": 16.62
+ },
+ {
+  "word": "Quote",
+  "start": 16.62,
+  "end": 16.98
+ },
+ {
+  "word": "verfehlt",
+  "start": 16.98,
+  "end": 17.54
+ },
+ {
+  "word": "verliert",
+  "start": 17.7,
+  "end": 18.04
+ },
+ {
+  "word": "seinen",
+  "start": 18.04,
+  "end": 18.18
+ },
+ {
+  "word": "Platz",
+  "start": 18.18,
+  "end": 18.48
+ },
+ {
+  "word": "im",
+  "start": 18.48,
+  "end": 18.7
+ },
+ {
+  "word": "Team",
+  "start": 18.7,
+  "end": 18.94
+ },
+ {
+  "word": "Abends",
+  "start": 20.06,
+  "end": 20.52
+ },
+ {
+  "word": "fährt",
+  "start": 20.52,
+  "end": 20.72
+ },
+ {
+  "word": "Emre",
+  "start": 20.72,
+  "end": 21.06
+ },
+ {
+  "word": "allein",
+  "start": 21.06,
+  "end": 21.38
+ },
+ {
+  "word": "durch",
+  "start": 21.38,
+  "end": 21.62
+ },
+ {
+  "word": "die",
+  "start": 21.62,
+  "end": 21.84
+ },
+ {
+  "word": "Stadt",
+  "start": 21.84,
+  "end": 22.1
+ },
+ {
+  "word": "und",
+  "start": 22.1,
+  "end": 22.36
+ },
+ {
+  "word": "fragt",
+  "start": 22.36,
+  "end": 22.8
+ },
+ {
+  "word": "sich",
+  "start": 22.8,
+  "end": 22.98
+ },
+ {
+  "word": "ob",
+  "start": 23.42,
+  "end": 23.6
+ },
+ {
+  "word": "der",
+  "start": 23.6,
+  "end": 23.76
+ },
+ {
+  "word": "Rentner",
+  "start": 23.76,
+  "end": 24.12
+ },
+ {
+  "word": "nur",
+  "start": 24.12,
+  "end": 24.3
+ },
+ {
+  "word": "Glück",
+  "start": 24.3,
+  "end": 24.58
+ },
+ {
+  "word": "war",
+  "start": 24.58,
+  "end": 24.84
+ },
+ {
+  "word": "Er",
+  "start": 25.86,
+  "end": 26.06
+ },
+ {
+  "word": "ruft",
+  "start": 26.06,
+  "end": 26.3
+ },
+ {
+  "word": "seine",
+  "start": 26.3,
+  "end": 26.52
+ },
+ {
+  "word": "alte",
+  "start": 26.52,
+  "end": 26.78
+ },
+ {
+  "word": "Lagerchefin",
+  "start": 26.78,
+  "end": 27.56
+ },
+ {
+  "word": "an",
+  "start": 27.56,
+  "end": 27.8
+ },
+ {
+  "word": "Sie",
+  "start": 27.8,
+  "end": 28.72
+ },
+ {
+  "word": "sagt",
+  "start": 28.72,
+  "end": 29.02
+ },
+ {
+  "word": "einen",
+  "start": 29.02,
+  "end": 29.3
+ },
+ {
+  "word": "einzigen",
+  "start": 29.3,
+  "end": 29.84
+ },
+ {
+  "word": "Satz",
+  "start": 29.84,
+  "end": 31.32
+ },
+ {
+  "word": "Wer",
+  "start": 31.32,
+  "end": 31.48
+ },
+ {
+  "word": "fünf",
+  "start": 31.48,
+  "end": 31.88
+ },
+ {
+  "word": "Jahre",
+  "start": 31.88,
+  "end": 32.1
+ },
+ {
+  "word": "Paletten",
+  "start": 32.1,
+  "end": 32.64
+ },
+ {
+  "word": "gestapelt",
+  "start": 32.64,
+  "end": 33.28
+ },
+ {
+  "word": "hat",
+  "start": 33.28,
+  "end": 33.5
+ },
+ {
+  "word": "den",
+  "start": 33.84,
+  "end": 34.0
+ },
+ {
+  "word": "wirft",
+  "start": 34.0,
+  "end": 34.36
+ },
+ {
+  "word": "keine",
+  "start": 34.36,
+  "end": 34.6
+ },
+ {
+  "word": "Absage",
+  "start": 34.6,
+  "end": 35.22
+ },
+ {
+  "word": "um",
+  "start": 35.22,
+  "end": 35.46
+ },
+ {
+  "word": "Emre",
+  "start": 36.58,
+  "end": 36.86
+ },
+ {
+  "word": "legt",
+  "start": 36.86,
+  "end": 37.2
+ },
+ {
+  "word": "auf",
+  "start": 37.2,
+  "end": 37.42
+ },
+ {
+  "word": "und",
+  "start": 37.42,
+  "end": 37.66
+ },
+ {
+  "word": "rechnet",
+  "start": 37.66,
+  "end": 37.98
+ },
+ {
+  "word": "nach",
+  "start": 37.98,
+  "end": 38.42
+ },
+ {
+  "word": "Er",
+  "start": 39.02,
+  "end": 39.14
+ },
+ {
+  "word": "findet",
+  "start": 39.14,
+  "end": 39.44
+ },
+ {
+  "word": "den",
+  "start": 39.44,
+  "end": 39.68
+ },
+ {
+  "word": "Fehler",
+  "start": 39.68,
+  "end": 39.96
+ },
+ {
+  "word": "Seit",
+  "start": 40.8,
+  "end": 41.02
+ },
+ {
+  "word": "Wochen",
+  "start": 41.02,
+  "end": 41.26
+ },
+ {
+  "word": "besucht",
+  "start": 41.26,
+  "end": 41.7
+ },
+ {
+  "word": "er",
+  "start": 41.7,
+  "end": 41.88
+ },
+ {
+  "word": "keine",
+  "start": 41.88,
+  "end": 42.12
+ },
+ {
+  "word": "alten",
+  "start": 42.12,
+  "end": 42.48
+ },
+ {
+  "word": "Kunden",
+  "start": 42.48,
+  "end": 42.82
+ },
+ {
+  "word": "mehr",
+  "start": 42.82,
+  "end": 43.16
+ },
+ {
+  "word": "Drei",
+  "start": 44.22,
+  "end": 44.48
+ },
+ {
+  "word": "Tage",
+  "start": 44.48,
+  "end": 44.74
+ },
+ {
+  "word": "später",
+  "start": 44.74,
+  "end": 45.22
+ },
+ {
+  "word": "steht",
+  "start": 45.22,
+  "end": 45.6
+ },
+ {
+  "word": "er",
+  "start": 45.6,
+  "end": 45.8
+ },
+ {
+  "word": "wieder",
+  "start": 45.8,
+  "end": 45.98
+ },
+ {
+  "word": "bei",
+  "start": 45.98,
+  "end": 46.26
+ },
+ {
+  "word": "Kunde",
+  "start": 46.26,
+  "end": 46.52
+ },
+ {
+  "word": "eins",
+  "start": 46.52,
+  "end": 46.92
+ },
+ {
+  "word": "mit",
+  "start": 47.52,
+  "end": 47.66
+ },
+ {
+  "word": "Kuchen",
+  "start": 47.66,
+  "end": 48.12
+ },
+ {
+  "word": "und",
+  "start": 48.12,
+  "end": 48.6
+ },
+ {
+  "word": "ohne",
+  "start": 48.6,
+  "end": 48.92
+ },
+ {
+  "word": "Ordner",
+  "start": 48.92,
+  "end": 49.42
+ },
+ {
+  "word": "Aus",
+  "start": 50.4,
+  "end": 50.6
+ },
+ {
+  "word": "dem",
+  "start": 50.6,
+  "end": 50.78
+ },
+ {
+  "word": "Besuch",
+  "start": 50.78,
+  "end": 51.26
+ },
+ {
+  "word": "werden",
+  "start": 51.26,
+  "end": 51.6
+ },
+ {
+  "word": "zwei",
+  "start": 51.6,
+  "end": 51.92
+ },
+ {
+  "word": "Empfehlungen",
+  "start": 51.92,
+  "end": 52.66
+ },
+ {
+  "word": "Aus",
+  "start": 53.3,
+  "end": 53.64
+ },
+ {
+  "word": "den",
+  "start": 53.64,
+  "end": 53.78
+ },
+ {
+  "word": "Empfehlungen",
+  "start": 53.78,
+  "end": 54.44
+ },
+ {
+  "word": "werden",
+  "start": 54.44,
+  "end": 54.78
+ },
+ {
+  "word": "sieben",
+  "start": 54.78,
+  "end": 55.18
+ },
+ {
+  "word": "Termine",
+  "start": 55.18,
+  "end": 55.62
+ },
+ {
+  "word": "Am",
+  "start": 55.62,
+  "end": 56.7
+ },
+ {
+  "word": "Monatsende",
+  "start": 56.7,
+  "end": 57.36
+ },
+ {
+  "word": "liegt",
+  "start": 57.36,
+  "end": 57.68
+ },
+ {
+  "word": "er",
+  "start": 57.68,
+  "end": 57.86
+ },
+ {
+  "word": "vier",
+  "start": 57.86,
+  "end": 58.14
+ },
+ {
+  "word": "Verträge",
+  "start": 58.14,
+  "end": 58.7
+ },
+ {
+  "word": "über",
+  "start": 58.7,
+  "end": 59.02
+ },
+ {
+  "word": "der",
+  "start": 59.02,
+  "end": 59.2
+ },
+ {
+  "word": "Quote",
+  "start": 59.2,
+  "end": 59.64
+ },
+ {
+  "word": "Ein",
+  "start": 60.54,
+  "end": 60.78
+ },
+ {
+  "word": "Jahr",
+  "start": 60.78,
+  "end": 61.0
+ },
+ {
+  "word": "später",
+  "start": 61.0,
+  "end": 61.44
+ },
+ {
+  "word": "leitet",
+  "start": 61.44,
+  "end": 61.82
+ },
+ {
+  "word": "er",
+  "start": 61.82,
+  "end": 62.04
+ },
+ {
+  "word": "eine",
+  "start": 62.04,
+  "end": 62.26
+ },
+ {
+  "word": "Gruppe",
+  "start": 62.26,
+  "end": 62.64
+ },
+ {
+  "word": "von",
+  "start": 62.64,
+  "end": 62.86
+ },
+ {
+  "word": "fünf",
+  "start": 62.86,
+  "end": 63.16
+ },
+ {
+  "word": "Leuten",
+  "start": 63.16,
+  "end": 63.52
+ },
+ {
+  "word": "Neuen",
+  "start": 64.4,
+  "end": 64.92
+ },
+ {
+  "word": "sagt",
+  "start": 64.92,
+  "end": 65.14
+ },
+ {
+  "word": "er",
+  "start": 65.14,
+  "end": 65.36
+ },
+ {
+  "word": "am",
+  "start": 65.36,
+  "end": 65.5
+ },
+ {
+  "word": "ersten",
+  "start": 65.5,
+  "end": 65.76
+ },
+ {
+  "word": "Tag",
+  "start": 65.76,
+  "end": 66.16
+ },
+ {
+  "word": "immer",
+  "start": 66.16,
+  "end": 66.44
+ },
+ {
+  "word": "denselben",
+  "start": 66.44,
+  "end": 67.0
+ },
+ {
+  "word": "Satz",
+  "start": 67.0,
+  "end": 67.52
+ },
+ {
+  "word": "Dir",
+  "start": 68.4,
+  "end": 68.54
+ },
+ {
+  "word": "wird",
+  "start": 68.54,
+  "end": 68.78
+ },
+ {
+  "word": "jemand",
+  "start": 68.78,
+  "end": 69.02
+ },
+ {
+  "word": "eine",
+  "start": 69.02,
+  "end": 69.34
+ },
+ {
+  "word": "Tür",
+  "start": 69.34,
+  "end": 69.64
+ },
+ {
+  "word": "vor",
+  "start": 69.64,
+  "end": 69.9
+ },
+ {
+  "word": "der",
+  "start": 69.9,
+  "end": 70.04
+ },
+ {
+  "word": "Nase",
+  "start": 70.04,
+  "end": 70.38
+ },
+ {
+  "word": "zuknallen",
+  "start": 70.38,
+  "end": 71.04
+ },
+ {
+  "word": "Das",
+  "start": 71.38,
+  "end": 71.5
+ },
+ {
+  "word": "gehört",
+  "start": 71.5,
+  "end": 71.76
+ },
+ {
+  "word": "zum",
+  "start": 71.76,
+  "end": 72.0
+ },
+ {
+  "word": "Preis",
+  "start": 72.0,
+  "end": 72.34
+ },
+ {
+  "word": "Und",
+  "start": 73.3,
+  "end": 73.66
+ },
+ {
+  "word": "an",
+  "start": 73.66,
+  "end": 73.82
+ },
+ {
+  "word": "einem",
+  "start": 73.82,
+  "end": 74.04
+ },
+ {
+  "word": "Sonntag",
+  "start": 74.04,
+  "end": 74.58
+ },
+ {
+  "word": "um",
+  "start": 74.58,
+  "end": 74.7
+ },
+ {
+  "word": "21:40",
+  "start": 74.7,
+  "end": 75.92
+ },
+ {
+  "word": "Uhr",
+  "start": 75.92,
+  "end": 76.48
+ },
+ {
+  "word": "ruft",
+  "start": 76.48,
+  "end": 76.78
+ },
+ {
+  "word": "ein",
+  "start": 76.78,
+  "end": 76.92
+ },
+ {
+  "word": "Freund",
+  "start": 76.92,
+  "end": 77.22
+ },
+ {
+  "word": "an",
+  "start": 77.22,
+  "end": 77.54
+ },
+ {
+  "word": "der",
+  "start": 77.62,
+  "end": 77.68
+ },
+ {
+  "word": "nicht",
+  "start": 77.68,
+  "end": 77.88
+ },
+ {
+  "word": "mehr",
+  "start": 77.88,
+  "end": 78.06
+ },
+ {
+  "word": "kann",
+  "start": 78.06,
+  "end": 78.32
+ }
+]

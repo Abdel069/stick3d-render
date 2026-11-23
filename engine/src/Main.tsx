@@ -33,25 +33,30 @@ const Inner: React.FC<{ from: number; first?: boolean; trans: string; bg: string
 };
 
 type G = { text: string; a: number };
-const groups: G[] = (() => {
+type W = { word: string; start: number; end: number };
+const makeGroups = (words: W[], SCRIPT: string[]): G[] => {
   const g: G[] = []; let cur: number[] = [];
-  const flush = () => { if (cur.length) { g.push({ text: cur.map((i) => String(SCRIPT[i]).replace(/[.,!?;:]$/, "")).join(" "), a: words[cur[0]].start }); cur = []; } };
+  const flush = () => { if (cur.length) { g.push({ text: cur.map((i) => String(SCRIPT[i]).replace(/[.,!?;:\u201e\u201c"]$/, "").replace(/^[\u201e\u201c"]/, "")).join(" "), a: words[cur[0]].start }); cur = []; } };
   words.forEach((_, i) => { cur.push(i); if (cur.length === 2 || /[.,!?;:]$/.test(String(SCRIPT[i]))) flush(); });
   flush(); return g;
-})();
-export const Captions: React.FC = () => {
+};
+const groups0 = makeGroups(words as W[], SCRIPT as string[]);
+export const Captions: React.FC<{ words?: W[]; script?: string[]; labelAt?: (t: number) => string | undefined }> = ({ words: ws, script: sc, labelAt }) => {
   // v6 captions: quiet, modern, editorial. Medium-weight cream sentence case, soft shadow, thin honey rule, numbers in honey. No stroke.
+  const groups = React.useMemo(() => (ws && sc ? makeGroups(ws, sc) : groups0), [ws, sc]);
   const f = useCurrentFrame(), t = f / FPS;
   const idx = groups.findIndex((g, i) => t >= g.a - 0.02 && t < (groups[i + 1]?.a ?? 99) - 0.02); const g = groups[Math.max(0, idx)];
   const k = interpolate(t - g.a, [0, 0.16], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
   const maxLen = Math.max(...String(g.text).split(/\s+/).map((w: string) => w.length), 4);
   const fs = Math.min(54, Math.floor(600 / (maxLen * 0.6)));
-  const parts = String(g.text).split(" ");
+  const parts = String(g.text).split(" "), label = labelAt ? labelAt(g.a + 0.01) : undefined;
+  if (idx < 0 && t < groups[0].a - 0.02) return null;
+  const lastEnd = (ws ?? (words as W[]))[(ws ?? (words as W[])).length - 1].end; if (ws && t > lastEnd + 0.7) return null;
   return (
     <>
       <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 420, background: "linear-gradient(to top, rgba(14,11,40,.5), rgba(14,11,40,0))" }} />
       <div style={{ position: "absolute", left: 40, right: 40, bottom: 250, textAlign: "center", opacity: k, transform: `translateY(${(1 - k) * 12}px)` }}>
-        <div style={{ width: 34, height: 3, borderRadius: 2, background: "#F2B84B", margin: "0 auto 16px", opacity: 0.95 }} />
+        {label ? <div style={{ fontFamily: "Inter, Arial", fontWeight: 600, fontSize: 20, letterSpacing: "0.28em", color: "#F2B84B", marginBottom: 12, textTransform: "uppercase" }}>{label}</div> : <div style={{ width: 34, height: 3, borderRadius: 2, background: "#F2B84B", margin: "0 auto 16px", opacity: 0.95 }} />}
         <div style={{ fontFamily: "Inter, Arial", fontWeight: 600, fontSize: fs, lineHeight: 1.15, letterSpacing: "0.015em", color: "#FAF0DC", textShadow: "0 2px 18px rgba(8,6,30,.7), 0 1px 3px rgba(8,6,30,.55)" }}>
           {parts.map((w, i) => <span key={i} style={{ color: /[0-9$]/.test(w) ? "#F2B84B" : undefined }}>{w}{i < parts.length - 1 ? " " : ""}</span>)}
         </div>

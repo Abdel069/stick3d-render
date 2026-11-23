@@ -1,0 +1,107 @@
+[
+ {
+  "word": "Das",
+  "start": 0.0,
+  "end": 0.2
+ },
+ {
+  "word": "war",
+  "start": 0.2,
+  "end": 0.42
+ },
+ {
+  "word": "der",
+  "start": 0.42,
+  "end": 0.58
+ },
+ {
+  "word": "Tag",
+  "start": 0.58,
+  "end": 0.96
+ },
+ {
+  "word": "an",
+  "start": 1.02,
+  "end": 1.18
+ },
+ {
+  "word": "dem",
+  "start": 1.18,
+  "end": 1.32
+ },
+ {
+  "word": "ich",
+  "start": 1.32,
+  "end": 1.48
+ },
+ {
+  "word": "kapiert",
+  "start": 1.48,
+  "end": 1.92
+ },
+ {
+  "word": "habe",
+  "start": 1.92,
+  "end": 2.26
+ },
+ {
+  "word": "Mein",
+  "start": 3.0,
+  "end": 3.18
+ },
+ {
+  "word": "Kontostand",
+  "start": 3.18,
+  "end": 4.1
+ },
+ {
+  "word": "hängt",
+  "start": 4.1,
+  "end": 4.56
+ },
+ {
+  "word": "von",
+  "start": 4.56,
+  "end": 4.76
+ },
+ {
+  "word": "mir",
+  "start": 4.76,
+  "end": 4.98
+ },
+ {
+  "word": "ab",
+  "start": 4.98,
+  "end": 5.32
+ },
+ {
+  "word": "Nicht",
+  "start": 6.12,
+  "end": 6.36
+ },
+ {
+  "word": "von",
+  "start": 6.36,
+  "end": 6.6
+ },
+ {
+  "word": "einer",
+  "start": 6.6,
+  "end": 6.88
+ },
+ {
+  "word": "Beförderungsrunde",
+  "start": 6.88,
+  "end": 7.98
+ },
+ {
+  "word": "im",
+  "start": 7.98,
+  "end": 8.14
+ },
+ {
+  "word": "März",
+  "start": 8.14,
+  "end": 8.6
+ }
+]

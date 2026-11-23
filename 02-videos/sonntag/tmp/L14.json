@@ -1,0 +1,97 @@
+[
+ {
+  "word": "Um",
+  "start": 0.0,
+  "end": 0.14
+ },
+ {
+  "word": "zehn",
+  "start": 0.14,
+  "end": 0.42
+ },
+ {
+  "word": "Planung",
+  "start": 0.42,
+  "end": 1.18
+ },
+ {
+  "word": "ab",
+  "start": 1.38,
+  "end": 1.54
+ },
+ {
+  "word": "vier",
+  "start": 1.54,
+  "end": 1.82
+ },
+ {
+  "word": "an",
+  "start": 1.82,
+  "end": 2.04
+ },
+ {
+  "word": "den",
+  "start": 2.04,
+  "end": 2.18
+ },
+ {
+  "word": "Türen",
+  "start": 2.18,
+  "end": 2.66
+ },
+ {
+  "word": "Da",
+  "start": 2.9,
+  "end": 3.1
+ },
+ {
+  "word": "sind",
+  "start": 3.1,
+  "end": 3.3
+ },
+ {
+  "word": "die",
+  "start": 3.3,
+  "end": 3.46
+ },
+ {
+  "word": "Leute",
+  "start": 3.46,
+  "end": 3.76
+ },
+ {
+  "word": "zu",
+  "start": 3.76,
+  "end": 4.02
+ },
+ {
+  "word": "Hause",
+  "start": 4.02,
+  "end": 4.34
+ },
+ {
+  "word": "Willst",
+  "start": 4.78,
+  "end": 5.08
+ },
+ {
+  "word": "du",
+  "start": 5.08,
+  "end": 5.2
+ },
+ {
+  "word": "eine",
+  "start": 5.2,
+  "end": 5.4
+ },
+ {
+  "word": "Tour",
+  "start": 5.4,
+  "end": 5.74
+ },
+ {
+  "word": "mitlaufen",
+  "start": 5.74,
+  "end": 6.36
+ }
+]

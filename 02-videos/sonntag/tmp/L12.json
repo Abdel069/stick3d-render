@@ -1,0 +1,42 @@
+[
+ {
+  "word": "Ist",
+  "start": 0.0,
+  "end": 0.22
+ },
+ {
+  "word": "es",
+  "start": 0.22,
+  "end": 0.44
+ },
+ {
+  "word": "auch",
+  "start": 0.44,
+  "end": 0.84
+ },
+ {
+  "word": "Aber",
+  "start": 1.74,
+  "end": 2.14
+ },
+ {
+  "word": "es",
+  "start": 2.14,
+  "end": 2.48
+ },
+ {
+  "word": "ist",
+  "start": 2.48,
+  "end": 2.7
+ },
+ {
+  "word": "mein",
+  "start": 2.7,
+  "end": 2.98
+ },
+ {
+  "word": "Stress",
+  "start": 2.98,
+  "end": 3.32
+ }
+]

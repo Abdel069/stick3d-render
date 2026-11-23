@@ -1,0 +1,37 @@
+[
+ {
+  "word": "Was",
+  "start": 0.0,
+  "end": 0.26
+ },
+ {
+  "word": "Das",
+  "start": 0.76,
+  "end": 1.04
+ },
+ {
+  "word": "hast",
+  "start": 1.04,
+  "end": 1.18
+ },
+ {
+  "word": "du",
+  "start": 1.18,
+  "end": 1.32
+ },
+ {
+  "word": "mir",
+  "start": 1.32,
+  "end": 1.46
+ },
+ {
+  "word": "nie",
+  "start": 1.46,
+  "end": 1.6
+ },
+ {
+  "word": "erzählt",
+  "start": 1.6,
+  "end": 1.84
+ }
+]

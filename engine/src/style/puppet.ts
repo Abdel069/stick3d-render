@@ -1,7 +1,7 @@
 // 2D stick-figure puppet v3: thick bean body, thin sticks, shading, physics-driven transforms, nervous acting.
 export type Look = {
   skin: string; body: string; outfit?: "suit" | "leather" | "blazer" | "hoodie" | "shirt"; tie?: string; shirt?: string;
-  hair?: "none" | "short" | "bob" | "swept" | "grey"; hairColor?: string; glasses?: boolean; badge?: string; hat?: string; shoe?: string; seed?: number /* unique head for main characters; undefined = shared NPC head */; mustache?: string;
+  hair?: "none" | "short" | "bob" | "swept" | "grey"; hairColor?: string; glasses?: boolean; badge?: string; hat?: string; shoe?: string; seed?: number /* unique head for main characters; undefined = shared NPC head */; mustache?: string; turban?: string;
   /* v5.1 main-character details */ sleeve?: string; pants?: string; stubble?: boolean; freckles?: boolean; ears?: boolean; brows?: number; lashes?: boolean; lips?: string; earring?: string; bowtie?: string; scarf?: string; patch?: string; flower?: string; sneakers?: boolean;
 };
 export type Arms = "down" | "up" | "hold" | "point" | "head" | "chest" | "box" | "shrug";
@@ -171,5 +171,12 @@ export function drawPuppet(c: CanvasRenderingContext2D, W: number, H: number, lo
     c.lineTo(hx - hr * 0.78, hy - hr * 0.34); c.quadraticCurveTo(hx, hy - hr * 0.5, hx + hr * 0.78, hy - hr * 0.34); c.closePath(); c.fill(); c.stroke();
     c.beginPath(); c.ellipse(hx + hr * 0.62, hy - hr * 0.36, hr * 0.62, hr * 0.13, 0.06, 0, 7); c.fill(); c.stroke();
     c.fillStyle = "rgba(255,255,255,.35)"; c.beginPath(); c.ellipse(hx - hr * 0.25, hy - hr * 0.78, hr * 0.22, hr * 0.07, -0.4, 0, 7); c.fill(); }
+  if (look.turban) { // towel wrapped on the head: big dome + twisted folds
+    c.fillStyle = look.turban; c.lineWidth = 8 * S; c.beginPath();
+    for (let i = 0; i <= 26; i++) { const a = Math.PI * (1.02 + 0.96 * i / 26), r = headR(a) + 12 * S; const x = hx + r * Math.cos(a) * hs.sx, y = hy + r * Math.sin(a) * hs.sy - 8 * S; i ? c.lineTo(x, y) : c.moveTo(x, y); }
+    c.lineTo(hx + hr * 0.8, hy - hr * 0.3); c.quadraticCurveTo(hx, hy - hr * 0.42, hx - hr * 0.8, hy - hr * 0.3); c.closePath(); c.fill(); c.stroke();
+    c.beginPath(); c.ellipse(hx - hr * 0.12, hy - hr * 1.18 * hs.sy, hr * 0.5, hr * 0.34, -0.25, 0, 7); c.fill(); c.stroke();
+    c.strokeStyle = "rgba(14,11,40,.45)"; c.lineWidth = 4 * S; for (const k of [0.2, 0.5, 0.8]) { c.beginPath(); c.moveTo(hx - hr * 0.8 + k * hr * 1.6, hy - hr * 0.42); c.quadraticCurveTo(hx - hr * 0.4 + k * hr * 0.8, hy - hr * 1.0, hx - hr * 0.5 + k * hr * 0.6, hy - hr * 1.3); c.stroke(); } c.strokeStyle = INK;
+  }
   c.restore();
 }

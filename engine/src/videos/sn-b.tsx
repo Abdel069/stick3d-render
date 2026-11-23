@@ -84,9 +84,9 @@ export const B6 = ({ t, f }: Ctx) => {
     <Cam t={t} keys={K6} /><Street t={t} num="10" />
     {[0, 1, 2].map((i) => <Box key={i} p={[0, 0.2 + i * 0.4, -3.4 + i * 0.5]} s={[3.6, 0.4, 1.0]} color={P.K2} line={3} />)}
     <Person p={[0.1, 0.35, -3.1]} h={3.4} look={{ ...emre, badge: undefined }} f={f} pose={{ mood: "worry", arms: "chest", armK: 0.8, hunch: 0.9, sweat: 0.4, squash: 0.012 * Math.sin(t * 2.2), tilt: 0.04 }} />
-    <Poster p={[2.4, 4.4, -3.2]} s={[3.0, 0.9]} k={seg(t, 28.0, 28.4, Easing.out(Easing.back(2)))} draw={drawText(hs[Math.max(0, ad)], P.K1, INK, 44)} />
-    <Clock p={[-2.6, 5.2, -3.6]} r={0.8} t={t} speed={10} />
-    <Poster p={[-2.6, 3.9, -3.5]} s={[1.9, 0.6]} k={seg(t, wt("zehn", 70), wt("zehn", 70) + 0.3)} draw={drawText("10 Minuten", P.Y2, INK, 60)} />
+    <Poster p={[1.3, 4.5, -3.2]} s={[2.8, 0.8]} k={seg(t, 28.0, 28.4, Easing.out(Easing.back(2)))} draw={drawText(hs[Math.max(0, ad)], P.K1, INK, 44)} />
+    <Clock p={[-1.6, 5.2, -3.6]} r={0.8} t={t} speed={10} />
+    <Poster p={[-1.4, 3.7, -3.5]} s={[1.9, 0.6]} k={seg(t, wt("zehn", 70), wt("zehn", 70) + 0.3)} draw={drawText("10 Minuten", P.Y2, INK, 60)} />
   </>);
 };
 
@@ -164,8 +164,8 @@ export const B12 = ({ t, f }: Ctx) => {
     <Cam t={t} keys={K12} /><Street t={t} num="12" opens={[0, 0.9, 0]} />
     <Person p={[0.25, 0, -5.55]} h={3.1} look={{ ...opa, hair: "short", hairColor: "#4a2a1a", glasses: false, body: P.V2, sleeve: P.V2 }} f={f} pose={{ mood: neu > 0.5 ? "smile" : "deadpan", arms: neu > 0.5 ? "chest" : undefined, armK: 0.6, tilt: neu > 0.5 ? 0.04 : 0 }} />
     <Person p={[-1.4, 0, -4.1]} h={3.7} look={emre} f={f} pose={{ mood: "smile", arms: "point", armK: 0.5, tilt: talkTilt(t, true, 0.02), squash: 0.012 * Math.sin(t * 2.2) }} />
-    <Poster p={[-2.8, 5.2, -3.6]} s={[3.2, 0.9]} k={old} draw={(c, W2, H) => { drawText("Haben Sie kurz Zeit?", P.K2, P.K4, 48)(c, W2, H); if (x > 0) { c.strokeStyle = P.C2; c.lineWidth = 10; c.beginPath(); c.moveTo(20, H / 2); c.lineTo(20 + (W2 - 40) * x, H / 2); c.stroke(); } }} />
-    <Poster p={[1.8, 6.4, -3.6]} s={[3.8, 1.5]} k={neu} draw={drawText("Was nervt Sie gerade am\nmeisten an Ihren Fixkosten?", P.Y2, INK, 40)} />
+    <Poster p={[-1.4, 4.9, -3.6]} s={[3.0, 0.8]} k={old} draw={(c, W2, H) => { drawText("Haben Sie kurz Zeit?", P.K2, P.K4, 48)(c, W2, H); if (x > 0) { c.strokeStyle = P.C2; c.lineWidth = 10; c.beginPath(); c.moveTo(20, H / 2); c.lineTo(20 + (W2 - 40) * x, H / 2); c.stroke(); } }} />
+    <Poster p={[0.4, 6.2, -3.6]} s={[3.6, 1.4]} k={neu} draw={drawText("Was nervt Sie gerade am\nmeisten an Ihren Fixkosten?", P.Y2, INK, 40)} />
   </>);
 };
 
@@ -203,8 +203,8 @@ export const B15 = ({ t, f }: Ctx) => {
   const up = seg(t, wt("weiß") - 0.4, wt("weiß") + 0.4, Easing.out(Easing.back(2)));
   return (<>
     <Cam t={t} keys={K15} /><Flat t={t} />
-    <Poster p={[-2.4, 4.4, -4.0]} s={[2.2, 1.2]} k={seg(t, 69, 69.4, Easing.out(Easing.back(2)))} draw={drawText("Vertrag 1", P.T2, "#fff", 64, "✓ unterschrieben")} />
-    <Poster p={[2.5, 4.4, -4.0]} s={[2.2, 1.2]} k={seg(t, 71.2, 71.6, Easing.out(Easing.back(2)))} draw={drawText("Miete", P.K2, P.C3, 64, "noch offen")} />
+    <Poster p={[-1.5, 4.9, -4.0]} s={[2.0, 1.1]} k={seg(t, 69, 69.4, Easing.out(Easing.back(2)))} draw={drawText("Vertrag 1", P.T2, "#fff", 64, "✓ unterschrieben")} />
+    <Poster p={[1.5, 4.9, -4.0]} s={[2.0, 1.1]} k={seg(t, 71.2, 71.6, Easing.out(Easing.back(2)))} draw={drawText("Miete", P.K2, P.C3, 64, "noch offen")} />
     <Person p={[0, 0, -3.6]} h={4.0} look={emre} f={f} pose={{ mood: "grin", arms: "up", armK: 0.4 + 0.6 * up, squash: 0.02 * Math.sin(t * 5) * up, air: 0.05 * up }} />
     <Glow p={[0, 3.6, -3.8]} r={3.6} color="rgba(242,184,75,1)" o={0.3 * up} />
   </>);

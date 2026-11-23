@@ -6,3 +6,4 @@ Voice v2: ElevenLabs via Higgsfield text2speech_v2 (variant elevenlabs, voice Ho
 v3: puppet v5 (deformed heads via Look.seed, NPC_SEED shared, longer limbs, slim torso, cap), BRAND palette (engine/src/style/brand.ts; scene colours snapped), yellow captions + coral shadow, humanized script (script_v2.txt), Holden voice, 54.85 s.
 v4: main characters detailed (sleeves, trousers, scarf, bowtie, lips, lashes, freckles, stubble, ears, earrings), palette v2 Dusk & Honey, grade saturate 1.1, caption auto-fit, price counter at 'rund 3,5'.
 v5: quiet captions, mustache (no teeth), longer main heads, 3D violin turntable (world-space, own spin).
+Series Emre (3 clips): Sonntag 78.6 s (dialogue Jonas Holden / Emre Marcus), Tuer10 75.4 s (narrator Reid), Februar 78.6 s (narrator Petra).

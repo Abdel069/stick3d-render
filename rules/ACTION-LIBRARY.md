@@ -25,3 +25,13 @@ Add every new pose/prop here with its pose-param names and the scene where first
 - Main characters: unique long head via Look.seed (NPC_SEED = shared crowd head), mustache/stubble/freckles/lashes/lips/earring/scarf/bowtie/patch/flower/sleeve/pants flags in puppet.ts. No teeth (removed on purpose).
 - Captions v6: cream Inter 600, sentence case, soft shadow, thin honey rule, numbers in honey, bottom scrim (Main.tsx).
 - Palette: engine/src/brand.ts "Dusk & Honey".
+
+## v7 additions (series "Emre", 3 clips: Sonntag / Tür zehn / Der Februar)
+- Dialogue pipeline: write one recording per line (Higgsfield text2speech_v2, variant elevenlabs, one voice per speaker), put them in 02-videos/<id>/lines/L01.mp3.. + lines.json, run `tools/build_dialog.py 02-videos/<id>` (trim, gaps, Whisper word timing per line, timeline.json). Narration: `tools/prep_narration.sh <id>` (02-videos/<id>/voice.mp3 + script.txt). Each video owns engine/public/<id>/ (voice.wav, words.json, script.json, mix.wav); never write into engine/public root.
+- Captions take props (words/script/labelAt) so several videos can live in one project; speaker label above the line for dialogues.
+- Shared kit: videos/sn-common.tsx (Scene without warp, cast looks jonas/emre/opa/frau/chef/lagerchefin/mutter, Poster (pop-in sign, hidden below k=0.03), drawText, StaticClock, InfoCard overlay, sets Living/Flat/Street/Lager/NightRoad, props Dog/Cake/Pallets/CarBox/Phone).
+- Lying figure: wrap Person in <group rotation={[0,0,-1.42]}> (screen roll). Never use puppet `tilt` for lying: the canvas clips it.
+- Seated figure: put the Person's feet inside the sofa seat volume so the seat hides the legs.
+- Every set must include <Lights/> (without it all boxes render black).
+- Puppet: mustache, turban, sleeve/pants colours, hands in skin colour, no teeth.
+- Cloud render: `gh workflow run render.yml -f comp=<Id> -f frames=<n> -f slices=20`; download `part-*` artifacts and stitch locally (the final-video artifact download can stall).
